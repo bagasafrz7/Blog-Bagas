@@ -1,3 +1,7 @@
+/* eslint-disable prettier/prettier */
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const axios = require('axios');
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -39,17 +43,47 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
+    ['bootstrap-vue/nuxt',
+      {
+        bootstrapVue: {
+          icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
+        }
+      }
+    ],
     // https://go.nuxtjs.dev/axios
     [
       'storyblok-nuxt',
-      { accessToken: 'oUtoAXIMfGGV5Ijt6ZNGQAtt', cacheProvider: 'memory' }
+      {
+        accessToken:
+          process.env.NODE_ENV === 'production'
+            ? 'RHIAgV9lKDsiWKVx9EmyGQtt'
+            : 'oUtoAXIMfGGV5Ijt6ZNGQAtt',
+        cacheProvider: 'memory'
+      }
     ]
   ],
+
+  generate: {
+    routes() {
+      return axios
+        .get(
+          'https://api.storyblok.com/v1/cdn/stories?version=published&token=RHIAgV9lKDsiWKVx9EmyGQtt&starts_with=blog&cv=' +
+          // eslint-disable-next-line prettier/prettier
+          Math.floor(Date.now() / 1e3)
+        )
+        .then((res) => {
+          const blogPost = res.data.stories.map((bp) => bp.full_slug)
+          return ['/', 'blog', ...blogPost]
+        })
+    }
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  build: {},
+
+  extend(config, ctx) { },
+  babel: { compact: true }
 }

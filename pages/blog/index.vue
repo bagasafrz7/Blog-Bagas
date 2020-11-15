@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import PostPreview from '../components/Blog/postPreview'
+import PostPreview from '../../components/Blog/postPreview'
 export default {
   components: {
     PostPreview
@@ -24,7 +24,6 @@ export default {
         starts_with: 'blog/'
       })
       .then((res) => {
-        console.log(res)
         return {
           posts: res.data.stories.map((bp) => {
             return {

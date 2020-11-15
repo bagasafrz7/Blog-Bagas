@@ -46,7 +46,7 @@
   padding: 0.3rem;
 }
 
-.nav-link.nuxt-link-exact-active {
+.nav-link.nuxt-link-active {
   border-bottom: 3px solid #06c4d1;
 }
 
@@ -58,7 +58,7 @@
 
 .nav-link a:hover,
 .nav-link a:active,
-.nav-link.nuxt-link-exact-active a {
+.nav-link.nuxt-link-active a {
   color: #06c4d1;
   text-decoration: none;
 }
