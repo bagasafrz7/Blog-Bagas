@@ -42,14 +42,6 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    ['bootstrap-vue/nuxt',
-      {
-        bootstrapVue: {
-          icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
-        }
-      }
-    ],
     // https://go.nuxtjs.dev/axios
     [
       'storyblok-nuxt',
