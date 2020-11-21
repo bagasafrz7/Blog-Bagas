@@ -1,5 +1,5 @@
 <template>
-  <div id="post" class="container">
+  <div id="post">
     <PostPreview
       v-for="post in posts"
       :id="post.id"
@@ -70,9 +70,9 @@ export default {
   flex-direction: column;
 }
 
-@media (min-width: 35rem) {
+/* @media (min-width: 35rem) {
   #post {
     flex-direction: row;
   }
-}
+} */
 </style>

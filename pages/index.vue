@@ -1,13 +1,17 @@
 <template>
-  <div id="post" class="container">
-    <PostPreview
-      v-for="post in posts"
-      :id="post.id"
-      :key="post.id"
-      :title="post.title"
-      :excerpt="post.previewText"
-      :thumbnail="post.thumbnailUrl"
-    />
+  <div>
+    <b-container fluid>
+      <b-row>
+        <PostPreview
+          v-for="post in posts"
+          :id="post.id"
+          :key="post.id"
+          :title="post.title"
+          :excerpt="post.previewText"
+          :thumbnail="post.thumbnailUrl"
+        />
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -24,7 +28,6 @@ export default {
         starts_with: 'blog/'
       })
       .then((res) => {
-        console.log(res)
         return {
           posts: res.data.stories.map((bp) => {
             return {
@@ -68,12 +71,23 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-@media (min-width: 35rem) {
+@media (max-width: 1200px) {
   #post {
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  #post {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
   }
 }
 </style>
