@@ -26,6 +26,7 @@ body {
 }
 
 .main-content {
-  margin-top: 4.5rem;
+  background: #000;
+  padding-bottom: 175px;
 }
 </style>

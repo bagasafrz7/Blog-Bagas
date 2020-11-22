@@ -64,30 +64,3 @@ export default {
   // }
 }
 </script>
-
-<style scoped>
-#post {
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-@media (max-width: 1200px) {
-  #post {
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 768px) {
-  #post {
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    flex-direction: column;
-  }
-}
-</style>

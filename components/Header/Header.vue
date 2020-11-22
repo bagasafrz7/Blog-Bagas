@@ -1,65 +1,33 @@
 <template>
-  <header class="main-header">
-    <nav class="main-nav">
-      <ul class="nav-links">
-        <nuxt-link to="/" tag="li" class="nav-link">
-          <a>All Post</a>
-        </nuxt-link>
-        <nuxt-link to="/about" tag="li" class="nav-link">
-          <a>About</a>
-        </nuxt-link>
-      </ul>
-    </nav>
-  </header>
+  <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar-brand href="#">Bagas</b-navbar-brand>
+
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav class="m-auto">
+        <b-nav-item to="/"> Home </b-nav-item>
+        <b-nav-item to="/about"> Tentang </b-nav-item>
+        <b-nav-item to="/kontak"> Kontak </b-nav-item>
+      </b-navbar-nav>
+
+      <b-navbar-nav>
+        <b-nav-item to="/"> IG </b-nav-item>
+        <b-nav-item to="/about"> TW </b-nav-item>
+        <b-nav-item to="/about"> GIT </b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <style scoped>
-.main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #022d30;
-  height: 4.5rem;
+.bg-info {
+  background: #000 !important;
+  padding: 20px 15px 0 15px;
 }
 
-.main-nav {
-  height: 100%;
-}
-
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.nav-link {
-  height: 100%;
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-  margin: 0 1rem;
-  padding: 0.3rem;
-}
-
-.nav-link.nuxt-link-active {
-  border-bottom: 3px solid #06c4d1;
-}
-
-.nav-link a {
-  justify-content: center;
-  display: block;
+.navbar-dark .navbar-brand {
   color: #fff;
-}
-
-.nav-link a:hover,
-.nav-link a:active,
-.nav-link.nuxt-link-active a {
-  color: #06c4d1;
-  text-decoration: none;
+  font-size: 32px;
 }
 </style>

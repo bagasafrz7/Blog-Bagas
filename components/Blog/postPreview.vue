@@ -1,17 +1,5 @@
 <template>
-  <!-- <nuxt-link :to="'/blog/' + id">
-    <article class="post-preview">
-      <div
-        :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
-        class="post-preview-thumbnail"
-      ></div>
-      <div class="post-preview-content">
-        <h1>{{ title }}</h1>
-        <p>{{ excerpt }}</p>
-      </div>
-    </article>
-  </nuxt-link> -->
-  <b-col cols="4" class="mt-4 text-center">
+  <b-col cols="12" md="12" lg="4" class="mt-4 text-center">
     <div
       :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
       class="post-preview-thumbnail"

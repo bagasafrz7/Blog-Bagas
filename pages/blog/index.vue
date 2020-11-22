@@ -62,14 +62,6 @@ export default {
 </script>
 
 <style scoped>
-#post {
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 /* @media (min-width: 35rem) {
   #post {
     flex-direction: row;

@@ -7,3 +7,9 @@
     </p>
   </section>
 </template>
+
+<style scoped>
+#about-page {
+  background: #fff;
+}
+</style>
