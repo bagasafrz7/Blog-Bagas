@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <main class="main-content">
+    <main>
       <Nuxt />
     </main>
   </div>
@@ -23,10 +23,5 @@ export default {
 
 body {
   font-family: 'Josefin Sans', sans-serif;
-}
-
-.main-content {
-  background: #000;
-  padding-bottom: 175px;
 }
 </style>

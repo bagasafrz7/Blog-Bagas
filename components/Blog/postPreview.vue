@@ -72,13 +72,34 @@ export default {
   background-size: cover;
   width: 100%;
   height: 400px;
-  transition: transform 0.3s, filter 1s ease-in-out;
-  filter: grayscale(100%);
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  transition: all 0.1s ease-in-out;
 }
 
 .post-preview-thumbnail:hover {
-  filter: grayscale(0);
+  filter: none;
+  -webkit-filter: grayscale(0);
   transform: scale(1.01);
+}
+
+.post-preview-thumbnail::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.post-preview-thumbnail:hover::before {
+  background: rgba(0, 0, 0, 0.4);
+  content: '';
 }
 
 .post-preview-content {

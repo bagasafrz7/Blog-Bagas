@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-content">
     <b-container fluid>
       <b-row>
         <PostPreview
@@ -64,3 +64,10 @@ export default {
   // }
 }
 </script>
+
+<style scoped>
+.main-content {
+  background: #000;
+  padding-bottom: 175px;
+}
+</style>

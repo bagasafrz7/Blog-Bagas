@@ -1,13 +1,17 @@
 <template>
-  <div id="post">
-    <PostPreview
-      v-for="post in posts"
-      :id="post.id"
-      :key="post.id"
-      :title="post.title"
-      :excerpt="post.previewText"
-      :thumbnail="post.thumbnailUrl"
-    />
+  <div class="main-content">
+    <b-container fluid>
+      <b-row>
+        <PostPreview
+          v-for="post in posts"
+          :id="post.id"
+          :key="post.id"
+          :title="post.title"
+          :excerpt="post.previewText"
+          :thumbnail="post.thumbnailUrl"
+        />
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -62,9 +66,8 @@ export default {
 </script>
 
 <style scoped>
-/* @media (min-width: 35rem) {
-  #post {
-    flex-direction: row;
-  }
-} */
+.main-content {
+  background: #000;
+  padding-bottom: 175px;
+}
 </style>
