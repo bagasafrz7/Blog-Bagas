@@ -10,6 +10,82 @@
           :excerpt="post.previewText"
           :thumbnail="post.thumbnailUrl"
         /> -->
+        <b-col cols="12">
+          <Particles
+            id="tsparticles"
+            :options="{
+              background: {
+                color: {
+                  value: '#000'
+                }
+              },
+              fpsLimit: 100,
+              interactivity: {
+                detectsOn: 'canvas',
+                events: {
+                  onClick: {
+                    enable: true,
+                    mode: 'push'
+                  },
+                  onHover: {
+                    enable: true,
+                    mode: 'repulse'
+                  },
+                  resize: true
+                },
+                modes: {
+                  bubble: {
+                    distance: 400,
+                    duration: 2,
+                    opacity: 0.4,
+                    size: 40
+                  },
+                  push: {
+                    quantity: 4
+                  },
+                  repulse: {
+                    distance: 200,
+                    duration: 0.1
+                  }
+                }
+              },
+              particles: {
+                color: {
+                  value: '#ffffff'
+                },
+                collisions: {
+                  enable: true
+                },
+                move: {
+                  direction: 'none',
+                  enable: true,
+                  outMode: 'bounce',
+                  random: false,
+                  speed: 6,
+                  straight: false
+                },
+                number: {
+                  density: {
+                    enable: true,
+                    value_area: 800
+                  },
+                  value: 80
+                },
+                opacity: {
+                  value: 0.2
+                },
+                shape: {
+                  type: 'circle'
+                },
+                size: {
+                  random: true,
+                  value: 5
+                }
+              },
+              detectRetina: true
+            }"
+          />
+        </b-col>
         <b-col class="hero-img text-center" cols="12">
           <img src="~assets/img/pp_ig_hd.png" alt="Image People" />
           <h5>Halo, saya Bagas Afrizal</h5>
@@ -50,6 +126,11 @@ export default {
           })
         }
       })
+  },
+  data() {
+    return {
+      particlesSnow: ''
+    }
   }
 }
 </script>
@@ -57,7 +138,11 @@ export default {
 <style scoped>
 .main-content {
   background: #000;
-  padding-bottom: 175px;
+}
+
+.hero-img {
+  position: absolute;
+  top: 75px;
 }
 
 .hero-img img {
@@ -73,7 +158,7 @@ export default {
 .hero-img h1 {
   width: 50%;
   margin: 25px auto;
-  font-size: 62px;
+  font-size: 48px;
   color: #fff;
 }
 
@@ -81,7 +166,7 @@ export default {
   width: 50%;
   margin: 25px auto 0;
   color: rgb(143, 143, 143);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 100 !important;
 }
 </style>
