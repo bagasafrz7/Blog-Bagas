@@ -1,6 +1,6 @@
 <template>
   <div class="header-nav">
-    <b-container>
+    <!-- <b-container>
       <b-row>
         <b-navbar toggleable="lg" type="dark" variant="info">
           <b-navbar-brand to="/">Bagas Afrizal</b-navbar-brand>
@@ -18,29 +18,36 @@
           </b-collapse>
         </b-navbar>
       </b-row>
+    </b-container> -->
+    <b-container>
+      <b-row>
+        <nav>
+          <input id="nav-toggle" type="checkbox" />
+          <div class="logo">Bagas<strong>Afrizal</strong></div>
+          <ul class="links">
+            <li><nuxt-link to="/">Beranda</nuxt-link></li>
+            <li><nuxt-link to="/about">Tentang Saya</nuxt-link></li>
+            <li><nuxt-link to="/blog">Hasil Tulisan</nuxt-link></li>
+            <li><nuxt-link to="/hasil">Projects</nuxt-link></li>
+            <li><nuxt-link to="/kontak">Eksperimen Aplikasi</nuxt-link></li>
+          </ul>
+          <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </label>
+        </nav>
+      </b-row>
     </b-container>
-    <!-- <nav>
-      <input id="nav-toggle" type="checkbox" />
-      <div class="logo">MINZ<strong>CODE</strong></div>
-      <ul class="links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <label for="nav-toggle" class="icon-burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </label>
-    </nav> -->
   </div>
 </template>
 
 <style scoped>
+nav {
+  width: 100%;
+}
 /* NAV */
-/* nav .logo {
+nav .logo {
   float: left;
   width: 40%;
   height: 100%;
@@ -78,7 +85,7 @@ nav .icon-burger {
   display: none;
   position: absolute;
   right: 5%;
-  top: 50%;
+  top: 4%;
   transform: translateY(-50%);
 }
 nav .icon-burger .line {
@@ -89,11 +96,19 @@ nav .icon-burger .line {
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
 }
+@media screen and (max-width: 1024px) {
+  nav .links a {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 768px) {
   nav .logo {
     float: none;
     width: auto;
     justify-content: center;
+    padding: 25px 0;
   }
   nav .links {
     float: none;
@@ -130,7 +145,7 @@ nav .icon-burger .line {
   nav :checked ~ .icon-burger .line:nth-child(2) {
     opacity: 0;
   }
-} */
+}
 /* NAV */
 
 .header-nav {
@@ -142,7 +157,7 @@ nav .icon-burger .line {
   /* padding: 20px 15px 0 15px; */
 }
 
-.navbar-dark .navbar-brand {
+/* .navbar-dark .navbar-brand {
   color: #fff;
   font-size: 32px;
 }
@@ -154,5 +169,5 @@ nav .icon-burger .line {
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
   color: orange;
-}
+} */
 </style>

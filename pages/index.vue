@@ -136,6 +136,13 @@ export default {
 </script>
 
 <style scoped>
+canvas.tsparticles-canvas-el {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  pointer-events: initial;
+}
+
 .main-content {
   background: #000;
 }
@@ -168,5 +175,19 @@ export default {
   color: rgb(143, 143, 143);
   font-size: 18px;
   font-weight: 100 !important;
+}
+
+@media screen and (min-width: 768px) {
+  #tsparticles {
+    width: 100%;
+    height: 650px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #tsparticles {
+    width: 100%;
+    height: 1000px;
+  }
 }
 </style>
