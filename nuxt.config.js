@@ -21,6 +21,11 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Barlow&display=swap'
       }
     ],
     script: [
@@ -49,6 +54,9 @@ export default {
   modules: [
     [
       'bootstrap-vue/nuxt'
+    ],
+    [
+      '@nuxtjs/moment'
     ],
     // https://go.nuxtjs.dev/axios
     [

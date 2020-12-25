@@ -1,24 +1,5 @@
 <template>
   <div class="header-nav">
-    <!-- <b-container>
-      <b-row>
-        <b-navbar toggleable="lg" type="dark" variant="info">
-          <b-navbar-brand to="/">Bagas Afrizal</b-navbar-brand>
-
-          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-          <b-collapse id="nav-collapse" is-nav>
-            <b-navbar-nav class="ml-auto">
-              <b-nav-item to="/"> Beranda </b-nav-item>
-              <b-nav-item to="/about"> Tentang Saya </b-nav-item>
-              <b-nav-item to="/blog"> Hasil Tulisan </b-nav-item>
-              <b-nav-item to="/hasil"> Eksperimen Aplikasi </b-nav-item>
-              <b-nav-item to="/kontak"> Narahubung </b-nav-item>
-            </b-navbar-nav>
-          </b-collapse>
-        </b-navbar>
-      </b-row>
-    </b-container> -->
     <b-container>
       <b-row>
         <nav>
