@@ -1,5 +1,5 @@
 <template>
-  <div id="post" v-editable="blok">
+  <div id="post">
     <b-container>
       <b-row>
         <b-col cols="8" class="detail-post">
@@ -10,12 +10,16 @@
               {{ $moment(published).format('LL') }}. By
               <span>Bagas Afrizal</span>
             </p>
+            <hr />
           </div>
           <p>{{ content }}</p>
         </b-col>
         <b-col cols="4" class="side-content">
           <h4>Tulisan Terbaru</h4>
           <div class="line-bt"></div>
+          <!-- <NewBlog /> -->
+          <!-- <Blog /> -->
+          <NewContent />
         </b-col>
       </b-row>
     </b-container>
@@ -23,7 +27,15 @@
 </template>
 
 <script>
+// import NewBlog from '../../../components/newBlog/newBlog'
+// import Blog from '../../../components/newBlog/Blog'
+import NewContent from '../../newBlog/index'
 export default {
+  components: {
+    // NewBlog
+    // Blog
+    NewContent
+  },
   asyncData(context) {
     return context.app.$storyapi
       .get('cdn/stories/blog/' + context.params.postId, {

@@ -58,6 +58,7 @@ export default {
     [
       '@nuxtjs/moment'
     ],
+    ['@nuxtjs/axios'],
     // https://go.nuxtjs.dev/axios
     [
       'storyblok-nuxt',

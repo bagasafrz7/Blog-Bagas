@@ -4,9 +4,10 @@
       <b-row>
         <nav>
           <input id="nav-toggle" type="checkbox" />
-          <div class="logo">Bagas<strong>Afrizal</strong></div>
+          <div class="logo">
+            <nuxt-link to="/">Bagas<strong>Afrizal</strong></nuxt-link>
+          </div>
           <ul class="links">
-            <li><nuxt-link to="/">Beranda</nuxt-link></li>
             <li><nuxt-link to="/about">Tentang Saya</nuxt-link></li>
             <li><nuxt-link to="/blog">Hasil Tulisan</nuxt-link></li>
             <li><nuxt-link to="/hasil">Projects</nuxt-link></li>
@@ -26,6 +27,7 @@
 <style scoped>
 nav {
   width: 100%;
+  padding: 20px 0;
 }
 /* NAV */
 nav .logo {
@@ -35,13 +37,26 @@ nav .logo {
   display: flex;
   align-items: center;
   font-size: 24px;
-  color: #fff;
+  color: #000;
+}
+
+nav .logo a {
+  color: #6bc5d2;
+  text-decoration: none;
+}
+
+nav .logo a:hover {
+  text-decoration: none;
+}
+
+.nuxt-link-exact-active.nuxt-link-active {
+  color: #6bc5d2;
 }
 nav .links {
   float: right;
   padding: 0;
   margin: 0;
-  width: 60%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -52,10 +67,10 @@ nav .links li {
 }
 nav .links a {
   display: block;
-  padding: 1em;
+  padding: 1em 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 #nav-toggle {
@@ -68,6 +83,7 @@ nav .icon-burger {
   right: 5%;
   top: 4%;
   transform: translateY(-50%);
+  background: #6bc5d2;
 }
 nav .icon-burger .line {
   width: 30px;
@@ -102,20 +118,22 @@ nav .icon-burger .line {
     width: auto;
     height: auto;
     flex-direction: column;
-    justify-content: space-evenly;
-    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.9);
     overflow: hidden;
     box-sizing: border-box;
     transition: all 0.5s ease-in-out;
   }
   nav .links a {
     font-size: 20px;
+    color: #fff;
   }
   nav :checked ~ .links {
     bottom: 0;
   }
   nav .icon-burger {
     display: block;
+    margin: 15px;
   }
   nav :checked ~ .icon-burger .line:nth-child(1) {
     transform: translateY(10px) rotate(225deg);
@@ -130,11 +148,11 @@ nav .icon-burger .line {
 /* NAV */
 
 .header-nav {
-  background: #000 !important;
+  background: rgb(255, 255, 255) !important;
   /* padding: 20px 15px 0 15px; */
 }
 .bg-info {
-  background: #000 !important;
+  background: rgb(255, 255, 255) !important;
   /* padding: 20px 15px 0 15px; */
 }
 

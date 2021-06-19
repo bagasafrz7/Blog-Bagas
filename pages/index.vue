@@ -2,21 +2,13 @@
   <div class="main-content">
     <b-container fluid>
       <b-row>
-        <!-- <PostPreview
-          v-for="post in posts"
-          :id="post.id"
-          :key="post.id"
-          :title="post.title"
-          :excerpt="post.previewText"
-          :thumbnail="post.thumbnailUrl"
-        /> -->
         <b-col cols="12">
           <Particles
             id="tsparticles"
             :options="{
               background: {
                 color: {
-                  value: '#000'
+                  value: '#fff'
                 }
               },
               fpsLimit: 100,
@@ -51,7 +43,7 @@
               },
               particles: {
                 color: {
-                  value: '#ffffff'
+                  value: '#000'
                 },
                 collisions: {
                   enable: true
@@ -87,14 +79,11 @@
           />
         </b-col>
         <b-col class="hero-img text-center" cols="12">
-          <img src="~assets/img/pp_ig_hd.png" alt="Image People" />
-          <h5>Halo, saya Bagas Afrizal</h5>
-          <h1>Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
-            tempora ea autem quae similique amet incidunt laudantium, sint
-            officiis asperiores consequatur neque molestias soluta odit.
-          </p>
+          <h1>
+            Hi!👋 <br />
+            I'm <span>Bagas Afrizal </span>
+          </h1>
+          <p>Tech Enthusiast, Frontend Engineer and Pemuda Indonesia</p>
         </b-col>
       </b-row>
     </b-container>
@@ -107,26 +96,6 @@ export default {
   components: {
     // PostPreview
   },
-  asyncData(context) {
-    return context.app.$storyapi
-      .get('cdn/stories', {
-        version: context.isDev ? 'draft' : 'published',
-        starts_with: 'blog/'
-      })
-      .then((res) => {
-        console.log(res)
-        return {
-          posts: res.data.stories.map((bp) => {
-            return {
-              id: bp.slug,
-              title: bp.content.title,
-              previewText: bp.content.sumary,
-              thumbnailUrl: bp.content.thumbnail
-            }
-          })
-        }
-      })
-  },
   data() {
     return {
       particlesSnow: ''
@@ -136,46 +105,55 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500;700&display=swap');
+
 canvas.tsparticles-canvas-el {
   width: 100%;
-  height: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: #fff;
   pointer-events: initial;
 }
 
 .main-content {
-  background: #000;
+  background: #fff;
 }
 
 .hero-img {
   position: absolute;
-  top: 75px;
-}
-
-.hero-img img {
-  width: 15%;
-  margin: 25px 0;
-}
-
-.hero-img h5 {
-  font-size: 28px;
-  color: #fff;
+  top: 25%;
 }
 
 .hero-img h1 {
   width: 50%;
   margin: 25px auto;
-  font-size: 48px;
-  color: #fff;
+  font-size: 72px;
+  color: #000;
+  font-family: 'Dosis', sans-serif;
+}
+
+.hero-img h1 span {
+  font-weight: bold;
+  color: #f7b633;
 }
 
 .hero-img p {
   width: 50%;
   margin: 25px auto 0;
-  color: rgb(143, 143, 143);
+  color: rgb(65, 64, 64);
   font-size: 18px;
   font-weight: 100 !important;
 }
+
+/* About */
+.about-me h2,
+h4,
+p {
+  color: #000;
+}
+
+.about-image img {
+  width: 75%;
+}
+/* About */
 
 @media screen and (min-width: 768px) {
   #tsparticles {
