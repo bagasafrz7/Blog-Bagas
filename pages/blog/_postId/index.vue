@@ -2,7 +2,7 @@
   <div id="post">
     <b-container>
       <b-row>
-        <b-col cols="8" class="detail-post">
+        <b-col cols="12" class="detail-post">
           <div class="post-thumbnail">
             <img :src="image" alt="" />
             <h1 class="mt-4">{{ title }}</h1>
@@ -14,28 +14,14 @@
           </div>
           <p>{{ content }}</p>
         </b-col>
-        <b-col cols="4" class="side-content">
-          <h4>Tulisan Terbaru</h4>
-          <div class="line-bt"></div>
-          <!-- <NewBlog /> -->
-          <!-- <Blog /> -->
-          <NewContent />
-        </b-col>
       </b-row>
     </b-container>
   </div>
 </template>
 
 <script>
-// import NewBlog from '../../../components/newBlog/newBlog'
-// import Blog from '../../../components/newBlog/Blog'
-import NewContent from '../../newBlog/index'
 export default {
-  components: {
-    // NewBlog
-    // Blog
-    NewContent
-  },
+  components: {},
   asyncData(context) {
     return context.app.$storyapi
       .get('cdn/stories/blog/' + context.params.postId, {

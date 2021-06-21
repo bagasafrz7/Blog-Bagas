@@ -148,11 +148,15 @@ nav .icon-burger .line {
 /* NAV */
 
 .header-nav {
-  background: rgb(255, 255, 255) !important;
+  /* background: rgb(255, 255, 255) !important; */
+  background: #fcfdff;
+
   /* padding: 20px 15px 0 15px; */
 }
 .bg-info {
-  background: rgb(255, 255, 255) !important;
+  /* background: rgb(255, 255, 255) !important; */
+  background: #fcfdff;
+
   /* padding: 20px 15px 0 15px; */
 }
 

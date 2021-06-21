@@ -8,7 +8,7 @@
             :options="{
               background: {
                 color: {
-                  value: '#fff'
+                  value: '#fcfdff'
                 }
               },
               fpsLimit: 100,
@@ -109,12 +109,13 @@ export default {
 
 canvas.tsparticles-canvas-el {
   width: 100%;
-  background-color: #fff;
+  background: #fcfdff;
+
   pointer-events: initial;
 }
 
 .main-content {
-  background: #fff;
+  background: #fcfdff;
 }
 
 .hero-img {

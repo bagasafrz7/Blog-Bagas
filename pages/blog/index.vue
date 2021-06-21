@@ -48,7 +48,6 @@ export default {
 
 <style scoped>
 .main-content {
-  background: #fff;
-  padding-bottom: 175px;
+  background: #fcfdff;
 }
 </style>

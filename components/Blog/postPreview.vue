@@ -1,24 +1,30 @@
 <template>
   <b-col sm="12" md="6" lg="6" xl="4" class="mt-4 text-center">
-    <div
-      :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
-      class="post-preview-thumbnail"
-    >
-      <div class="detail-title">
-        <h1>{{ title }}</h1>
-      </div>
-      <div class="read-more">
-        <nuxt-link :to="'/blog/' + id"> Read More </nuxt-link>
-      </div>
-    </div>
-    <p class="text-left mt-2 mb-2">
-      {{ publishedat.slice(0, 10) }} by
-      <span
-        ><u>
-          <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
-        </u></span
+    <b-skeleton-wrapper :loading="loading">
+      <template #loading>
+        <b-skeleton-img></b-skeleton-img>
+      </template>
+
+      <div
+        :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
+        class="post-preview-thumbnail"
       >
-    </p>
+        <div class="detail-title">
+          <h1>{{ title }}</h1>
+        </div>
+        <div class="read-more">
+          <nuxt-link :to="'/blog/' + id"> Read More </nuxt-link>
+        </div>
+      </div>
+      <p class="text-left mt-2 mb-2">
+        {{ publishedat.slice(0, 10) }} by
+        <span
+          ><u>
+            <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
+          </u></span
+        >
+      </p>
+    </b-skeleton-wrapper>
     <!-- <p>{{ excerpt }}</p> -->
   </b-col>
 </template>
@@ -46,11 +52,55 @@ export default {
       type: String,
       required: true
     }
+  },
+  data() {
+    return {
+      loading: false,
+      loadingTime: 0,
+      maxLoadingTime: 3
+    }
+  },
+  watch: {
+    loading(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.clearLoadingTimeInterval()
+
+        if (newValue) {
+          this.$_loadingTimeInterval = setInterval(() => {
+            this.loadingTime++
+          }, 1000)
+        }
+      }
+    },
+    loadingTime(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        if (newValue === this.maxLoadingTime) {
+          this.loading = false
+        }
+      }
+    }
+  },
+  created() {
+    this.$_loadingTimeInterval = null
+  },
+  mounted() {
+    this.startLoading()
+  },
+  methods: {
+    clearLoadingTimeInterval() {
+      clearInterval(this.$_loadingTimeInterval)
+      this.$_loadingTimeInterval = null
+    },
+    startLoading() {
+      this.loading = true
+      this.loadingTime = 0
+    }
   }
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
 /* .detail-title {
   padding-top: 150px;
 } */
@@ -69,8 +119,10 @@ export default {
   padding: 0.75rem;
   color: #fcfdff;
   background-color: rgba(10, 9, 8, 0);
-  font-size: 63px;
+  font-size: 60px;
   transition: background-color 225ms cubic-bezier(0.4, 0.25, 0.3, 1);
+  font-family: 'Prompt', sans-serif;
+  text-shadow: #474747 3px 5px 2px;
 }
 
 .read-more a {
