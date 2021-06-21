@@ -91,8 +91,11 @@ export default {
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    babel: {
+      compact: true
+    }
+  },
 
-  extend(config, ctx) { },
-  babel: { compact: true }
+  extend(config, ctx) { }
 }
