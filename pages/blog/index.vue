@@ -48,6 +48,6 @@ export default {
 
 <style scoped>
 .main-content {
-  background: #fcfdff;
+  background: #121212;
 }
 </style>

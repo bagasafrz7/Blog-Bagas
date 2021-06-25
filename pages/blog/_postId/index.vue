@@ -6,9 +6,13 @@
           <div class="post-thumbnail">
             <img :src="image" alt="" />
             <h1 class="mt-4">{{ title }}</h1>
-            <p>
+            <p class="author">
               {{ $moment(published).format('LL') }}. By
-              <span>Bagas Afrizal</span>
+              <span
+                ><u>
+                  <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
+                </u></span
+              >
             </p>
             <hr />
           </div>
@@ -57,6 +61,19 @@ export default {
 </script>
 
 <style scoped>
+#post {
+  background: #121212;
+}
+
+h1,
+p {
+  color: #fff;
+}
+
+p.author a {
+  color: #f7b633;
+}
+
 .post-thumbnail {
   padding: 50px 0 20px 0;
 }
@@ -76,7 +93,11 @@ export default {
   padding: 50px 0;
 }
 .side-content .line-bt {
-  border-top: 3px solid #000;
+  border-top: 3px solid #fff;
   width: 50px;
+}
+
+hr {
+  background: #fff;
 }
 </style>

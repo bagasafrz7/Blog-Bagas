@@ -2,7 +2,9 @@
   <b-col sm="12" md="6" lg="6" xl="4" class="mt-4 text-center">
     <b-skeleton-wrapper :loading="loading">
       <template #loading>
-        <b-skeleton-img></b-skeleton-img>
+        <div class="isloading">
+          <b-skeleton-img></b-skeleton-img>
+        </div>
       </template>
 
       <div
@@ -16,7 +18,7 @@
           <nuxt-link :to="'/blog/' + id"> Read More </nuxt-link>
         </div>
       </div>
-      <p class="text-left mt-2 mb-2">
+      <p class="text-left mt-2 mb-2 author">
         {{ publishedat.slice(0, 10) }} by
         <span
           ><u>
@@ -196,6 +198,18 @@ export default {
   text-align: center;
   padding: 1rem;
 } */
+
+p.author {
+  color: #fff;
+}
+
+p.author a {
+  color: #f7b633;
+}
+
+.isloading {
+  height: 300px;
+}
 
 @media (min-width: 35rem) {
   .post-preview {

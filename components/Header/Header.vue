@@ -5,7 +5,8 @@
         <nav>
           <input id="nav-toggle" type="checkbox" />
           <div class="logo">
-            <nuxt-link to="/">Bagas<strong>Afrizal</strong></nuxt-link>
+            <!-- <nuxt-link to="/">Bagas<strong>Afrizal</strong></nuxt-link> -->
+            <nuxt-link to="/"><h2>B</h2></nuxt-link>
           </div>
           <ul class="links">
             <li><nuxt-link to="/about">Tentang Saya</nuxt-link></li>
@@ -37,11 +38,26 @@ nav .logo {
   display: flex;
   align-items: center;
   font-size: 24px;
-  color: #000;
+  color: #fff;
+}
+
+.logo h2 {
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 50px;
+  transition: ease-in-out 0.5s;
+}
+
+.logo h2:hover {
+  background: #f7b633;
+  color: #fff;
 }
 
 nav .logo a {
-  color: #6bc5d2;
+  color: #f7b633;
   text-decoration: none;
 }
 
@@ -50,7 +66,7 @@ nav .logo a:hover {
 }
 
 .nuxt-link-exact-active.nuxt-link-active {
-  color: #6bc5d2;
+  color: #f7b633;
 }
 nav .links {
   float: right;
@@ -70,7 +86,7 @@ nav .links a {
   padding: 1em 0;
   font-size: 16px;
   font-weight: bold;
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 #nav-toggle {
@@ -83,7 +99,7 @@ nav .icon-burger {
   right: 5%;
   top: 4%;
   transform: translateY(-50%);
-  background: #6bc5d2;
+  background: #f7b633;
 }
 nav .icon-burger .line {
   width: 30px;
@@ -149,13 +165,13 @@ nav .icon-burger .line {
 
 .header-nav {
   /* background: rgb(255, 255, 255) !important; */
-  background: #fcfdff;
+  background: #121212;
 
   /* padding: 20px 15px 0 15px; */
 }
 .bg-info {
   /* background: rgb(255, 255, 255) !important; */
-  background: #fcfdff;
+  background: #121212;
 
   /* padding: 20px 15px 0 15px; */
 }

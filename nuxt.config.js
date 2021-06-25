@@ -55,6 +55,20 @@ export default {
     [
       'bootstrap-vue/nuxt'
     ],
+    ['nuxt-fontawesome', {
+      component: 'fa', //customize component name
+      imports: [{
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['faLightbulb']
+          },
+          {set: '@fortawesome/free-brands-svg-icons',
+          icons: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin']
+          },
+          {set: '@fortawesome/free-regular-svg-icons',
+          icons: ['faLightbulb']
+          },
+      ]
+   }],
     [
       '@nuxtjs/moment'
     ],
@@ -71,6 +85,18 @@ export default {
       }
     ]
   ],
+
+  // fontawesome: {
+  //   component: 'Fa',
+  //   icons: {
+  //     solid:true,
+  //     brands: true
+  //   }
+  // },
+
+  bootstrapVue: {
+    icons: true
+  },
 
   generate: {
     routes() {

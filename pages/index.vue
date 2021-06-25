@@ -8,7 +8,7 @@
             :options="{
               background: {
                 color: {
-                  value: '#fcfdff'
+                  value: '#121212'
                 }
               },
               fpsLimit: 100,
@@ -43,7 +43,7 @@
               },
               particles: {
                 color: {
-                  value: '#000'
+                  value: '#fff'
                 },
                 collisions: {
                   enable: true
@@ -106,16 +106,17 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 canvas.tsparticles-canvas-el {
   width: 100%;
-  background: #fcfdff;
+  background: #121212;
 
   pointer-events: initial;
 }
 
 .main-content {
-  background: #fcfdff;
+  background: #121212;
 }
 
 .hero-img {
@@ -126,9 +127,9 @@ canvas.tsparticles-canvas-el {
 .hero-img h1 {
   width: 50%;
   margin: 25px auto;
-  font-size: 72px;
-  color: #000;
-  font-family: 'Dosis', sans-serif;
+  font-size: 80px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 
 .hero-img h1 span {
@@ -139,8 +140,8 @@ canvas.tsparticles-canvas-el {
 .hero-img p {
   width: 50%;
   margin: 25px auto 0;
-  color: rgb(65, 64, 64);
-  font-size: 18px;
+  color: rgb(235, 235, 235);
+  font-size: 20px;
   font-weight: 100 !important;
 }
 
