@@ -160,12 +160,23 @@ p {
     width: 100%;
     height: 650px;
   }
+  .hero-img h1 {
+    width: 100%;
+    font-size: 64px;
+  }
 }
 
 @media screen and (max-width: 576px) {
   #tsparticles {
     width: 100%;
-    height: 1000px;
+    height: 500px;
+  }
+  .hero-img h1 {
+    width: 100%;
+    font-size: 40px;
+  }
+  .hero-img p {
+    font-size: 16px;
   }
 }
 </style>

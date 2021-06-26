@@ -50,4 +50,10 @@ export default {
 .main-content {
   background: var(--bg);
 }
+
+@media screen and (max-width: 576px) {
+  .main-content {
+    padding: 0 25px;
+  }
+}
 </style>

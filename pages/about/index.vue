@@ -41,6 +41,11 @@
           <hr />
           <div class="row">
             <div class="col-md-6">
+              <div class="title-two">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+              </div>
+            </div>
+            <div class="col-md-6">
               <div class="content">
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -68,11 +73,6 @@
                   cupiditate blanditiis quis autem hic recusandae inventore
                   sunt!
                 </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="title-two">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
               </div>
             </div>
           </div>
@@ -461,6 +461,29 @@ p.contact-me {
   50%,
   100% {
     bottom: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-two p {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .img-profile {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .img-profile img {
+    width: 75%;
+  }
+  .title-two p {
+    font-size: 48px;
+  }
+  .detail-sosmed {
+    margin: 0 0 25px 0;
   }
 }
 </style>
