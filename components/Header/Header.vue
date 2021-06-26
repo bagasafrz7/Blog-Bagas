@@ -11,8 +11,8 @@
           <ul class="links">
             <li><nuxt-link to="/about">Tentang Saya</nuxt-link></li>
             <li><nuxt-link to="/blog">Hasil Tulisan</nuxt-link></li>
-            <li><nuxt-link to="/hasil">Projects</nuxt-link></li>
-            <li><nuxt-link to="/kontak">Eksperimen Aplikasi</nuxt-link></li>
+            <li><nuxt-link to="/projects">Projects</nuxt-link></li>
+            <!-- <li><nuxt-link to="/kontak">Eksperimen Aplikasi</nuxt-link></li> -->
           </ul>
           <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
@@ -72,7 +72,7 @@ nav .links {
   float: right;
   padding: 0;
   margin: 0;
-  width: 50%;
+  width: 40%;
   height: 100%;
   display: flex;
   justify-content: space-around;

@@ -59,13 +59,13 @@ export default {
       component: 'fa', //customize component name
       imports: [{
           set: '@fortawesome/free-solid-svg-icons',
-          icons: ['faLightbulb']
+          icons: ['faLightbulb', 'faVirus', 'faNetworkWired', 'faMoneyCheckAlt', 'faStore']
           },
           {set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin']
+          icons: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin', 'faVuejs', 'faReact', 'faHtml5', 'faCss3Alt', 'faWordpressSimple', 'faPhp', 'faBootstrap', 'faJs', 'faNodeJs']
           },
           {set: '@fortawesome/free-regular-svg-icons',
-          icons: ['faLightbulb']
+          icons: ['faBuilding', 'faHospital', 'faComments']
           },
       ]
    }],
@@ -120,6 +120,17 @@ export default {
   build: {
     babel: {
       compact: true
+    },
+    extend(config, ctx) {
+      config.module.rules.push({
+        enforce: 'pre',
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        exclude: /(node_modules)/,
+        options: {
+          fix: true
+        }
+      })
     }
   },
 
