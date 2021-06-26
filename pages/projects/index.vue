@@ -193,11 +193,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .project {
-  background: #121212;
+  background: var(--bg);
 }
 .project h2,
 p.sub-title {
-  color: #fff;
+  color: var(--color);
   font-family: 'Poppins', sans-serif;
 }
 .list-project {
@@ -248,6 +248,7 @@ p.sub-title {
 .img-project .building {
   font-size: 72px;
   margin: 10px 0;
+  color: #000;
 }
 .description-project h6,
 p {
@@ -256,9 +257,10 @@ p {
 .description-project h6 {
   font-size: 24px;
   font-weight: bold;
+  color: #000;
 }
 .description-project p {
-  color: #777777;
+  color: #000;
 }
 .description-project a {
   color: #f7b633;

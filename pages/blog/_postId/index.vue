@@ -62,12 +62,12 @@ export default {
 
 <style scoped>
 #post {
-  background: #121212;
+  background: var(--bg);
 }
 
 h1,
 p {
-  color: #fff;
+  color: var(--color);
 }
 
 p.author a {

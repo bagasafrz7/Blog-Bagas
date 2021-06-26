@@ -200,7 +200,7 @@ export default {
 } */
 
 p.author {
-  color: #fff;
+  color: var(--color);
 }
 
 p.author a {

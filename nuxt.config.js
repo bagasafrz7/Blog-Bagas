@@ -36,7 +36,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['~/plugins/particles.js'],
@@ -55,6 +55,8 @@ export default {
     [
       'bootstrap-vue/nuxt'
     ],
+    ['@nuxtjs/color-mode'],
+    // ['@nuxtjs/svg', '@nuxtjs/color-mode'],
     ['nuxt-fontawesome', {
       component: 'fa', //customize component name
       imports: [{
@@ -65,7 +67,7 @@ export default {
           icons: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin', 'faVuejs', 'faReact', 'faHtml5', 'faCss3Alt', 'faWordpressSimple', 'faPhp', 'faBootstrap', 'faJs', 'faNodeJs']
           },
           {set: '@fortawesome/free-regular-svg-icons',
-          icons: ['faBuilding', 'faHospital', 'faComments']
+          icons: ['faBuilding', 'faHospital', 'faComments', 'faSun', 'faMoon']
           },
       ]
    }],

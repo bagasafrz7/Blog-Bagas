@@ -205,9 +205,9 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-#about-page {
+/* #about-page {
   background: #121212;
-}
+} */
 
 .hero-about {
   margin: 50px 0 0 0;
@@ -230,7 +230,7 @@ p.about-text {
   letter-spacing: -1px;
   padding-right: 0px;
   margin-bottom: 50px;
-  color: #fff;
+  color: var(--color);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -255,7 +255,7 @@ p.about-text {
 }
 
 .social-media .title p {
-  color: #fff;
+  color: var(--color);
   font-size: 32px;
   font-family: 'Poppins', sans-serif;
 }
@@ -269,7 +269,7 @@ hr {
 .twitter,
 .github,
 .linkedin {
-  color: #fff;
+  color: var(--color);
   font-size: 32px;
   margin: 0 10px;
   transition: ease-in 0.5s;
@@ -289,7 +289,7 @@ hr {
 }
 
 p.contact-me {
-  color: #fff;
+  color: var(--color);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -301,10 +301,10 @@ p.contact-me {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--color);
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--color);
   outline: none;
   background: transparent;
 }
@@ -313,10 +313,10 @@ p.contact-me {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--color);
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--color);
   outline: none;
   background: transparent;
 }
@@ -326,7 +326,7 @@ p.contact-me {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--color);
   pointer-events: none;
   transition: 0.5s;
 }
@@ -337,7 +337,7 @@ p.contact-me {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--color);
   pointer-events: none;
   transition: 0.5s;
 }

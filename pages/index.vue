@@ -7,9 +7,7 @@
             id="tsparticles"
             :options="{
               background: {
-                color: {
-                  value: '#121212'
-                }
+                color: {}
               },
               fpsLimit: 100,
               interactivity: {
@@ -43,7 +41,7 @@
               },
               particles: {
                 color: {
-                  value: '#fff'
+                  value: 'rgb(104, 104, 104)'
                 },
                 collisions: {
                   enable: true
@@ -110,14 +108,13 @@ export default {
 
 canvas.tsparticles-canvas-el {
   width: 100%;
-  background: #121212;
-
+  /* background: #121212; */
   pointer-events: initial;
 }
 
-.main-content {
+/* .main-content {
   background: #121212;
-}
+} */
 
 .hero-img {
   position: absolute;
@@ -128,19 +125,20 @@ canvas.tsparticles-canvas-el {
   width: 50%;
   margin: 25px auto;
   font-size: 80px;
-  color: #fff;
+  color: var(--color);
   font-family: 'Poppins', sans-serif;
 }
 
 .hero-img h1 span {
   font-weight: bold;
   color: #f7b633;
+  font-family: 'Poppins', sans-serif;
 }
 
 .hero-img p {
   width: 50%;
   margin: 25px auto 0;
-  color: rgb(235, 235, 235);
+  color: var(--sub-color);
   font-size: 20px;
   font-weight: 100 !important;
 }

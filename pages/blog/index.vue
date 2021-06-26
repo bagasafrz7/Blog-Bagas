@@ -48,6 +48,6 @@ export default {
 
 <style scoped>
 .main-content {
-  background: #121212;
+  background: var(--bg);
 }
 </style>

@@ -12,6 +12,7 @@
             <li><nuxt-link to="/about">Tentang Saya</nuxt-link></li>
             <li><nuxt-link to="/blog">Hasil Tulisan</nuxt-link></li>
             <li><nuxt-link to="/projects">Projects</nuxt-link></li>
+            <li><ColorModePicker /></li>
             <!-- <li><nuxt-link to="/kontak">Eksperimen Aplikasi</nuxt-link></li> -->
           </ul>
           <label for="nav-toggle" class="icon-burger">
@@ -24,6 +25,15 @@
     </b-container>
   </div>
 </template>
+
+<script>
+import ColorModePicker from '@/components/ColorModePicker'
+export default {
+  components: {
+    ColorModePicker
+  }
+}
+</script>
 
 <style scoped>
 nav {
@@ -38,17 +48,18 @@ nav .logo {
   display: flex;
   align-items: center;
   font-size: 24px;
-  color: #fff;
+  /* color: var(--color-logo); */
 }
 
 .logo h2 {
-  background: #fff;
+  background: var(--bg-logo);
   width: 50px;
   height: 50px;
   text-align: center;
   padding: 10px 0;
   border-radius: 50px;
   transition: ease-in-out 0.5s;
+  color: var(--color-logo);
 }
 
 .logo h2:hover {
@@ -86,7 +97,7 @@ nav .links a {
   padding: 1em 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff;
+  color: var(--bg-secondary);
   text-decoration: none;
 }
 #nav-toggle {
@@ -163,18 +174,18 @@ nav .icon-burger .line {
 }
 /* NAV */
 
-.header-nav {
-  /* background: rgb(255, 255, 255) !important; */
-  background: #121212;
+/* .header-nav { */
+/* background: rgb(255, 255, 255) !important; */
+/* background: #121212; */
 
-  /* padding: 20px 15px 0 15px; */
-}
-.bg-info {
-  /* background: rgb(255, 255, 255) !important; */
-  background: #121212;
+/* padding: 20px 15px 0 15px; */
+/* } */
+/* .bg-info { */
+/* background: rgb(255, 255, 255) !important; */
+/* background: #121212; */
 
-  /* padding: 20px 15px 0 15px; */
-}
+/* padding: 20px 15px 0 15px; */
+/* } */
 
 /* .navbar-dark .navbar-brand {
   color: #fff;
