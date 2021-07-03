@@ -25,11 +25,13 @@ export default {
 
 <style scoped>
 .sun {
-  color: var(--color-icon-header);
+  /* color: var(--color-icon-header); */
+  color: #f7b633;
   font-size: 20px;
 }
 .moon {
-  color: var(--color-icon-header);
+  /* color: var(--color-icon-header); */
+  color: #f7b633;
   font-size: 20px;
 }
 </style>

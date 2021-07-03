@@ -142,7 +142,6 @@ nav .icon-burger {
   position: absolute;
   right: 5%;
   top: 4%;
-  transform: translateY(-50%);
   background: #f7b633;
 }
 nav .icon-burger .line {
@@ -165,7 +164,9 @@ nav .icon-burger .line {
     float: none;
     width: auto;
     justify-content: center;
-    padding: 25px 0;
+  }
+  .header-nav {
+    padding: 15px 0;
   }
   nav .links {
     float: none;
@@ -183,6 +184,13 @@ nav .icon-burger .line {
     overflow: hidden;
     box-sizing: border-box;
     transition: all 0.5s ease-in-out;
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  ul li a {
+    color: #000;
   }
   nav .links a {
     font-size: 20px;
@@ -233,4 +241,10 @@ nav .icon-burger .line {
 .navbar-dark .navbar-nav .nav-link:focus {
   color: orange;
 } */
+
+@media screen and (max-width: 576px) {
+  ul {
+    margin: 10px 0;
+  }
+}
 </style>

@@ -39,7 +39,7 @@
                 <h6>RS PGI Cikini Drive Thru</h6>
                 <p>description</p>
                 <a
-                  href="http://dev.andtechnology.me/rscikini/#/"
+                  href="https://rscikinidrivethru.com/#/"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Lihat Project...</a
