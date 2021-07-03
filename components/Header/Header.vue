@@ -15,7 +15,8 @@
             <li><ColorModePicker /></li>
             <!-- <li><nuxt-link to="/kontak">Eksperimen Aplikasi</nuxt-link></li> -->
           </ul>
-          <label for="nav-toggle" class="icon-burger">
+          <!-- for="nav-toggle" -->
+          <label v-b-toggle.sidebar-no-header class="icon-burger">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -23,6 +24,38 @@
         </nav>
       </b-row>
     </b-container>
+    <b-sidebar
+      id="sidebar-no-header"
+      aria-labelledby="sidebar-no-header-title"
+      shadow
+      right
+      class="custom-sidebar"
+      bg-variant="light"
+    >
+      <template #default="{ hide }">
+        <div class="p-3">
+          <nav>
+            <div class="logo">
+              <!-- <nuxt-link to="/">Bagas<strong>Afrizal</strong></nuxt-link> -->
+              <nuxt-link to="/"><h2>B</h2></nuxt-link>
+            </div>
+            <ul class="sidebar-links">
+              <li>
+                <nuxt-link to="/about" @click="hide">Tentang Saya</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/blog" @click="hide">Hasil Tulisan</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/projects" @click="hide">Projects</nuxt-link>
+              </li>
+              <li @click="hide"><ColorModePicker /></li>
+              <!-- <li><nuxt-link to="/kontak">Eksperimen Aplikasi</nuxt-link></li> -->
+            </ul>
+          </nav>
+        </div>
+      </template>
+    </b-sidebar>
   </div>
 </template>
 

@@ -17,6 +17,17 @@
             <hr />
           </div>
           <p>{{ content }}</p>
+          <h6>Tags :</h6>
+          <div class="tags">
+            <div v-for="item in tags" :key="item">
+              <b-badge variant="warning" class="detail-tags">{{
+                item
+              }}</b-badge>
+            </div>
+          </div>
+          <div class="comments">
+            <Disqus />
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -32,12 +43,14 @@ export default {
         version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
       })
       .then((res) => {
+        console.log(res)
         return {
           blok: res.data.story.content,
           image: res.data.story.content.thumbnail,
           title: res.data.story.content.title,
           content: res.data.story.content.content,
-          published: res.data.story.published_at
+          published: res.data.story.published_at,
+          tags: res.data.story.tag_list
         }
       })
   },
@@ -99,5 +112,14 @@ p.author a {
 
 hr {
   background: #fff;
+}
+.tags {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+}
+.tags .badge {
+  padding: 5px 10px;
+  margin: 5px;
 }
 </style>
