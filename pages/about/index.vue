@@ -19,21 +19,20 @@
               </div>
               <div class="col-md-9">
                 <p class="about-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptas, eveniet. Culpa, expedita? Temporibus, minus ad
-                  libero fugit nobis non doloremque aut quasi facere dolorum
-                  sequi voluptate assumenda! Atque ut autem delectus repellendus
-                  ratione consequatur mollitia, nam illo rerum reiciendis.
+                  Seorang Pemuda Indonesia yang gemar dan sangat tertarik dengan
+                  Dunia Teknologi. Saat ini bekerja sebagai Frontend Engineer di
+                  salah satu perusahaan swasta di Jakarta. Dan sedang
+                  mempelajari Backend agar kedepannya bisa menjadi Full Stack
+                  Developer.
                   <br />
                   <br />
-                  Quo commodi in voluptatibus est nam quisquam optio repellendus
-                  cumque vel! Natus neque totam tempore mollitia quas nisi
-                  voluptatem repellendus earum non. Dicta harum rerum fuga. Ab
-                  facilis quae natus repellendus maiores eius minima animi
-                  dolores saepe commodi vitae iste voluptatem aliquid deserunt
-                  officiis, tempore sapiente inventore, ad velit aliquam
-                  cupiditate? Deserunt eos perspiciatis aliquam sed facere nisi
-                  hic quam perferendis?
+                  Saya suka menjelajahi dan mempelajari hal-hal seputar
+                  teknologi, bukan hanya dalam hal coding saja, tapi setiap hal
+                  yang berhubungan dengan Teknologi. Selain itu, saya juga
+                  senang berpetualang, entah naik gunung dan menjelajahi
+                  kota-kota dengan kawan atau bahkan sendiri. Dan ada satu hal
+                  lagi yang sangat saya sukai, yaitu TULISAN. Saya amat menyukai
+                  sebuah karya tulis, entah berbentuk buku atau puisi.
                 </p>
               </div>
             </div>
@@ -42,36 +41,44 @@
           <div class="row">
             <div class="col-md-6">
               <div class="title-two">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <p>
+                  Loser says "It Can't Be Done", Winner says "It's Hard, But We
+                  Can Try"
+                </p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="content">
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Fugiat voluptatum culpa ducimus molestiae ad temporibus
-                  officiis ea quia. Sint, ex possimus. Mollitia vel voluptas
-                  eaque dolorem numquam, non voluptatibus id nulla impedit
-                  tempora saepe ut temporibus excepturi debitis amet officiis?
-                  Velit quos quas natus. <br />
-                  <br />
-                  Earum repudiandae aliquam similique asperiores laboriosam
-                  ratione, culpa iure quo maiores numquam molestias ex
-                  blanditiis nihil provident excepturi, neque sequi facere quia.
-                  Aperiam officia sunt magni, illum velit ipsam suscipit
-                  nesciunt maiores repudiandae pariatur eius quisquam a iusto,
-                  dolore ullam magnam commodi obcaecati dolorum minus
-                  repellendus consectetur necessitatibus odit possimus aut?
+                  Banyak orang yang bilang “Tidak Bisa” itu bermodalkan apa yang
+                  dia lihat pada hari ini. Dan jika semua orang mengambil
+                  keputusan berdasarkan apa yang di lihat hari ini, tidak akan
+                  ada yang namanya INOVASI. Padahal sebenarnya tidak ada yang
+                  tidak bisa, hanya saja belum tau caranya dan belum dicoba.
                   <br />
                   <br />
-                  Quibusdam corporis, laborum porro autem quo deserunt
-                  architecto tenetur alias omnis quod id earum vitae, placeat,
-                  repellendus unde commodi quis magni laboriosam totam dolore a
-                  ducimus ullam labore. Praesentium aut necessitatibus,
-                  veritatis sunt sed quam dignissimos inventore ipsum velit
-                  deleniti facere ipsam nemo. Facilis aspernatur a aperiam
-                  cupiditate blanditiis quis autem hic recusandae inventore
-                  sunt!
+                  Dulu ketika ada sebuah aplikasi toko online pertama kali
+                  mengudara di Indonesia, banyak sekali orang skeptis, belanja
+                  ya di Mall bukan di handphone. Lalu ketika dulu ada sebuah
+                  aplikasi transportasi online terbentuk, banyak orang yang
+                  meragukannya, mesen ojek aja harus pakai aplikasi. Tapi
+                  sekarang, hampir setiap aktivitas kita engga jauh dari yang
+                  namanya aplikasi tersebut, untuk berpergian tinggal buka
+                  handphone lalu transportasinya datang. Untuk belanja tidak
+                  perlu report-report keluar rumah, tinggal buka aplikasinya
+                  lalu beli dan lusa barangnya sudah sampai dirumah. Jadi tidak
+                  ada yang namanya tidak bisa, Bisa tapi membutuhkan waktu dan
+                  berani untuk mencobanya. Jika gagal, coba lagi. Gagal lagi,
+                  coba lagi. Gagal lagi, coba lagi dengan belajar dari kegagalan
+                  yang sebelumnya. Ingat, semua itu butuh waktu dan proses.
+                  Selama proses tersebutlah yang membuat kamu bisa banyak
+                  belajar hingga tujuan itu tercapai.
+                  <br />
+                  <br />
+                  Jika kamu ingin kerjasama dalam bentuk apapun, dari proyek
+                  pembuatan perangkat lunak, penulisan konten, atau hal yang
+                  lainnya. Silahkan hubungi saya melalui form inquiry dibawah
+                  ini atau bisa menguhubungi saya melalui linkedin.
                 </p>
               </div>
             </div>
@@ -136,7 +143,7 @@
                       <label>Your Message</label>
                       <!-- <textarea name="" id="" cols="30" rows="5"></textarea> -->
                     </div>
-                    <a type="submit">
+                    <a type="submit" @click="submitData">
                       <span></span>
                       <span></span>
                       <span></span>
@@ -197,6 +204,15 @@ export default {
     startLoading() {
       this.loading = true
       this.loadingTime = 0
+    },
+    submitData() {
+      this.$swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Oops...',
+        html:
+          'Fitur ini masih dalam tahap pengembangan. Tapi jangan khawatir, kamu bisa menghubungi saya di email bagasafrz16@gmail.com, atau dengan <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bagasafrz16@gmail.com&su=HalloBagas&body=Message" target="_blank">Klik Disini</a>'
+      })
     }
   }
 }

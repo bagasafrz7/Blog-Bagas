@@ -1,7 +1,17 @@
 <template>
   <div class="main-content">
     <b-container>
-      <b-row>
+      <b-row v-if="posts.length !== 0">
+        <!-- <PostPreview
+          v-for="post in posts"
+          :id="post.id"
+          :key="post.id"
+          :title="post.title"
+          :excerpt="post.previewText"
+          :thumbnail="post.thumbnailUrl"
+          :publishedat="post.publishedAt"
+        /> -->
+
         <PostPreview
           v-for="post in posts"
           :id="post.id"
@@ -11,6 +21,9 @@
           :thumbnail="post.thumbnailUrl"
           :publishedat="post.publishedAt"
         />
+      </b-row>
+      <b-row v-else-if="posts.length === 0">
+        <p class="text-center">Data Kosong</p>
       </b-row>
     </b-container>
   </div>

@@ -56,6 +56,8 @@ export default {
       'bootstrap-vue/nuxt'
     ],
     ['@nuxtjs/color-mode'],
+    ['vue-social-sharing/nuxt'],
+    ['vue-sweetalert2/nuxt'],
     // ['@nuxtjs/svg', '@nuxtjs/color-mode'],
     ['nuxt-fontawesome', {
       component: 'fa', //customize component name

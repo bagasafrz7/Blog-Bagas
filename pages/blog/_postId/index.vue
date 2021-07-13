@@ -25,6 +25,23 @@
               }}</b-badge>
             </div>
           </div>
+          <!-- <h6>Share :</h6> -->
+          <!-- <div class="share">
+            <ShareNetwork
+              v-for="network in networks"
+              :key="network.network"
+              :network="network.network"
+              :style="{ backgroundColor: network.color }"
+              :url="sharing.url"
+              :title="title"
+              :description="sharing.description"
+              :quote="sharing.quote"
+              :hashtags="sharing.hashtags"
+              :twitter-user="sharing.twitterUser"
+            >
+              <span>{{ network.name }}</span>
+            </ShareNetwork>
+          </div> -->
           <div class="comments">
             <Disqus />
           </div>
@@ -48,6 +65,7 @@ export default {
           blok: res.data.story.content,
           image: res.data.story.content.thumbnail,
           title: res.data.story.content.title,
+          slug: res.data.story.content.slug,
           content: res.data.story.content.content,
           published: res.data.story.published_at,
           tags: res.data.story.tag_list
@@ -56,7 +74,55 @@ export default {
   },
   data() {
     return {
-      publis: this.published
+      publis: this.published,
+      sharing: {
+        url: 'https://news.vuejs.org/issues/180',
+        title:
+          'Say hi to Vite! A brand new, extremely fast development setup for Vue.',
+        description:
+          'This week, I’d like to introduce you to "Vite", which means "Fast". It’s a brand new development setup created by Evan You.',
+        quote: "The hot reload is so fast it's near instant. - Evan You",
+        hashtags: 'vuejs,vite,javascript',
+        twitterUser: 'youyuxi'
+      },
+      networks: [
+        {
+          network: 'facebook',
+          name: 'Facebook',
+          icon: 'fab fah fa-lg fa-facebook-f',
+          color: '#1877f2'
+        },
+        {
+          network: 'line',
+          name: 'Line',
+          icon: 'fab fah fa-lg fa-line',
+          color: '#00c300'
+        },
+        {
+          network: 'linkedin',
+          name: 'LinkedIn',
+          icon: 'fab fah fa-lg fa-linkedin',
+          color: '#007bb5'
+        },
+        {
+          network: 'telegram',
+          name: 'Telegram',
+          icon: 'fab fah fa-lg fa-telegram-plane',
+          color: '#0088cc'
+        },
+        {
+          network: 'twitter',
+          name: 'Twitter',
+          icon: 'fab fah fa-lg fa-twitter',
+          color: '#1da1f2'
+        },
+        {
+          network: 'whatsapp',
+          name: 'Whatsapp',
+          icon: 'fab fah fa-lg fa-whatsapp',
+          color: '#25d366'
+        }
+      ]
     }
   },
   mounted() {
