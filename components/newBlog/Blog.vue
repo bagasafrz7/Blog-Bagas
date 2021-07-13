@@ -30,7 +30,7 @@ export default {
         starts_with: 'blog/'
       })
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         //   return {
         //     posts: res.data.stories.map((bp) => {
         //       return {
@@ -49,7 +49,7 @@ export default {
     }
   },
   created() {
-    console.log(this.mountains)
+    // console.log(this.mountains)
   }
   // asyncData(context) {
   //   return context.app.$storyapi

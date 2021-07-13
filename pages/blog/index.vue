@@ -1,17 +1,7 @@
 <template>
   <div class="main-content">
     <b-container>
-      <b-row v-if="posts.length !== 0">
-        <!-- <PostPreview
-          v-for="post in posts"
-          :id="post.id"
-          :key="post.id"
-          :title="post.title"
-          :excerpt="post.previewText"
-          :thumbnail="post.thumbnailUrl"
-          :publishedat="post.publishedAt"
-        /> -->
-
+      <b-row>
         <PostPreview
           v-for="post in posts"
           :id="post.id"
@@ -20,10 +10,8 @@
           :excerpt="post.previewText"
           :thumbnail="post.thumbnailUrl"
           :publishedat="post.publishedAt"
+          :content="post.content"
         />
-      </b-row>
-      <b-row v-else-if="posts.length === 0">
-        <p class="text-center">Data Kosong</p>
       </b-row>
     </b-container>
   </div>
@@ -42,7 +30,7 @@ export default {
         starts_with: 'blog/'
       })
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         return {
           posts: res.data.stories.map((bp) => {
             return {
@@ -50,7 +38,8 @@ export default {
               title: bp.content.title,
               previewText: bp.content.sumary,
               thumbnailUrl: bp.content.thumbnail,
-              publishedAt: bp.published_at
+              publishedAt: bp.published_at,
+              content: bp.content.content
             }
           })
         }

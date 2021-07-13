@@ -7,7 +7,7 @@
             <img :src="image" alt="" />
             <h1 class="mt-4">{{ title }}</h1>
             <p class="author">
-              {{ $moment(published).format('LL') }}. By
+              {{ $moment(published).format('LL') }} By
               <span
                 ><u>
                   <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
@@ -16,7 +16,16 @@
             </p>
             <hr />
           </div>
-          <p>{{ content }}</p>
+          <p
+            style="
+              white-space: pre-wrap;
+              word-wrap: break-word;
+              font-family: inherit;
+              font-family: 'Poppins', sans-serif;
+            "
+          >
+            {{ content }}
+          </p>
           <h6>Tags :</h6>
           <div class="tags">
             <div v-for="item in tags" :key="item">
@@ -60,7 +69,7 @@ export default {
         version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
       })
       .then((res) => {
-        console.log(res)
+        // console.log(res.data.story.content.content)
         return {
           blok: res.data.story.content,
           image: res.data.story.content.thumbnail,
@@ -140,6 +149,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 #post {
   background: var(--bg);
 }
@@ -162,11 +172,11 @@ p.author a {
   object-fit: cover;
 }
 .detail-post .post-thumbnail p {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .detail-post p {
-  font-family: 'Barlow', sans-serif;
   text-align: justify;
+  font-family: 'Poppins', sans-serif;
 }
 .side-content {
   padding: 50px 0;

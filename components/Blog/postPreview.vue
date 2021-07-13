@@ -18,14 +18,21 @@
           <nuxt-link :to="'/blog/' + id"> Read More </nuxt-link>
         </div>
       </div>
-      <p class="text-left mt-2 mb-2 author">
-        {{ publishedat.slice(0, 10) }} by
-        <span
-          ><u>
-            <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
-          </u></span
-        >
-      </p>
+      <div class="row">
+        <div class="col-md-8">
+          <p class="text-left mt-2 mb-2 author">
+            {{ publishedat.slice(0, 10) }} by
+            <span
+              ><u>
+                <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
+              </u></span
+            >
+          </p>
+        </div>
+        <div class="col-md-4">
+          <p class="mt-2 mb-2 min-read">{{ readingTime }} min read</p>
+        </div>
+      </div>
     </b-skeleton-wrapper>
     <!-- <p>{{ excerpt }}</p> -->
   </b-col>
@@ -53,6 +60,10 @@ export default {
     id: {
       type: String,
       required: true
+    },
+    content: {
+      type: String,
+      required: true
     }
   },
   data() {
@@ -60,6 +71,18 @@ export default {
       loading: false,
       loadingTime: 0,
       maxLoadingTime: 3
+    }
+  },
+  computed: {
+    readingTime() {
+      let minutes = 0
+      const contentAsString = JSON.stringify(this.content)
+      const words = contentAsString.split(' ').length
+      const wordsPerMinute = 250
+
+      minutes = Math.ceil(words / wordsPerMinute)
+
+      return minutes
     }
   },
   watch: {
@@ -103,6 +126,8 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 /* .detail-title {
   padding-top: 150px;
 } */
@@ -201,12 +226,17 @@ export default {
 
 p.author {
   color: var(--color);
+  font-family: 'Poppins', sans-serif;
 }
 
 p.author a {
   color: #f7b633;
 }
 
+p.min-read {
+  color: grey;
+  font-family: 'Poppins', sans-serif;
+}
 .isloading {
   height: 300px;
 }
