@@ -158,7 +158,7 @@ p.author a {
 }
 .post-thumbnail img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
 }
 .detail-post .post-thumbnail p {
