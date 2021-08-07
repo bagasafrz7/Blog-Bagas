@@ -124,7 +124,12 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     babel: {
-      compact: true
+      compact: true,
+      plugins: [
+        ["@babel/plugin-proposal-private-property-in-object", {
+        "loose": true
+      }]
+      ]
     },
     extend(config, ctx) {
       config.module.rules.push({
