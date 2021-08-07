@@ -159,6 +159,11 @@ p {
   color: var(--color);
 }
 
+h1 {
+  font-size: 40px;
+  margin: 15px 0 0 0;
+}
+
 p.author a {
   color: #f7b633;
 }

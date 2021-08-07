@@ -47,7 +47,8 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -63,7 +64,7 @@ export default {
       component: 'fa', //customize component name
       imports: [{
           set: '@fortawesome/free-solid-svg-icons',
-          icons: ['faLightbulb', 'faVirus', 'faNetworkWired', 'faMoneyCheckAlt', 'faStore']
+          icons: ['faLightbulb', 'faVirus', 'faNetworkWired', 'faMoneyCheckAlt', 'faStore', 'faBars']
           },
           {set: '@fortawesome/free-brands-svg-icons',
           icons: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin', 'faVuejs', 'faReact', 'faHtml5', 'faCss3Alt', 'faWordpressSimple', 'faPhp', 'faBootstrap', 'faJs', 'faNodeJs']

@@ -1,8 +1,8 @@
 <template>
   <div class="project">
     <div class="container">
-      <h2>Projects</h2>
-      <p class="sub-title">Some projects I worked on previously.</p>
+      <!-- <h2>Projects</h2> -->
+      <!-- <p class="sub-title">Some projects I worked on previously.</p> -->
       <div class="row">
         <div class="col-md-6">
           <div class="list-project">
@@ -12,12 +12,17 @@
               </div>
               <div class="description-project">
                 <h6>Jualrumahpluit.com</h6>
-                <p>description</p>
+                <p>
+                  Jualrumahpluit.com is a website application to find property
+                  consultants, properties around Pluit Muara Karang and PIK.
+                  This application is built using HTML, CSS, and PHP, as well as
+                  the React JS library to display Blogs from the WordPress API
+                </p>
                 <a
                   href="https://jualrumahpluit.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Lihat Project...</a
+                  >View More...</a
                 >
                 <div class="tools">
                   <fa :icon="['fab', 'html5']" class="html5" />
@@ -37,12 +42,17 @@
               </div>
               <div class="description-project">
                 <h6>RS PGI Cikini Drive Thru</h6>
-                <p>description</p>
+                <p>
+                  RS Cikini Drive THRU is a website application for ordering
+                  services such as Antigen Swab, Antibody Swab, and PCR Swab
+                  online for PGI Cikini Hospital. This application is made using
+                  Vue Js as frontend and Laravel as Backend
+                </p>
                 <a
                   href="https://rscikinidrivethru.com/#/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Lihat Project...</a
+                  >View More...</a
                 >
                 <div class="tools">
                   <fa :icon="['fab', 'vuejs']" class="vuejs" />
@@ -62,12 +72,17 @@
               </div>
               <div class="description-project">
                 <h6>Space Point of Sale</h6>
-                <p>description</p>
+                <p>
+                  SPACE Apps is a web-based point of sale application that is
+                  used to support food and beverage sales, and is equipped with
+                  admin / cashier dashboard features, to payment transactions.
+                  This application is built with Vue JS and Express JS.
+                </p>
                 <a
                   href="https://pos-space.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Lihat Project...</a
+                  >View More...</a
                 >
                 <div class="tools">
                   <fa :icon="['fab', 'vuejs']" class="vuejs" />
@@ -86,12 +101,18 @@
               </div>
               <div class="description-project">
                 <h6>Nepays</h6>
-                <p>description</p>
+                <p>
+                  Nepays Apps is a website-based payment gateway application
+                  that is used to transfer money and top up balances digitally.
+                  The top up feature is integrated with Midtrans. This
+                  application was built with the team using Vue JS and Express
+                  JS.
+                </p>
                 <a
                   href="https://nepays.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Lihat Project...</a
+                  >View More...</a
                 >
                 <div class="tools">
                   <fa :icon="['fab', 'vuejs']" class="vuejs" />
@@ -112,12 +133,17 @@
               </div>
               <div class="description-project">
                 <h6>Portal Job - BADAG</h6>
-                <p>description</p>
+                <p>
+                  BADAG Apps is a website-based job portal application to find
+                  jobs for job seekers and find workers. It features real-time
+                  chat and a standard profile. This application was built with a
+                  team using Vue JS and Express JS.
+                </p>
                 <a
                   href="https://badag.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Lihat Project...</a
+                  >View More...</a
                 >
                 <div class="tools">
                   <fa :icon="['fab', 'vuejs']" class="vuejs" />
@@ -136,12 +162,17 @@
               </div>
               <div class="description-project">
                 <h6>Tracking Covid</h6>
-                <p>description</p>
+                <p>
+                  Covid Track is an application that contains information about
+                  the number of sufferers of Covid-19 cases around the world.
+                  Always update data for all countries every day. This
+                  application is built using React JS
+                </p>
                 <a
                   href="https://pandemi-data.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Lihat Project...</a
+                  >View More...</a
                 >
                 <div class="tools">
                   <fa :icon="['fab', 'react']" class="react" />
@@ -160,12 +191,17 @@
               </div>
               <div class="description-project">
                 <h6>Play Chat</h6>
-                <p>description</p>
+                <p>
+                  The Play Chat application is a web-based chat application that
+                  is used to interact online. Has a feature to find friends,
+                  current location and can send messages in real-time. This
+                  application is built using Vue JS and Express JS.
+                </p>
                 <a
                   href="https://play-chat.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Lihat Project...</a
+                  >View More...</a
                 >
                 <div class="tools">
                   <fa :icon="['fab', 'vuejs']" class="vuejs" />
@@ -208,10 +244,10 @@ p.sub-title {
 }
 .detail-project {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .img-project {
-  margin: 0 15px 0 0;
+  margin: 15px auto;
 }
 .html5 {
   color: #e34f26;
@@ -260,11 +296,28 @@ p {
   color: #000;
 }
 .description-project p {
-  color: #000;
+  color: rgb(110, 110, 110);
+  margin: 5px 0;
 }
 .description-project a {
   color: #f7b633;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+}
+.tools {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .detail-project {
+    display: flex;
+    flex-direction: column;
+  }
+  .img-project {
+    margin: 0 auto;
+  }
+  .description-project h6 {
+    margin: 15px 0 0 0;
+  }
 }
 </style>

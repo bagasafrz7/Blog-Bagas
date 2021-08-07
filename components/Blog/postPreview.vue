@@ -19,8 +19,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8">
-          <p class="text-left mt-2 mb-2 author">
+        <div class="col-md-8 col-sm-7">
+          <p class="mt-2 mb-2 author">
             {{ publishedat.slice(0, 10) }} by
             <span
               ><u>
@@ -29,7 +29,7 @@
             >
           </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-5">
           <p class="mt-2 mb-2 min-read">{{ readingTime }} min read</p>
         </div>
       </div>
@@ -227,6 +227,7 @@ export default {
 p.author {
   color: var(--color);
   font-family: 'Poppins', sans-serif;
+  text-align: left;
 }
 
 p.author a {
@@ -236,6 +237,7 @@ p.author a {
 p.min-read {
   color: grey;
   font-family: 'Poppins', sans-serif;
+  text-align: right;
 }
 .isloading {
   height: 300px;
@@ -245,6 +247,16 @@ p.min-read {
   .post-preview {
     width: 25rem;
     margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  p.author {
+    text-align: center;
+  }
+
+  p.min-read {
+    text-align: center;
   }
 }
 </style>

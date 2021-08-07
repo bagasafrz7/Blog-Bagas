@@ -5,21 +5,38 @@
         <nav>
           <input id="nav-toggle" type="checkbox" />
           <div class="logo">
-            <!-- <nuxt-link to="/">Bagas<strong>Afrizal</strong></nuxt-link> -->
-            <nuxt-link to="/"><h2>B</h2></nuxt-link>
+            <div v-if="$colorMode.preference === 'light'">
+              <nuxt-link to="/">
+                <img src="@/assets/img/logo/ba3-black.png" alt="" srcset="" />
+              </nuxt-link>
+            </div>
+            <div v-else-if="$colorMode.preference === 'dark'">
+              <nuxt-link to="/">
+                <img src="@/assets/img/logo/ba3-white.png" alt="" srcset="" />
+              </nuxt-link>
+            </div>
           </div>
           <ul class="links">
             <li><nuxt-link to="/about">Tentang Saya</nuxt-link></li>
             <li><nuxt-link to="/blog">Hasil Tulisan</nuxt-link></li>
             <li><nuxt-link to="/projects">Projects</nuxt-link></li>
             <li><ColorModePicker /></li>
-            <!-- <li><nuxt-link to="/kontak">Eksperimen Aplikasi</nuxt-link></li> -->
           </ul>
-          <!-- for="nav-toggle" -->
-          <label v-b-toggle.sidebar-no-header class="icon-burger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+          <!-- v-b-toggle.sidebar-no-header -->
+          <label class="icon-burger">
+            <input id="active" type="checkbox" />
+
+            <label for="active" class="menu-btn">
+              <fa :icon="['fas', 'bars']" class="building" />
+            </label>
+            <div class="wrapper">
+              <ul>
+                <li><a @click="linkAbout">Tentang Saya</a></li>
+                <li><a @click="linkHasil">Hasil Tulisan</a></li>
+                <li><a @click="linkProject">Projects</a></li>
+                <li><ColorModePicker /></li>
+              </ul>
+            </div>
           </label>
         </nav>
       </b-row>
@@ -36,7 +53,6 @@
         <div class="p-3">
           <nav>
             <div class="logo">
-              <!-- <nuxt-link to="/">Bagas<strong>Afrizal</strong></nuxt-link> -->
               <nuxt-link to="/"><h2>B</h2></nuxt-link>
             </div>
             <ul class="sidebar-links">
@@ -50,7 +66,6 @@
                 <nuxt-link to="/projects" @click="hide">Projects</nuxt-link>
               </li>
               <li @click="hide"><ColorModePicker /></li>
-              <!-- <li><nuxt-link to="/kontak">Eksperimen Aplikasi</nuxt-link></li> -->
             </ul>
           </nav>
         </div>
@@ -64,6 +79,17 @@ import ColorModePicker from '@/components/ColorModePicker'
 export default {
   components: {
     ColorModePicker
+  },
+  methods: {
+    linkAbout() {
+      this.$router.push('/about')
+    },
+    linkProject() {
+      this.$router.push('/projects')
+    },
+    linkHasil() {
+      this.$router.push('/blog')
+    }
   }
 }
 </script>
@@ -82,6 +108,11 @@ nav .logo {
   align-items: center;
   font-size: 24px;
   /* color: var(--color-logo); */
+}
+
+nav .logo img {
+  width: 50px;
+  height: 50px;
 }
 
 .logo h2 {
@@ -142,7 +173,7 @@ nav .icon-burger {
   position: absolute;
   right: 5%;
   top: 4%;
-  background: #f7b633;
+  /* background: #f7b633; */
 }
 nav .icon-burger .line {
   width: 30px;
@@ -201,7 +232,7 @@ nav .icon-burger .line {
   }
   nav .icon-burger {
     display: block;
-    margin: 15px;
+    margin: 10px;
   }
   nav :checked ~ .icon-burger .line:nth-child(1) {
     transform: translateY(10px) rotate(225deg);
@@ -213,34 +244,112 @@ nav .icon-burger .line {
     opacity: 0;
   }
 }
-/* NAV */
 
-/* .header-nav { */
-/* background: rgb(255, 255, 255) !important; */
-/* background: #121212; */
-
-/* padding: 20px 15px 0 15px; */
-/* } */
-/* .bg-info { */
-/* background: rgb(255, 255, 255) !important; */
-/* background: #121212; */
-
-/* padding: 20px 15px 0 15px; */
-/* } */
-
-/* .navbar-dark .navbar-brand {
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .wrapper {
+  background: #000;
+  clip-path: circle(75%);
+  z-index: 8;
+}
+.menu-btn {
+  position: absolute;
+  z-index: 9;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
   color: #fff;
-  font-size: 32px;
+  cursor: pointer;
+  background: #000;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li {
+  margin: 15px 0;
+}
+.wrapper ul li a {
+  color: none;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  /* padding: 5px 30px; */
+  color: #fff;
+  border-radius: 50px;
+  background: #000;
+  position: relative;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+.wrapper ul li a:after {
+  position: absolute;
+  content: '';
+  background: #fff;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
+  width: 104%;
+  height: 110%;
+  left: -2%;
+  top: -5%; /* if the font is 'Oswald'*/
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  animation: rotate 1.5s linear infinite;
+  transition: transform 0.3s ease;
+}
+.wrapper ul li a:hover:after {
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover {
+  color: #fff;
+}
+input[type='checkbox'] {
+  display: none;
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  color: #202020;
+}
+.content .title {
+  font-size: 40px;
+  font-weight: 700;
+}
+.content p {
+  font-size: 35px;
+  font-weight: 600;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: #fff;
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
-
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link:focus {
-  color: orange;
-} */
 
 @media screen and (max-width: 576px) {
   ul {

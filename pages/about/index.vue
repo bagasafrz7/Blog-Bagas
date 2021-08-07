@@ -210,8 +210,7 @@ export default {
         position: 'center',
         icon: 'error',
         title: 'Oops...',
-        html:
-          'Fitur ini masih dalam tahap pengembangan. Tapi jangan khawatir, kamu bisa menghubungi saya di email bagasafrz16@gmail.com, atau dengan <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bagasafrz16@gmail.com&su=HalloBagas&body=Message" target="_blank">Klik Disini</a>'
+        html: 'Fitur ini masih dalam tahap pengembangan. Tapi jangan khawatir, kamu bisa menghubungi saya di email bagasafrz16@gmail.com, atau dengan <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bagasafrz16@gmail.com&su=HalloBagas&body=Message" target="_blank">Klik Disini</a>'
       })
     }
   }
