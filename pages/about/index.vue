@@ -19,20 +19,10 @@
               </div>
               <div class="col-md-9">
                 <p class="about-text">
-                  Seorang Pemuda Indonesia yang gemar dan sangat tertarik dengan
-                  Dunia Teknologi. Saat ini bekerja sebagai Frontend Engineer di
-                  salah satu perusahaan swasta di Jakarta. Dan sedang
-                  mempelajari Backend agar kedepannya bisa menjadi Full Stack
-                  Developer.
+                  {{ $t('label_about1') }}
                   <br />
                   <br />
-                  Saya suka menjelajahi dan mempelajari hal-hal seputar
-                  teknologi, bukan hanya dalam hal coding saja, tapi setiap hal
-                  yang berhubungan dengan Teknologi. Selain itu, saya juga
-                  senang berpetualang, entah naik gunung dan menjelajahi
-                  kota-kota dengan kawan atau bahkan sendiri. Dan ada satu hal
-                  lagi yang sangat saya sukai, yaitu TULISAN. Saya amat menyukai
-                  sebuah karya tulis, entah berbentuk buku atau puisi.
+                  {{ $t('label_about2') }}
                 </p>
               </div>
             </div>
@@ -42,43 +32,20 @@
             <div class="col-md-6">
               <div class="title-two">
                 <p>
-                  Loser says "It Can't Be Done", Winner says "It's Hard, But We
-                  Can Try"
+                  {{ $t('label_about_main') }}
                 </p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="content">
                 <p>
-                  Banyak orang yang bilang “Tidak Bisa” itu bermodalkan apa yang
-                  dia lihat pada hari ini. Dan jika semua orang mengambil
-                  keputusan berdasarkan apa yang di lihat hari ini, tidak akan
-                  ada yang namanya INOVASI. Padahal sebenarnya tidak ada yang
-                  tidak bisa, hanya saja belum tau caranya dan belum dicoba.
+                  {{ $t('label_about3') }}
                   <br />
                   <br />
-                  Dulu ketika ada sebuah aplikasi toko online pertama kali
-                  mengudara di Indonesia, banyak sekali orang skeptis, belanja
-                  ya di Mall bukan di handphone. Lalu ketika dulu ada sebuah
-                  aplikasi transportasi online terbentuk, banyak orang yang
-                  meragukannya, mesen ojek aja harus pakai aplikasi. Tapi
-                  sekarang, hampir setiap aktivitas kita engga jauh dari yang
-                  namanya aplikasi tersebut, untuk berpergian tinggal buka
-                  handphone lalu transportasinya datang. Untuk belanja tidak
-                  perlu report-report keluar rumah, tinggal buka aplikasinya
-                  lalu beli dan lusa barangnya sudah sampai dirumah. Jadi tidak
-                  ada yang namanya tidak bisa, Bisa tapi membutuhkan waktu dan
-                  berani untuk mencobanya. Jika gagal, coba lagi. Gagal lagi,
-                  coba lagi. Gagal lagi, coba lagi dengan belajar dari kegagalan
-                  yang sebelumnya. Ingat, semua itu butuh waktu dan proses.
-                  Selama proses tersebutlah yang membuat kamu bisa banyak
-                  belajar hingga tujuan itu tercapai.
+                  {{ $t('label_about4') }}
                   <br />
                   <br />
-                  Jika kamu ingin kerjasama dalam bentuk apapun, dari proyek
-                  pembuatan perangkat lunak, penulisan konten, atau hal yang
-                  lainnya. Silahkan hubungi saya melalui form inquiry dibawah
-                  ini atau bisa menguhubungi saya melalui linkedin.
+                  {{ $t('label_about5') }}
                 </p>
               </div>
             </div>
@@ -87,7 +54,7 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="title">
-                  <p>My Social Media</p>
+                  <p>{{ $t('label_social_media') }}</p>
                 </div>
                 <div class="detail-sosmed">
                   <a
@@ -121,35 +88,55 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <p class="contact-me">Contact Me</p>
+                <p class="contact-me mb-2">{{ $t('label_contactme') }}</p>
                 <div class="login-box">
-                  <form>
+                  <form @submit.prevent="submitData">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="user-box">
-                          <input type="text" name="" required />
-                          <label>Name</label>
+                          <input v-model="formData.name" type="text" required />
+                          <label>{{ $t('label_name') }}</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="user-box">
-                          <input type="email" name="" required />
-                          <label>Email</label>
+                          <input
+                            v-model="formData.email"
+                            type="email"
+                            required
+                          />
+                          <label>{{ $t('label_email') }}</label>
                         </div>
                       </div>
                     </div>
                     <div class="user-box">
-                      <input type="text" name="" required />
-                      <label>Your Message</label>
+                      <input v-model="formData.message" type="text" required />
+                      <label>{{ $t('label_message') }}</label>
                       <!-- <textarea name="" id="" cols="30" rows="5"></textarea> -->
                     </div>
-                    <a type="submit" @click="submitData">
+                    <div class="button-send">
+                      <!-- <button type="submit" class="btn btn-kirim">
+                        {{ $t('btn_kirim') }}
+                      </button> -->
+                      <button
+                        type="submit"
+                        class="btn btn-kirim"
+                        :disabled="
+                          formData.name === '' ||
+                          formData.email === '' ||
+                          formData.message === ''
+                        "
+                      >
+                        {{ $t('btn_kirim') }}
+                      </button>
+                    </div>
+                    <!-- <a type="submit">
                       <span></span>
                       <span></span>
                       <span></span>
                       <span></span>
                       Submit
-                    </a>
+                    </a> -->
                   </form>
                 </div>
               </div>
@@ -161,13 +148,34 @@
   </section>
 </template>
 
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
 <script>
+// import Email from '../../email.js'
+
 export default {
   data() {
     return {
       loading: false,
       loadingTime: 0,
-      maxLoadingTime: 3
+      maxLoadingTime: 3,
+      formData: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
+  head() {
+    return {
+      title: 'Tentang Bagas Afrizal',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Tentang Bagas Afrizal'
+        }
+      ]
     }
   },
   watch: {
@@ -206,12 +214,46 @@ export default {
       this.loadingTime = 0
     },
     submitData() {
-      this.$swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: 'Oops...',
-        html: 'Fitur ini masih dalam tahap pengembangan. Tapi jangan khawatir, kamu bisa menghubungi saya di email bagasafrz16@gmail.com, atau dengan <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bagasafrz16@gmail.com&su=HalloBagas&body=Message" target="_blank">Klik Disini</a>'
+      // this.$swal.fire({
+      //   position: 'center',
+      //   icon: 'error',
+      //   title: 'Oops...',
+      //   html: 'Fitur ini masih dalam tahap pengembangan. Tapi jangan khawatir, kamu bisa menghubungi saya di email bagasafrz16@gmail.com, atau dengan <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bagasafrz16@gmail.com&su=HalloBagas&body=Message" target="_blank">Klik Disini</a>'
+      // })
+      // this.$swal.fire({
+      //   position: 'center',
+      //   icon: 'success',
+      //   title: 'Yeay, Data Berhasil Dikirim 🥳',
+      //   html: 'Data yang kamu kirim akan segera dibalas, Terima Kasih'
+      // })
+      // this.$toast.success('Yeay, Data Berhasil Dikirim 🥳')
+      this.$toasted.success('Yeay, Data Berhasil Dikirim 🥳', {
+        theme: 'bubble',
+        position: 'top-center',
+        duration: 5000,
+        progressBar: true
       })
+      Email.send({
+        Host: 'ftp.marvelfood.co.id',
+        Username: 'k5008115',
+        Password: 'fXx4Jv94t0',
+        To: 'bagasafrz16@gmail.com',
+        From: 'noreply@bagasafrizal.com',
+        Subject: `New Inquiry`,
+        Body: `<span style="font-family:arial,helvetica,sans-serif">Hi Bagas Afrizal,<br /><br />There is a New Question From :</span><blockquote><p><span style="font-family:arial,helvetica,sans-serif">Nama : ${this.formData.name}<br />Email : ${this.formData.email}<br />Message : ${this.formData.message}</span></p></blockquote><p><span style="font-family:arial,helvetica,sans-serif">Please follow up immediately for this question data&nbsp;</span></p><p><span style="font-family:arial,helvetica,sans-serif">Best Regards,<br /><br />Tim Bagas Afrizal</span></p><hr /><p><span style="font-family:arial,helvetica,sans-serif"><span style="color:#A9A9A9"><span style="font-size:11px">Tangerang - Indonesia<br />Phone :&nbsp;<span style="background-color:rgb(255, 255, 255)">0895-0295-5429</span></span></span></span></p>`
+      })
+        .then((message) => (this.formData = ''))
+        .catch(
+          (error) =>
+            this.$swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Data Gagal Dikirim'
+            }),
+          setTimeout(() => {
+            this.formData = ''
+          }, 1500)
+        )
     }
   }
 }
@@ -308,6 +350,25 @@ p.contact-me {
   font-family: 'Poppins', sans-serif;
 }
 
+.btn-kirim {
+  /* border: 1px solid #f7b633; */
+  background: #f7b633;
+  width: 15%;
+  color: #fff;
+  /* color: #f7b633; */
+  padding: 10px 0;
+}
+
+.button-send {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.login-box {
+  margin: 25px 0 50px 0;
+}
+
 .login-box .user-box {
   position: relative;
 }
@@ -387,98 +448,6 @@ p.contact-me {
   letter-spacing: 4px;
 }
 
-.login-box a:hover {
-  background: #f7b633;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #f7b633, 0 0 25px #f7b633, 0 0 50px #f7b633,
-    0 0 100px #f7b633;
-}
-
-.login-box a span {
-  position: absolute;
-  display: block;
-}
-
-.login-box a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #f7b633);
-  animation: btn-anim1 2s linear infinite;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
-.login-box a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #f7b633);
-  animation: btn-anim2 2s linear infinite;
-  animation-delay: 0.25s;
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,
-  100% {
-    top: 100%;
-  }
-}
-
-.login-box a span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #f7b633);
-  animation: btn-anim3 2s linear infinite;
-  animation-delay: 0.5s;
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,
-  100% {
-    right: 100%;
-  }
-}
-
-.login-box a span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #f7b633);
-  animation: btn-anim4 2s linear infinite;
-  animation-delay: 0.75s;
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,
-  100% {
-    bottom: 100%;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .title-two p {
     font-size: 60px;
@@ -499,6 +468,43 @@ p.contact-me {
   }
   .detail-sosmed {
     margin: 0 0 25px 0;
+  }
+  .toasted-container .toasted {
+    top: 50px;
+    width: 75%;
+    clear: both;
+    margin: 0 auto;
+    margin-top: 10px;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    word-break: normal;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: center;
+    box-sizing: inherit;
+    /* border-radius: 25px; */
+  }
+  .toasted.bubble.success {
+    background: #4caf50;
+    border-radius: 25px;
+  }
+  .img-profile.bubble.success {
+    background: #4caf50;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 25px;
+  }
+  .btn-kirim {
+    /* border: 1px solid #f7b633; */
+    background: #f7b633;
+    width: 25%;
+    color: #fff;
+    /* color: #f7b633; */
+    padding: 10px 0;
   }
 }
 </style>

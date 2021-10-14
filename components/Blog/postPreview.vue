@@ -3,11 +3,12 @@
     <b-skeleton-wrapper :loading="loading">
       <template #loading>
         <div class="isloading">
-          <b-skeleton-img></b-skeleton-img>
+          <b-skeleton-img />
         </div>
       </template>
 
       <div
+        v-if="showEng"
         :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
         class="post-preview-thumbnail"
       >
@@ -15,16 +16,45 @@
           <h1>{{ title }}</h1>
         </div>
         <div class="read-more">
-          <nuxt-link :to="'/blog/' + id"> Read More </nuxt-link>
+          <nuxt-link :to="'/blog/' + id"> {{ $t('btn_readmore') }} </nuxt-link>
         </div>
       </div>
-      <div class="row">
+      <div
+        v-if="showIdn"
+        :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
+        class="post-preview-thumbnail"
+      >
+        <div class="detail-title">
+          <h1>{{ title }}</h1>
+        </div>
+        <div class="read-more">
+          <nuxt-link :to="'/id/blog/' + id">
+            {{ $t('btn_readmore') }}
+          </nuxt-link>
+        </div>
+      </div>
+      <div v-if="showEng" class="row">
         <div class="col-md-8 col-sm-7">
           <p class="mt-2 mb-2 author">
             {{ publishedat.slice(0, 10) }} by
             <span
               ><u>
                 <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
+              </u></span
+            >
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-5">
+          <p class="mt-2 mb-2 min-read">{{ readingTime }} min read</p>
+        </div>
+      </div>
+      <div v-if="showIdn" class="row">
+        <div class="col-md-8 col-sm-7">
+          <p class="mt-2 mb-2 author">
+            {{ publishedat.slice(0, 10) }} by
+            <span
+              ><u>
+                <nuxt-link to="/id/about">Bagas Afrizal</nuxt-link>
               </u></span
             >
           </p>
@@ -70,7 +100,9 @@ export default {
     return {
       loading: false,
       loadingTime: 0,
-      maxLoadingTime: 3
+      maxLoadingTime: 3,
+      showEng: true,
+      showIdn: false
     }
   },
   computed: {
@@ -110,6 +142,14 @@ export default {
   },
   mounted() {
     this.startLoading()
+    const language = localStorage.getItem('local')
+    if (language === 'en') {
+      this.showIdn = false
+      this.showEng = true
+    } else if (language === 'id') {
+      this.showIdn = true
+      this.showEng = false
+    }
   },
   methods: {
     clearLoadingTimeInterval() {

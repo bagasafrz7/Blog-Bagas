@@ -5,7 +5,7 @@
         <nav>
           <input id="nav-toggle" type="checkbox" />
           <div class="logo">
-            <div v-if="$colorMode.preference === 'light'">
+            <!-- <div v-if="$colorMode.preference === 'light'">
               <nuxt-link to="/">
                 <img src="@/assets/img/logo/ba3-black.png" alt="" srcset="" />
               </nuxt-link>
@@ -14,13 +14,171 @@
               <nuxt-link to="/">
                 <img src="@/assets/img/logo/ba3-white.png" alt="" srcset="" />
               </nuxt-link>
+            </div> -->
+            <div v-if="show">
+              <div v-if="showEng">
+                <nuxt-link to="/">
+                  <img src="@/assets/img/logo/ba3-black.png" alt="" srcset="" />
+                </nuxt-link>
+              </div>
+              <div v-if="showIdn">
+                <nuxt-link to="/id">
+                  <img src="@/assets/img/logo/ba3-black.png" alt="" srcset="" />
+                </nuxt-link>
+              </div>
+            </div>
+            <div v-if="showMoon">
+              <div v-if="showEng">
+                <nuxt-link to="/">
+                  <img src="@/assets/img/logo/ba3-black.png" alt="" srcset="" />
+                </nuxt-link>
+              </div>
+              <div v-if="showIdn">
+                <nuxt-link to="/id">
+                  <img src="@/assets/img/logo/ba3-black.png" alt="" srcset="" />
+                </nuxt-link>
+              </div>
+            </div>
+            <div v-if="showSun">
+              <div v-if="showEng">
+                <nuxt-link to="/">
+                  <img src="@/assets/img/logo/ba3-white.png" alt="" srcset="" />
+                </nuxt-link>
+              </div>
+              <div v-if="showIdn">
+                <nuxt-link to="/id">
+                  <img src="@/assets/img/logo/ba3-white.png" alt="" srcset="" />
+                </nuxt-link>
+              </div>
             </div>
           </div>
-          <ul class="links">
-            <li><nuxt-link to="/about">Tentang Saya</nuxt-link></li>
-            <li><nuxt-link to="/blog">Hasil Tulisan</nuxt-link></li>
-            <li><nuxt-link to="/projects">Projects</nuxt-link></li>
-            <li><ColorModePicker /></li>
+          <ul v-if="showEng" class="links">
+            <li>
+              <nuxt-link to="/about">
+                {{ $t('link_about') }}
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/blog"> {{ $t('link_blog') }} </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/projects"> {{ $t('link_project') }} </nuxt-link>
+            </li>
+            <li>
+              <div class="dropdown">
+                <p v-if="$i18n.locale !== 'en'" class="dropbtn">
+                  <img src="@/assets/img/id.png" alt="" srcset="" />
+                </p>
+                <p v-if="$i18n.locale !== 'id'" class="dropbtn">
+                  <img src="@/assets/img/en.png" alt="" srcset="" />
+                </p>
+                <!-- <button class="dropbtn">Dropdown</button> -->
+                <div class="dropdown-content">
+                  <li style="display: flex; flex-direction: row">
+                    <img
+                      src="@/assets/img/id.png"
+                      alt=""
+                      srcset=""
+                      style="width: 50%; object-fit: none"
+                    />
+                    <!-- <nuxt-link :to="switchLocalePath('id')" style="color: #000">
+                      IDN</nuxt-link
+                    > -->
+                    <p style="color: #000" @click="languageIDN">IDN</p>
+                  </li>
+                  <li style="display: flex; flex-direction: row">
+                    <img
+                      src="@/assets/img/en.png"
+                      alt=""
+                      srcset=""
+                      style="width: 50%; object-fit: none"
+                    />
+                    <!-- <nuxt-link :to="switchLocalePath('en')" style="color: #000">
+                      ENG
+                    </nuxt-link> -->
+                    <p style="color: #000" @click="languageENG">ENG</p>
+                  </li>
+                </div>
+              </div>
+            </li>
+            <!-- <li><ColorModePicker /></li> -->
+            <li>
+              <div>
+                <a @click="toggle">
+                  <div v-if="showSun">
+                    <fa :icon="['far', 'sun']" class="sun" />
+                  </div>
+                  <div v-if="showMoon">
+                    <fa :icon="['far', 'moon']" class="moon" />
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+          <ul v-if="showIdn" class="links">
+            <li>
+              <nuxt-link to="/id/about">
+                {{ $t('link_about') }}
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/id/blog"> {{ $t('link_blog') }} </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/id/projects">
+                {{ $t('link_project') }}
+              </nuxt-link>
+            </li>
+            <li>
+              <div class="dropdown">
+                <p v-if="$i18n.locale !== 'en'" class="dropbtn">
+                  <img src="@/assets/img/id.png" alt="" srcset="" />
+                </p>
+                <p v-if="$i18n.locale !== 'id'" class="dropbtn">
+                  <img src="@/assets/img/en.png" alt="" srcset="" />
+                </p>
+                <!-- <button class="dropbtn">Dropdown</button> -->
+                <div class="dropdown-content">
+                  <li style="display: flex; flex-direction: row">
+                    <img
+                      src="@/assets/img/id.png"
+                      alt=""
+                      srcset=""
+                      style="width: 50%; object-fit: none"
+                    />
+                    <!-- <nuxt-link :to="switchLocalePath('id')" style="color: #000">
+                      IDN</nuxt-link
+                    > -->
+                    <p style="color: #000" @click="languageIDN">IDN</p>
+                  </li>
+                  <li style="display: flex; flex-direction: row">
+                    <img
+                      src="@/assets/img/en.png"
+                      alt=""
+                      srcset=""
+                      style="width: 50%; object-fit: none"
+                    />
+                    <!-- <nuxt-link :to="switchLocalePath('en')" style="color: #000">
+                      ENG
+                    </nuxt-link> -->
+                    <p style="color: #000" @click="languageENG">ENG</p>
+                  </li>
+                </div>
+              </div>
+            </li>
+            <!-- <li><ColorModePicker /></li> -->
+            <li>
+              <div>
+                <a @click="toggle">
+                  <div v-if="showSun">
+                    <fa :icon="['far', 'sun']" class="sun" />
+                  </div>
+                  <div v-if="showMoon">
+                    <fa :icon="['far', 'moon']" class="moon" />
+                  </div>
+                </a>
+              </div>
+            </li>
           </ul>
           <!-- v-b-toggle.sidebar-no-header -->
           <label class="icon-burger">
@@ -29,12 +187,125 @@
             <label for="active" class="menu-btn">
               <fa :icon="['fas', 'bars']" class="building" />
             </label>
-            <div class="wrapper">
+            <div v-if="showEng" class="wrapper">
               <ul>
-                <li><a @click="linkAbout">Tentang Saya</a></li>
-                <li><a @click="linkHasil">Hasil Tulisan</a></li>
-                <li><a @click="linkProject">Projects</a></li>
-                <li><ColorModePicker /></li>
+                <li>
+                  <a @click="linkAbout">{{ $t('link_about') }}</a>
+                </li>
+                <li>
+                  <a @click="linkHasil">{{ $t('link_blog') }}</a>
+                </li>
+                <li>
+                  <a @click="linkProject">{{ $t('link_project') }}</a>
+                </li>
+                <div style="display: flex; flex-direction: row">
+                  <li style="margin: 5px 0">
+                    <div>
+                      <a @click="toggle">
+                        <div v-if="showSun">
+                          <fa :icon="['far', 'sun']" class="sun" />
+                        </div>
+                        <div v-if="showMoon">
+                          <fa :icon="['far', 'moon']" class="moon" />
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li style="margin: 15px 0">
+                    <b-dropdown size="lg" variant="link">
+                      <template
+                        #button-content
+                        style="display: flex; flex-direction: row"
+                      >
+                        <span v-if="$i18n.locale !== 'en'" class="dropbtn"
+                          ><img src="@/assets/img/id.png" alt="" srcset=""
+                        /></span>
+                        <span v-if="$i18n.locale !== 'id'" class="dropbtn"
+                          ><img src="@/assets/img/en.png" alt="" srcset=""
+                        /></span>
+                      </template>
+                      <b-dropdown-item>
+                        <img
+                          src="@/assets/img/id.png"
+                          alt=""
+                          srcset=""
+                          style="width: 50%; object-fit: none"
+                        />
+                        <p style="color: #000" @click="languageIDN">IDN</p>
+                      </b-dropdown-item>
+                      <b-dropdown-item>
+                        <img
+                          src="@/assets/img/en.png"
+                          alt=""
+                          srcset=""
+                          style="width: 50%; object-fit: none"
+                        />
+                        <p style="color: #000" @click="languageENG">ENG</p>
+                      </b-dropdown-item>
+                    </b-dropdown>
+                  </li>
+                  <!-- <li><ColorModePicker /></li> -->
+                </div>
+              </ul>
+            </div>
+            <div v-if="showIdn" class="wrapper">
+              <ul>
+                <li>
+                  <a @click="linkAboutID">{{ $t('link_about') }}</a>
+                </li>
+                <li>
+                  <a @click="linkHasilID">{{ $t('link_blog') }}</a>
+                </li>
+                <li>
+                  <a @click="linkProjectID">{{ $t('link_project') }}</a>
+                </li>
+                <div style="display: flex; flex-direction: row">
+                  <li style="margin: 5px 0">
+                    <div>
+                      <a @click="toggle">
+                        <div v-if="showSun">
+                          <fa :icon="['far', 'sun']" class="sun" />
+                        </div>
+                        <div v-if="showMoon">
+                          <fa :icon="['far', 'moon']" class="moon" />
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li style="margin: 15px 0">
+                    <b-dropdown size="lg" variant="link">
+                      <template #button-content>
+                        <div style="display: flex; flex-direction: row">
+                          <span v-if="$i18n.locale !== 'en'" class="dropbtn"
+                            ><img src="@/assets/img/id.png" alt="" srcset=""
+                          /></span>
+                          <span v-if="$i18n.locale !== 'id'" class="dropbtn"
+                            ><img src="@/assets/img/en.png" alt="" srcset=""
+                          /></span>
+                        </div>
+                      </template>
+                      <b-dropdown-item>
+                        <img
+                          src="@/assets/img/id.png"
+                          alt=""
+                          srcset=""
+                          style="width: 50%; object-fit: none"
+                        />
+                        <p style="color: #000" @click="languageIDN">IDN</p>
+                      </b-dropdown-item>
+                      <b-dropdown-item>
+                        <img
+                          src="@/assets/img/en.png"
+                          alt=""
+                          srcset=""
+                          style="width: 50%; object-fit: none"
+                        />
+                        <p style="color: #000" @click="languageENG">ENG</p>
+                      </b-dropdown-item>
+                    </b-dropdown>
+                  </li>
+                  <!-- <li><ColorModePicker /></li> -->
+                </div>
               </ul>
             </div>
           </label>
@@ -53,19 +324,33 @@
         <div class="p-3">
           <nav>
             <div class="logo">
-              <nuxt-link to="/"><h2>B</h2></nuxt-link>
+              <nuxt-link to="/">
+                <h2>B</h2>
+              </nuxt-link>
             </div>
             <ul class="sidebar-links">
               <li>
-                <nuxt-link to="/about" @click="hide">Tentang Saya</nuxt-link>
+                <nuxt-link to="/about" @click="hide"> Tentang Saya </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/blog" @click="hide">Hasil Tulisan</nuxt-link>
+                <nuxt-link to="/blog" @click="hide"> Hasil Tulisan </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/projects" @click="hide">Projects</nuxt-link>
+                <nuxt-link to="/projects" @click="hide"> Projects </nuxt-link>
               </li>
-              <li @click="hide"><ColorModePicker /></li>
+              <li @click="hide">
+                <!-- <ColorModePicker /> -->
+                <div>
+                  <a @click="toggle">
+                    <div v-if="showSun">
+                      <fa :icon="['far', 'sun']" class="sun" />
+                    </div>
+                    <div v-if="showMoon">
+                      <fa :icon="['far', 'moon']" class="moon" />
+                    </div>
+                  </a>
+                </div>
+              </li>
             </ul>
           </nav>
         </div>
@@ -75,10 +360,39 @@
 </template>
 
 <script>
-import ColorModePicker from '@/components/ColorModePicker'
+// import ColorModePicker from '@/components/ColorModePicker'
 export default {
   components: {
-    ColorModePicker
+    // ColorModePicker
+  },
+  data() {
+    return {
+      show: true,
+      showSun: true,
+      showMoon: false,
+      showEng: true,
+      showIdn: false
+    }
+  },
+  mounted() {
+    // this.show = false
+    this.$colorMode.preference =
+      this.$colorMode.value === 'light' ? 'dark' : 'light'
+    const dataTheme = localStorage.getItem('nuxt-color-mode')
+    if (dataTheme === 'light') {
+      this.show = true
+      this.showSun = true
+      this.showMoon = false
+      // console.log(dataTheme)
+    } else if (dataTheme === 'dark') {
+      this.show = false
+      this.showSun = true
+      this.showMoon = false
+      // console.log(dataTheme)
+    } else if (dataTheme === '') {
+      this.showSun = true
+      this.showMoon = false
+    }
   },
   methods: {
     linkAbout() {
@@ -89,12 +403,110 @@ export default {
     },
     linkHasil() {
       this.$router.push('/blog')
+    },
+    inkAboutID() {
+      this.$router.push('/id/about')
+    },
+    linkProjectID() {
+      this.$router.push('/id/projects')
+    },
+    linkHasilID() {
+      this.$router.push('/id/blog')
+    },
+    languageENG() {
+      localStorage.setItem('local', 'en')
+      const language = localStorage.getItem('local')
+      this.$i18n.locale = language
+      // console.log(language)
+      this.showIdn = false
+      this.showEng = true
+    },
+    languageIDN() {
+      localStorage.setItem('local', 'id')
+      const language = localStorage.getItem('local')
+      this.$i18n.locale = language
+      // console.log(language)
+      this.showIdn = true
+      this.showEng = false
+    },
+    toggle() {
+      this.show = false
+      this.$colorMode.preference =
+        this.$colorMode.value === 'light' ? 'dark' : 'light'
+      const dataTheme = localStorage.getItem('nuxt-color-mode')
+      if (dataTheme === 'light') {
+        this.showSun = true
+        this.showMoon = false
+        // console.log(dataTheme)
+      } else if (dataTheme === 'dark') {
+        this.showSun = false
+        this.showMoon = true
+        this.show = false
+        // console.log(dataTheme)
+      } else if (dataTheme === '') {
+        this.showSun = true
+        this.showMoon = false
+      }
+      // console.log(dataTheme)
     }
   }
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.dropbtn {
+  background-color: transparent;
+  color: var(--bg-secondary);
+  border: none;
+  display: flex;
+  flex-direction: row;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  /* min-width: 160px; */
+  /* width: 100%; */
+  width: 100px;
+  left: -40px;
+  right: 30px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: #000;
+}
+.dropdown-content a {
+  color: #000;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+/* .dropdown-content a:hover {
+  background-color: #ddd;
+} */
+.dropdown:hover .dropdown-content {
+  display: block;
+  padding: 10px 5px;
+}
+.dropdown:hover .dropbtn {
+  background-color: transparent;
+}
+.sun {
+  /* color: var(--color-icon-header); */
+  color: #f7b633;
+  font-size: 20px;
+}
+.moon {
+  /* color: var(--color-icon-header); */
+  color: #f7b633;
+  font-size: 20px;
+}
 nav {
   width: 100%;
   padding: 20px 0;
@@ -173,6 +585,7 @@ nav .icon-burger {
   position: absolute;
   right: 5%;
   top: 4%;
+  display: none;
   /* background: #f7b633; */
 }
 nav .icon-burger .line {
@@ -193,7 +606,7 @@ nav .icon-burger .line {
 @media screen and (max-width: 768px) {
   nav .logo {
     float: none;
-    width: auto;
+    width: 30%;
     justify-content: center;
   }
   .header-nav {
@@ -262,11 +675,11 @@ nav .icon-burger .line {
 .menu-btn {
   position: absolute;
   z-index: 9;
-  right: 20px;
+  right: 0px;
   height: 50px;
   width: 50px;
   text-align: center;
-  line-height: 50px;
+  line-height: 55px;
   border-radius: 50%;
   font-size: 20px;
   color: #fff;
@@ -276,14 +689,15 @@ nav .icon-burger .line {
 }
 .wrapper ul {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  /* top: 50%;
+  left: 50%; */
+  top: 35%;
+  left: 35%;
   transform: translate(-50%, -50%);
   list-style: none;
-  text-align: center;
 }
 .wrapper ul li {
-  margin: 15px 0;
+  margin: 5px 0;
 }
 .wrapper ul li a {
   color: none;
@@ -297,29 +711,9 @@ nav .icon-burger .line {
   position: relative;
   line-height: 50px;
   transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
-.wrapper ul li a:after {
-  position: absolute;
-  content: '';
-  background: #fff;
-  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
-  /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
-  width: 104%;
-  height: 110%;
-  left: -2%;
-  top: -5%; /* if the font is 'Oswald'*/
-  border-radius: 50px;
-  transform: scaleY(0);
-  z-index: -1;
-  animation: rotate 1.5s linear infinite;
-  transition: transform 0.3s ease;
-}
-.wrapper ul li a:hover:after {
-  transform: scaleY(1);
-}
-.wrapper ul li a:hover {
-  color: #fff;
-}
+
 input[type='checkbox'] {
   display: none;
 }
@@ -354,6 +748,17 @@ input[type='checkbox'] {
 @media screen and (max-width: 576px) {
   ul {
     margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .logo {
+    width: 40%;
+  }
+
+  .hero-img h1 {
+    width: 100%;
+    font-size: 32px;
   }
 }
 </style>

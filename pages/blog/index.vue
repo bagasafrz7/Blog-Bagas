@@ -44,6 +44,18 @@ export default {
           })
         }
       })
+  },
+  head() {
+    return {
+      title: 'Tulisan Bagas Afrizal',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Tulisan Bagas Afrizal'
+        }
+      ]
+    }
   }
 }
 </script>

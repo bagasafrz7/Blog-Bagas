@@ -13,22 +13,22 @@
               <div class="description-project">
                 <h6>Jualrumahpluit.com</h6>
                 <p>
-                  Jualrumahpluit.com is a website application to find property
-                  consultants, properties around Pluit Muara Karang and PIK.
-                  This application is built using HTML, CSS, and PHP, as well as
-                  the React JS library to display Blogs from the WordPress API
+                  {{ $t('deskripsi_jualrumah') }}
                 </p>
                 <a
                   href="https://jualrumahpluit.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View More...</a
+                  >{{ $t('label_viewmore') }}</a
                 >
                 <div class="tools">
-                  <fa :icon="['fab', 'html5']" class="html5" />
-                  <fa :icon="['fab', 'css3-alt']" class="css3-alt" />
-                  <fa :icon="['fab', 'react']" class="react" />
-                  <fa :icon="['fab', 'php']" class="php" />
+                  <fa :icon="['fab', 'html5']" class="html5 detail-tools" />
+                  <fa
+                    :icon="['fab', 'css3-alt']"
+                    class="css3-alt detail-tools"
+                  />
+                  <fa :icon="['fab', 'react']" class="react detail-tools" />
+                  <fa :icon="['fab', 'php']" class="php detail-tools" />
                 </div>
               </div>
             </div>
@@ -43,20 +43,20 @@
               <div class="description-project">
                 <h6>RS PGI Cikini Drive Thru</h6>
                 <p>
-                  RS Cikini Drive THRU is a website application for ordering
-                  services such as Antigen Swab, Antibody Swab, and PCR Swab
-                  online for PGI Cikini Hospital. This application is made using
-                  Vue Js as frontend and Laravel as Backend
+                  {{ $t('deskripsi_cikini') }}
                 </p>
                 <a
                   href="https://rscikinidrivethru.com/#/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View More...</a
+                  >{{ $t('label_viewmore') }}</a
                 >
                 <div class="tools">
-                  <fa :icon="['fab', 'vuejs']" class="vuejs" />
-                  <fa :icon="['fab', 'bootstrap']" class="bootstrap" />
+                  <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
+                  <fa
+                    :icon="['fab', 'bootstrap']"
+                    class="bootstrap detail-tools"
+                  />
                 </div>
               </div>
             </div>
@@ -68,26 +68,30 @@
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
-                <fa :icon="['fas', 'store']" class="building" />
+                <fa :icon="['fas', 'business-time']" class="building" />
               </div>
               <div class="description-project">
-                <h6>Space Point of Sale</h6>
+                <h6>Marvel Food</h6>
                 <p>
-                  SPACE Apps is a web-based point of sale application that is
-                  used to support food and beverage sales, and is equipped with
-                  admin / cashier dashboard features, to payment transactions.
-                  This application is built with Vue JS and Express JS.
+                  {{ $t('deskripsi_marvel') }}
                 </p>
                 <a
-                  href="https://pos-space.netlify.app/"
+                  href="http://marvelfood.co.id/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View More...</a
+                  >{{ $t('label_viewmore') }}</a
                 >
                 <div class="tools">
-                  <fa :icon="['fab', 'vuejs']" class="vuejs" />
-                  <fa :icon="['fab', 'js']" class="js" />
-                  <fa :icon="['fab', 'node-js']" class="node-js" />
+                  <img
+                    src="@/assets/img/favicon.png"
+                    alt=""
+                    srcset=""
+                    class="detail-tools"
+                  />
+                  <fa
+                    :icon="['fab', 'js']"
+                    class="js detail-tools detail-tools"
+                  />
                 </div>
               </div>
             </div>
@@ -97,27 +101,23 @@
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
-                <fa :icon="['fas', 'money-check-alt']" class="building" />
+                <fa :icon="['fas', 'store']" class="building" />
               </div>
               <div class="description-project">
-                <h6>Nepays</h6>
+                <h6>Space Point of Sale</h6>
                 <p>
-                  Nepays Apps is a website-based payment gateway application
-                  that is used to transfer money and top up balances digitally.
-                  The top up feature is integrated with Midtrans. This
-                  application was built with the team using Vue JS and Express
-                  JS.
+                  {{ $t('deskripsi_pos') }}
                 </p>
                 <a
-                  href="https://nepays.netlify.app/"
+                  href="https://pos-space.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View More...</a
+                  >{{ $t('label_viewmore') }}</a
                 >
                 <div class="tools">
-                  <fa :icon="['fab', 'vuejs']" class="vuejs" />
-                  <fa :icon="['fab', 'js']" class="js" />
-                  <fa :icon="['fab', 'node-js']" class="node-js" />
+                  <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
+                  <fa :icon="['fab', 'js']" class="js detail-tools" />
+                  <fa :icon="['fab', 'node-js']" class="node-js detail-tools" />
                 </div>
               </div>
             </div>
@@ -134,21 +134,18 @@
               <div class="description-project">
                 <h6>Portal Job - BADAG</h6>
                 <p>
-                  BADAG Apps is a website-based job portal application to find
-                  jobs for job seekers and find workers. It features real-time
-                  chat and a standard profile. This application was built with a
-                  team using Vue JS and Express JS.
+                  {{ $t('deskripsi_badag') }}
                 </p>
                 <a
                   href="https://badag.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View More...</a
+                  >{{ $t('label_viewmore') }}</a
                 >
                 <div class="tools">
-                  <fa :icon="['fab', 'vuejs']" class="vuejs" />
-                  <fa :icon="['fab', 'js']" class="js" />
-                  <fa :icon="['fab', 'node-js']" class="node-js" />
+                  <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
+                  <fa :icon="['fab', 'js']" class="js detail-tools" />
+                  <fa :icon="['fab', 'node-js']" class="node-js detail-tools" />
                 </div>
               </div>
             </div>
@@ -158,24 +155,23 @@
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
-                <fa :icon="['fas', 'virus']" class="building" />
+                <fa :icon="['fas', 'money-check-alt']" class="building" />
               </div>
               <div class="description-project">
-                <h6>Tracking Covid</h6>
+                <h6>Nepays</h6>
                 <p>
-                  Covid Track is an application that contains information about
-                  the number of sufferers of Covid-19 cases around the world.
-                  Always update data for all countries every day. This
-                  application is built using React JS
+                  {{ $t('deskripsi_nepays') }}
                 </p>
                 <a
-                  href="https://pandemi-data.netlify.app/"
+                  href="https://nepays.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View More...</a
+                  >{{ $t('label_viewmore') }}</a
                 >
                 <div class="tools">
-                  <fa :icon="['fab', 'react']" class="react" />
+                  <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
+                  <fa :icon="['fab', 'js']" class="js detail-tools" />
+                  <fa :icon="['fab', 'node-js']" class="node-js detail-tools" />
                 </div>
               </div>
             </div>
@@ -192,21 +188,42 @@
               <div class="description-project">
                 <h6>Play Chat</h6>
                 <p>
-                  The Play Chat application is a web-based chat application that
-                  is used to interact online. Has a feature to find friends,
-                  current location and can send messages in real-time. This
-                  application is built using Vue JS and Express JS.
+                  {{ $t('deskripsi_playchat') }}
                 </p>
                 <a
                   href="https://play-chat.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View More...</a
+                  >{{ $t('label_viewmore') }}</a
                 >
                 <div class="tools">
-                  <fa :icon="['fab', 'vuejs']" class="vuejs" />
-                  <fa :icon="['fab', 'js']" class="js" />
-                  <fa :icon="['fab', 'node-js']" class="node-js" />
+                  <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
+                  <fa :icon="['fab', 'js']" class="js detail-tools" />
+                  <fa :icon="['fab', 'node-js']" class="node-js detail-tools" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="list-project">
+            <div class="detail-project">
+              <div class="img-project">
+                <fa :icon="['fas', 'virus']" class="building" />
+              </div>
+              <div class="description-project">
+                <h6>Tracking Covid</h6>
+                <p>
+                  {{ $t('deskripsi_covid') }}
+                </p>
+                <a
+                  href="https://pandemi-data.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >{{ $t('label_viewmore') }}</a
+                >
+                <div class="tools">
+                  <fa :icon="['fab', 'react']" class="react detail-tools" />
                 </div>
               </div>
             </div>
@@ -221,6 +238,18 @@
 export default {
   data() {
     return {}
+  },
+  head() {
+    return {
+      title: 'Portofolio Bagas Afrizal',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Portofolio Bagas Afrizal'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -305,7 +334,12 @@ p {
   font-weight: bold;
 }
 .tools {
-  margin: 10px 0;
+  margin: 10px 5;
+  display: flex;
+  flex-direction: row;
+}
+.detail-tools {
+  margin: 0 5px;
 }
 
 @media screen and (max-width: 768px) {

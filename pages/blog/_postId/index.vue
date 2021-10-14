@@ -5,18 +5,25 @@
         <b-col cols="12" class="detail-post">
           <div class="post-thumbnail">
             <img :src="image" alt="" />
-            <h1 class="mt-4">{{ title }}</h1>
-            <p class="author">
-              {{ $moment(published).format('LL') }} By
-              <span
-                ><u>
-                  <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
-                </u></span
-              >
-            </p>
-            <hr />
+            <div style="width: 75%; margin: 0 auto">
+              <h1 class="mt-4">
+                {{ title }}
+              </h1>
+              <p class="author">
+                {{ $moment(published).format('LL') }}
+                <span style="color: #000">By</span>
+                <span
+                  ><u>
+                    <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
+                  </u></span
+                >
+              </p>
+              <hr />
+            </div>
           </div>
-          <p
+          <!-- <div v-html="content"></div> -->
+          <div class="content-blog" v-html="$md.render(content)"></div>
+          <!-- <p
             style="
               white-space: pre-wrap;
               word-wrap: break-word;
@@ -25,15 +32,18 @@
             "
           >
             {{ content }}
-          </p>
-          <h6>Tags :</h6>
-          <div class="tags">
-            <div v-for="item in tags" :key="item">
-              <b-badge variant="warning" class="detail-tags">{{
-                item
-              }}</b-badge>
+          </p> -->
+          <section class="section-tags">
+            <h6>Tags :</h6>
+            <div class="tags">
+              <div v-for="item in tags" :key="item">
+                <b-badge variant="warning" class="detail-tags">
+                  {{ item }}
+                </b-badge>
+              </div>
             </div>
-          </div>
+          </section>
+
           <!-- <h6>Share :</h6> -->
           <!-- <div class="share">
             <ShareNetwork
@@ -144,6 +154,18 @@ export default {
         window.location.reload()
       }
     })
+  },
+  head() {
+    return {
+      title: this.title + ' | Bagas Afrizal',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.title
+        }
+      ]
+    }
   }
 }
 </script>
@@ -160,12 +182,31 @@ p {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 46px;
+  font-family: 'Poppins', sans-serif;
   margin: 15px 0 0 0;
+}
+
+p.author {
+  color: grey;
 }
 
 p.author a {
   color: #f7b633;
+}
+
+.content-blog {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-family: 'Poppins', sans-serif;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.comments {
+  width: 75%;
+  margin: 0 auto;
 }
 
 .post-thumbnail {
@@ -199,8 +240,31 @@ hr {
   flex-direction: row;
   width: 100px;
 }
+.section-tags {
+  width: 75%;
+  margin: auto;
+}
 .tags .badge {
   padding: 5px 10px;
   margin: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .content-blog {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: inherit;
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .comments {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .section-tags {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 </style>
