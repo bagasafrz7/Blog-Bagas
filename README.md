@@ -2,6 +2,8 @@
 
 ## Build Setup
 
+Untuk API-Keys Storyblok nya bisa disesuiakan dengan key di akun storibloknya. Dan untuk menggantinya ada di file nuxt.config.js di Line 180 dan 181
+
 ```bash
 # install dependencies
 $ npm install
