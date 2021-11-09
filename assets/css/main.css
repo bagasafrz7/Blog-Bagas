@@ -4,12 +4,14 @@
   --color-primary: #158876;
   --color-secondary: #0e2233;
   --bg: #121212;
+  --bg1: #fff;
   --bg-secondary: #fff;
   --border-color: #ddd;
   --color-icon-header: #fff;
   --bg-logo: #fff;
   --color-logo: #f7b633;
   --color-h1: #f7b633;
+  --color-nav: #000;
 }
 
 .light-mode {
@@ -17,6 +19,7 @@
   --sub-color: #000;
   --color-primary: #41b38a;
   --bg: #fff;
+  --bg1: #121212;
   --color-secondary: #fdf9f3;
   --bg-secondary: #071521;
   --border-color: #0d2538;
@@ -24,6 +27,7 @@
   --bg-logo: #f7b633;
   --color-logo: #fff;
   --color-h1: #800080;
+  --color-nav: #fff;
 }
 
 

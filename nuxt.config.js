@@ -2,6 +2,8 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 const axios = require('axios');
 
+const ampify = require('./plugins/ampify');
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -12,7 +14,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Tulisan dari Bagas Afrizal'
+        content: 'Halo, Aku Bagas!'
       }
     ],
     link: [
@@ -51,17 +53,17 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
     // '@nuxtjs/color-mode'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    ['@nuxtjs/color-mode'],
     ['@nuxtjs/toast'],
     [
       'bootstrap-vue/nuxt'
     ],
-    ['@nuxtjs/color-mode'],
     ['@nuxtjs/markdownit', {
       markdownit: {
         runtime: true // Support `$md()`
@@ -107,7 +109,10 @@ export default {
               deskripsi_badag: 'BADAG Apps is a website-based job portal application to find jobs for job seekers and find workers. It features real-time chat and a standard profile. This application was built with a team using Vue JS and Express JS.',
               deskripsi_nepays: 'Nepays Apps is a website-based payment gateway application that is used to transfer money and top up balances digitally. The top up feature is integrated with Midtrans. This application was built with the team using Vue JS and Express JS.',
               deskripsi_playchat: 'The Play Chat application is a web-based chat application that is used to interact online. Has a feature to find friends, current location and can send messages in real-time. This application is built using Vue JS and Express JS.',
-              deskripsi_covid: 'Covid Track is an application that contains information about the number of sufferers of Covid-19 cases around the world. Always update data for all countries every day. This application is built using React JS.'
+              deskripsi_covid: 'Covid Track is an application that contains information about the number of sufferers of Covid-19 cases around the world. Always update data for all countries every day. This application is built using React JS.',
+              title_suscces: 'Yeay, Data Sent Successfully',
+              description_succes: 'The data you send will be replied to soon, Thank you!',
+              label_close: 'Close'
             },
             id: {
               link_about: 'Tentang Saya',
@@ -138,7 +143,10 @@ export default {
               deskripsi_badag: 'BADAG Apps adalah aplikasi portal pekerjaan berbasis website untuk mencari pekerjaan bagi pencari kerja dan mencari pekerja. Ini fitur obrolan waktu nyata dan profil standar. Aplikasi ini dibangun dengan tim menggunakan Vue JS dan Express JS.',
               deskripsi_nepays: 'Nepays Apps merupakan aplikasi payment gateway berbasis website yang digunakan untuk transfer uang dan top up saldo secara digital. Fitur top up terintegrasi dengan Midtrans. Aplikasi ini dibangun dengan tim menggunakan Vue JS dan Express JS.',
               deskripsi_playchat: 'Aplikasi Play Chat merupakan aplikasi chatting berbasis web yang digunakan untuk berinteraksi secara online. Memiliki fitur untuk mencari teman, lokasi saat ini dan dapat mengirim pesan secara real-time. Aplikasi ini dibangun menggunakan Vue JS dan Express JS.',
-              deskripsi_covid: 'Covid Track adalah aplikasi yang berisi informasi jumlah penderita kasus Covid-19 di seluruh dunia. Selalu perbarui data untuk semua negara setiap hari dengan integrasi dengan API Public. Aplikasi ini dibangun menggunakan React JS.'
+              deskripsi_covid: 'Covid Track adalah aplikasi yang berisi informasi jumlah penderita kasus Covid-19 di seluruh dunia. Selalu perbarui data untuk semua negara setiap hari dengan integrasi dengan API Public. Aplikasi ini dibangun menggunakan React JS.',
+              title_suscces: 'Yeay, Data Berhasil Dikirim',
+              description_succes: ' Data yang kamu kirim akan segera dibalas, Terima Kasih!',
+              label_close: 'Tutup'
             }
           }
         }
@@ -152,7 +160,7 @@ export default {
           icons: ['faLightbulb', 'faVirus', 'faNetworkWired', 'faMoneyCheckAlt', 'faStore', 'faBars', 'faBusinessTime']
           },
           {set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin', 'faVuejs', 'faReact', 'faHtml5', 'faCss3Alt', 'faWordpressSimple', 'faPhp', 'faBootstrap', 'faJs', 'faNodeJs']
+          icons: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin', 'faVuejs', 'faReact', 'faHtml5', 'faCss3Alt', 'faWordpressSimple', 'faPhp', 'faBootstrap', 'faJs', 'faNodeJs', 'faFacebook', 'faLine', 'faTelegramPlane', 'faWhatsapp']
           },
           {set: '@fortawesome/free-regular-svg-icons',
           icons: ['faBuilding', 'faHospital', 'faComments', 'faSun', 'faMoon']
@@ -200,6 +208,15 @@ export default {
           const blogPost = res.data.stories.map((bp) => bp.full_slug)
           return ['/', 'blog', ...blogPost]
         })
+    }
+  },
+
+  hooks: {
+    'generate:page': (page) => {
+      if (/^\/amp/gi.test(page.route)) {
+        console.log('processing amp file: ', page.route);
+        page.html = ampify(page.html);
+      }
     }
   },
 

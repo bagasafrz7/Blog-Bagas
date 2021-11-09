@@ -203,10 +203,11 @@ export default {
   text-align: center;
   z-index: 9;
   background: transparent;
-  width: 50%;
+  /* width: 50%; */
   padding: 10px 25px;
   border: 1px solid #fff;
   color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 
 .read-more a:hover {
@@ -297,6 +298,9 @@ p.min-read {
 
   p.min-read {
     text-align: center;
+  }
+  .detail-title h1 {
+    font-size: 48px;
   }
 }
 </style>
