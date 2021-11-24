@@ -36,7 +36,7 @@
       <div v-if="showEng" class="row">
         <div class="col-md-8 col-sm-7">
           <p class="mt-2 mb-2 author">
-            {{ publishedat.slice(0, 10) }} by
+            {{ $moment(publishedat).format('L') }} by
             <span
               ><u>
                 <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
@@ -51,7 +51,7 @@
       <div v-if="showIdn" class="row">
         <div class="col-md-8 col-sm-7">
           <p class="mt-2 mb-2 author">
-            {{ publishedat.slice(0, 10) }} by
+            {{ $moment(publishedat).format('L') }} by
             <span
               ><u>
                 <nuxt-link to="/id/about">Bagas Afrizal</nuxt-link>
@@ -168,6 +168,10 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+@font-face {
+  font-family: 'CheltenhamStdBold';
+  src: url('@/assets/font/CheltenhamStdBold.otf') format('otf');
+}
 /* .detail-title {
   padding-top: 150px;
 } */
@@ -188,8 +192,10 @@ export default {
   background-color: rgba(10, 9, 8, 0);
   font-size: 60px;
   transition: background-color 225ms cubic-bezier(0.4, 0.25, 0.3, 1);
-  font-family: 'Prompt', sans-serif;
-  text-shadow: #474747 3px 5px 2px;
+  /* font-family: 'Prompt', sans-serif; */
+  font-family: 'CheltenhamStdBold';
+  font-weight: bold;
+  /* text-shadow: #474747 3px 5px 2px; */
 }
 
 .read-more a {

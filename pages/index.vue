@@ -167,6 +167,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+@font-face {
+  font-family: 'futura';
+  src: url('@/assets/font/futura/FuturaBold.ttf') format('ttf');
+}
+
 canvas.tsparticles-canvas-el {
   width: 100%;
   /* background: #121212; */
@@ -188,6 +193,7 @@ canvas.tsparticles-canvas-el {
   font-size: 80px;
   color: var(--color);
   font-family: 'Poppins', sans-serif;
+  /* font-family: 'futura'; */
 }
 
 .hero-img h1 span {
@@ -202,6 +208,7 @@ canvas.tsparticles-canvas-el {
   color: var(--sub-color);
   font-size: 20px;
   font-weight: 100 !important;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* About */

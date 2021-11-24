@@ -180,6 +180,12 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+  font-family: 'CheltenhamStdBold';
+  src: url('@/assets/font/CheltenhamStdBold.otf') format('otf');
+}
+
 #post {
   background: var(--bg);
 }
@@ -191,7 +197,9 @@ p {
 
 h1 {
   font-size: 46px;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'CheltenhamStdBold';
+  font-weight: bold;
   margin: 15px 0 0 0;
 }
 
@@ -222,7 +230,7 @@ p.author a {
 }
 
 .post-thumbnail {
-  padding: 50px 0 20px 0;
+  padding: 0 0 20px 0;
   width: 75%;
   margin: 0 auto;
 }
