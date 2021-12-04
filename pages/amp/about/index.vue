@@ -206,6 +206,12 @@ export default {
           hid: 'description',
           name: 'description',
           content: 'Tentang Bagas Afrizal'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            'Bagas Afrizal,Tentang Bagas Afrizal, Bagas, Afrizal, Frontend Developer, Pemuda Indonesia, bagasafrizal.com'
         }
       ]
     }

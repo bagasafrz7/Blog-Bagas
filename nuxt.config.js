@@ -112,7 +112,8 @@ export default {
               deskripsi_covid: 'Covid Track is an application that contains information about the number of sufferers of Covid-19 cases around the world. Always update data for all countries every day. This application is built using React JS.',
               title_suscces: 'Yeay, Data Sent Successfully',
               description_succes: 'The data you send will be replied to soon, Thank you!',
-              label_close: 'Close'
+              label_close: 'Close',
+              link_home: 'Home',
             },
             id: {
               link_about: 'Tentang Saya',
@@ -146,7 +147,8 @@ export default {
               deskripsi_covid: 'Covid Track adalah aplikasi yang berisi informasi jumlah penderita kasus Covid-19 di seluruh dunia. Selalu perbarui data untuk semua negara setiap hari dengan integrasi dengan API Public. Aplikasi ini dibangun menggunakan React JS.',
               title_suscces: 'Yeay, Data Berhasil Dikirim',
               description_succes: ' Data yang kamu kirim akan segera dibalas, Terima Kasih!',
-              label_close: 'Tutup'
+              label_close: 'Tutup',
+              link_home: 'Beranda'
             }
           }
         }

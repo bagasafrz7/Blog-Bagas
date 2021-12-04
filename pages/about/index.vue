@@ -191,6 +191,7 @@ export default {
       loadingTime: 0,
       maxLoadingTime: 3,
       showMenu: false,
+      titlePage: '',
       formData: {
         name: '',
         email: '',
@@ -198,14 +199,28 @@ export default {
       }
     }
   },
+  mounted() {
+    if (this.$i18n.locale === 'id') {
+      this.titlePage = 'Tentang Bagas Afrizal'
+    } else {
+      this.titlePage = 'About Bagas Afrizal'
+    }
+    this.startLoading()
+  },
   head() {
     return {
-      title: 'Tentang Bagas Afrizal',
+      title: this.titlePage,
       meta: [
         {
           hid: 'description',
           name: 'description',
           content: 'Tentang Bagas Afrizal'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            'Bagas Afrizal,Tentang Bagas Afrizal, Bagas, Afrizal, Frontend Developer, Pemuda Indonesia, bagasafrizal.com'
         }
       ]
     }
@@ -232,9 +247,6 @@ export default {
   },
   created() {
     this.$_loadingTimeInterval = null
-  },
-  mounted() {
-    this.startLoading()
   },
   methods: {
     clearLoadingTimeInterval() {
@@ -303,9 +315,9 @@ export default {
   background: #121212;
 } */
 
-.hero-about {
+/* .hero-about {
   margin: 50px 0 0 0;
-}
+} */
 
 .img-profile img {
   width: 100%;

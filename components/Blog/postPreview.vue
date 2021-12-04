@@ -3,7 +3,8 @@
     <b-skeleton-wrapper :loading="loading">
       <template #loading>
         <div class="isloading">
-          <b-skeleton-img />
+          <b-skeleton-img height="550px" />
+          <b-skeleton class="mt-2"></b-skeleton>
         </div>
       </template>
 

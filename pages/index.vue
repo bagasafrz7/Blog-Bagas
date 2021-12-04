@@ -157,7 +157,34 @@ export default {
   },
   data() {
     return {
-      particlesSnow: ''
+      particlesSnow: '',
+      titlePage: ''
+    }
+  },
+  mounted() {
+    if (this.$i18n.locale === 'id') {
+      this.titlePage = 'Halo, Aku Bagas Afrizal!'
+    } else {
+      this.titlePage = `Hi, I'm Bagas Afrizal!`
+    }
+  },
+  head() {
+    return {
+      title: this.titlePage,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Halo, Aku Bagas Afrizal! | Tech Enthusiasts, Frontend Engineers and Indonesian Youth'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            'Bagas Afrizal,Tentang Bagas Afrizal, Bagas, Afrizal, Frontend Developer, Pemuda Indonesia, bagasafrizal.com'
+        }
+      ]
     }
   }
 }

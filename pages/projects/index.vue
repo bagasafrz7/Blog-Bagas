@@ -237,16 +237,31 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      titlePage: ''
+    }
+  },
+  mounted() {
+    if (this.$i18n.locale === 'id') {
+      this.titlePage = 'Portofolio Bagas Afrizal'
+    } else {
+      this.titlePage = 'Portfolio Bagas Afrizal'
+    }
   },
   head() {
     return {
-      title: 'Portofolio Bagas Afrizal',
+      title: this.titlePage,
       meta: [
         {
           hid: 'description',
           name: 'description',
           content: 'Portofolio Bagas Afrizal'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            'Bagas Afrizal,Portofolio Bagas Afrizal, Bagas, Afrizal, Frontend Developer, Pemuda Indonesia, bagasafrizal.com'
         }
       ]
     }

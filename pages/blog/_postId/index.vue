@@ -171,6 +171,11 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.title
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: this.title + '| Bagas Afrizal'
         }
       ]
     }

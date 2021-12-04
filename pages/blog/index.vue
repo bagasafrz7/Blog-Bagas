@@ -45,14 +45,32 @@ export default {
         }
       })
   },
+  data() {
+    return {
+      titlePage: ''
+    }
+  },
+  mounted() {
+    if (this.$i18n.locale === 'id') {
+      this.titlePage = 'Tulisan Bagas Afrizal'
+    } else {
+      this.titlePage = 'Blog Bagas Afrizal'
+    }
+  },
   head() {
     return {
-      title: 'Tulisan Bagas Afrizal',
+      title: this.titlePage,
       meta: [
         {
           hid: 'description',
           name: 'description',
           content: 'Tulisan Bagas Afrizal'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content:
+            'Bagas Afrizal,Tentang Bagas Afrizal, Bagas, Afrizal, Frontend Developer, Pemuda Indonesia, bagasafrizal.com, Blog, Blog Bagas'
         }
       ]
     }
