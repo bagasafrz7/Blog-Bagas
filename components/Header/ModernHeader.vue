@@ -10,11 +10,13 @@
       title="menu"
     />
     <label for="navcheck" aria-hidden="true" title="Menu">
-      <span class="burger">
-        <span class="bar">
-          <span class="visuallyhidden">Menu</span>
+      <div>
+        <span class="burger">
+          <span class="bar">
+            <span class="visuallyhidden">Menu</span>
+          </span>
         </span>
-      </span>
+      </div>
     </label>
     <nav v-if="showEng" id="menu">
       <a>
@@ -397,15 +399,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-$timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-$nav-width-desktop: 50em;
-$nav-width-tablet: 30em;
-$nav-width-mobile: 20em;
-$nav-item-nb: 6;
-
+<style scoped>
 input {
   position: fixed;
   opacity: 0;
@@ -418,62 +412,58 @@ label {
   outline: none;
   background: none;
   cursor: pointer;
-  &::before {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(darken(#3498db, 40%), 0.75);
-    content: '';
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s $timing-function;
-  }
-  .burger {
-    position: fixed;
-    top: 1.5em;
-    left: 1.5em;
-    z-index: 3;
-    width: 2em;
-    height: 2em;
-    margin: 0;
-    padding: 0;
-    transition: opacity 0.5s $timing-function;
-    &::before,
-    .bar,
-    &::after {
-      position: absolute;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 12%;
-      background: #000;
-      content: '';
-      transition: all 0.5s $timing-function;
-    }
-    .bar {
-      top: 44%;
-    }
-    &::before {
-      top: 0;
-      transform-origin: top left;
-    }
-    &::after {
-      bottom: 0;
-      transform-origin: bottom left;
-    }
-  }
 }
-
-input:focus + label,
-label:hover {
-  .burger {
-    opacity: 0.75;
-  }
+label::before {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 38, 57, 0.75);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-
+label .burger {
+  position: fixed;
+  top: 1.5em;
+  left: 1.5em;
+  z-index: 3;
+  width: 2em;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+label .burger::before,
+label .burger .bar,
+label .burger::after {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 12%;
+  background: var(--bg1);
+  content: '';
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+label .burger .bar {
+  top: 44%;
+}
+label .burger::before {
+  top: 0;
+  transform-origin: top left;
+}
+label .burger::after {
+  bottom: 0;
+  transform-origin: bottom left;
+}
+input:focus + label .burger,
+label:hover .burger {
+  opacity: 0.75;
+}
 nav {
   position: fixed;
   top: 0;
@@ -484,107 +474,120 @@ nav {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
-  transform: translate3d(0, 0, 0); /* material acceleration */
+  transform: translate3d(0, 0, 0);
+  /* material acceleration */
   transform: translateX(-100%);
   will-change: transform;
-  transition: transform 0.5s $timing-function;
-  &::before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    width: $nav-width-mobile;
-    // background: #d62956;
-    background: #3498db;
-    content: '';
-    transform: skewX(15deg) translateX(-100%);
-    transform-origin: bottom left;
-    will-change: transform;
-    transition: transform 0.5s $timing-function;
-    @media (min-width: 40em) {
-      width: $nav-width-desktop;
-    }
-    @media (max-width: 1024px) {
-      width: $nav-width-tablet;
-    }
-    @media (max-width: 768px) {
-      width: $nav-width-tablet;
-    }
-    @media (max-width: 576px) {
-      width: $nav-width-mobile;
-    }
-  }
-  a {
-    font-family: 'Poppins', sans-serif;
-    margin: 0.5em 0;
-    padding: 0.2em 2em;
-    cursor: pointer;
-    font-size: 1.5em;
-    color: white !important;
-    text-decoration: none;
-    font-weight: 500;
-    transform: translateX(-100%);
-    transition: color 0.15s, transform 0.5s;
-    transition-timing-function: $timing-function;
-    @for $i from 1 through $nav-item-nb {
-      &:nth-child(#{$i}) {
-        transition-delay: 0s, #{50 + (50 * $i)}ms;
-      }
-    }
-    &:hover {
-      color: #f7b633 !important;
-    }
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+nav::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 20em;
+  background: #3498db;
+  content: '';
+  transform: skewX(15deg) translateX(-100%);
+  transform-origin: bottom left;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+@media (min-width: 40em) {
+  nav::before {
+    width: 50em;
   }
 }
-
+@media (max-width: 1024px) {
+  nav::before {
+    width: 30em;
+  }
+}
+@media (max-width: 768px) {
+  nav::before {
+    width: 30em;
+  }
+}
+@media (max-width: 576px) {
+  nav::before {
+    width: 20em;
+  }
+}
+nav a {
+  font-family: 'Poppins', sans-serif;
+  margin: 0.5em 0;
+  padding: 0.2em 2em;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: white !important;
+  text-decoration: none;
+  font-weight: 500;
+  transform: translateX(-100%);
+  transition: color 0.15s, transform 0.5s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+nav a:nth-child(1) {
+  transition-delay: 0s, 100ms;
+}
+nav a:nth-child(2) {
+  transition-delay: 0s, 150ms;
+}
+nav a:nth-child(3) {
+  transition-delay: 0s, 200ms;
+}
+nav a:nth-child(4) {
+  transition-delay: 0s, 250ms;
+}
+nav a:nth-child(5) {
+  transition-delay: 0s, 300ms;
+}
+nav a:nth-child(6) {
+  transition-delay: 0s, 350ms;
+}
+nav a:hover {
+  color: #f7b633 !important;
+}
 main {
   overflow: hidden;
-  .content {
-    transform: translate3d(0, 0, 0); /* material acceleration */
-    will-change: transform, filter;
-    transition: all 0.5s $timing-function;
-  }
 }
-
-[id='navcheck']:checked {
-  & + label {
-    &::before {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .burger {
-      &::before,
-      &::after {
-        width: 141.42%; // Pythagore!
-      }
-      &::before {
-        transform: rotate(45deg) translateY(-50%);
-      }
-      &::after {
-        transform: rotate(-45deg) translateY(50%);
-      }
-      .bar {
-        transform: scale(0.1);
-      }
-    }
-  }
-  & ~ nav {
-    transform: translateX(0);
-    &::before {
-      transform: skewX(15deg) translateX(0);
-    }
-    a {
-      transform: translateX(0);
-    }
-  }
-  & ~ main .content {
-    transform: translateX(3em);
-    transform-origin: left center;
-    filter: blur(2px);
-  }
+main .content {
+  transform: translate3d(0, 0, 0);
+  /* material acceleration */
+  will-change: transform, filter;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-
+[id='navcheck']:checked + label::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+[id='navcheck']:checked + label .burger::before,
+[id='navcheck']:checked + label .burger::after {
+  width: 141.42%;
+}
+[id='navcheck']:checked + label .burger::before {
+  transform: rotate(45deg) translateY(-50%);
+}
+[id='navcheck']:checked + label .burger::after {
+  transform: rotate(-45deg) translateY(50%);
+}
+[id='navcheck']:checked + label .burger .bar {
+  transform: scale(0.1);
+}
+[id='navcheck']:checked ~ nav {
+  transform: translateX(0);
+}
+[id='navcheck']:checked ~ nav::before {
+  transform: skewX(15deg) translateX(0);
+}
+[id='navcheck']:checked ~ nav a {
+  transform: translateX(0);
+}
+[id='navcheck']:checked ~ main .content {
+  transform: translateX(3em);
+  transform-origin: left center;
+  filter: blur(2px);
+}
 /* helper */
 .visuallyhidden {
   border: 0;
@@ -596,7 +599,6 @@ main {
   position: absolute;
   width: 1px;
 }
-
 /* misc */
 body {
   overflow-x: hidden;
@@ -604,15 +606,13 @@ body {
   color: white;
   font: 1em/1.4 'lato';
 }
-// main {
-//   background: #3498db;
-//   padding: 5% 0;
-// }
 article {
   width: 80%;
   margin: 0 auto;
   font-size: 1.3em;
-  @media (min-width: 60em) {
+}
+@media (min-width: 60em) {
+  article {
     width: 50%;
   }
 }
@@ -620,7 +620,6 @@ h1 {
   font: 2.5em/1.4 'roboto condensed';
   font-weight: 700;
 }
-
 .dropbtn {
   background-color: transparent;
   color: var(--bg-secondary);
@@ -636,8 +635,10 @@ h1 {
   display: none;
   position: absolute;
   background-color: #fff;
-  /* min-width: 160px; */
-  /* width: 100%; */
+  /* min-width: 160px;
+	 */
+  /* width: 100%;
+	 */
   width: 100px;
   left: -40px;
   right: 30px;
@@ -653,8 +654,9 @@ h1 {
   font-size: 14px;
 }
 /* .dropdown-content a:hover {
-  background-color: #ddd;
-} */
+	 background-color: #ddd;
+}
+ */
 .dropdown:hover .dropdown-content {
   display: block;
   padding: 10px 5px;

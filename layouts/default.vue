@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <Header /> -->
-    <ModernHeader />
+    <!-- <ModernHeader /> -->
     <main class="main-content">
       <Nuxt />
     </main>
@@ -10,25 +10,13 @@
 
 <script>
 // import Header from '../components/Header/Header'
-import ModernHeader from '../components/Header/ModernHeader'
+// import ModernHeader from '../components/Header/ModernHeader'
 export default {
   components: {
     // Header,
-    ModernHeader
+    // ModernHeader
   }
 }
 </script>
 
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-.main-content {
-  margin: 50px 0;
-}
-</style>
+<style src="~/assets/css/style.css"></style>

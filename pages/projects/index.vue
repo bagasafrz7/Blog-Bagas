@@ -4,7 +4,7 @@
       <!-- <h2>Projects</h2> -->
       <!-- <p class="sub-title">Some projects I worked on previously.</p> -->
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
@@ -34,7 +34,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
@@ -97,7 +97,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
@@ -125,7 +125,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
@@ -151,7 +151,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
@@ -179,7 +179,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
@@ -205,7 +205,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="list-project">
             <div class="detail-project">
               <div class="img-project">
@@ -235,7 +235,9 @@
 </template>
 
 <script>
+import aosMixin from '~/plugins/aos'
 export default {
+  mixins: [aosMixin],
   data() {
     return {
       titlePage: ''
@@ -285,6 +287,7 @@ p.sub-title {
   padding: 20px;
   border-radius: 25px;
   margin: 15px 0;
+  box-shadow: 10px 10px 4px 0px rgb(0 0 0 / 8%);
 }
 .detail-project {
   display: flex;

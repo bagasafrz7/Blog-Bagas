@@ -1,7 +1,7 @@
 <template>
   <div class="main-content">
-    <b-container fluid>
-      <b-row>
+    <b-container>
+      <!-- <b-row>
         <b-col cols="12">
           <Particles
             id="tsparticles"
@@ -77,83 +77,96 @@
           />
         </b-col>
         <b-col class="hero-img text-center" cols="12">
-          <h1>
+          <h1 data-aos="fade-down" data-aos-duration="1000">
             {{ $t('label_hi') }} <br />
             {{ $t('label_im') }} <span>Bagas Afrizal </span>
           </h1>
-          <p>{{ $t('label_title_home') }}</p>
+          <p data-aos="fade-up" data-aos-duration="1000">
+            {{ $t('label_title_home') }}
+          </p>
+        </b-col>
+      </b-row> -->
+      <b-row>
+        <b-col cols="12">
+          <LandingSite />
         </b-col>
       </b-row>
-    </b-container>
-    <!-- <section class="section-two">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="title-two">
-              <p>
-                Loser says "It Can't Be Done", Winner says "It's Hard, But We
-                Can Try"
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="content">
-              <p>
-                Banyak orang yang bilang “Tidak Bisa” itu bermodalkan apa yang
-                dia lihat pada hari ini. Dan jika semua orang mengambil
-                keputusan berdasarkan apa yang di lihat hari ini, tidak akan ada
-                yang namanya INOVASI. Padahal sebenarnya tidak ada yang tidak
-                bisa, hanya saja belum tau caranya dan belum dicoba.
-                <br />
-                <br />
-                Dulu ketika ada sebuah aplikasi toko online pertama kali
-                mengudara di Indonesia, banyak sekali orang skeptis, belanja ya
-                di Mall bukan di handphone. Lalu ketika dulu ada sebuah aplikasi
-                transportasi online terbentuk, banyak orang yang meragukannya,
-                mesen ojek aja harus pakai aplikasi. Tapi sekarang, hampir
-                setiap aktivitas kita engga jauh dari yang namanya aplikasi
-                tersebut, untuk berpergian tinggal buka handphone lalu
-                transportasinya datang. Untuk belanja tidak perlu report-report
-                keluar rumah, tinggal buka aplikasinya lalu beli dan lusa
-                barangnya sudah sampai dirumah. Jadi tidak ada yang namanya
-                tidak bisa, Bisa tapi membutuhkan waktu dan berani untuk
-                mencobanya. Jika gagal, coba lagi. Gagal lagi, coba lagi. Gagal
-                lagi, coba lagi dengan belajar dari kegagalan yang sebelumnya.
-                Ingat, semua itu butuh waktu dan proses. Selama proses
-                tersebutlah yang membuat kamu bisa banyak belajar hingga tujuan
-                itu tercapai.
-                <br />
-                <br />
-                Jika kamu ingin kerjasama dalam bentuk apapun, dari proyek
-                pembuatan perangkat lunak, penulisan konten, atau hal yang
-                lainnya. Silahkan hubungi saya melalui form inquiry dibawah ini
-                atau bisa menguhubungi saya melalui linkedin.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- <section class="section-three">
-      <div class="container">
+      <section id="blog" class="blog">
         <div class="row">
           <div class="col-md-12">
-            <p class="title">Konten Blog</p>
-            <div class="see-all">
-              <p>Lihat Selangkapnya</p>
+            <h6>Some Things I Write</h6>
+            <hr class="lines-blog" />
+          </div>
+          <ListBlog
+            v-for="post in posts"
+            :id="post.id"
+            :key="post.id"
+            :title="post.title"
+            :excerpt="post.previewText"
+            :thumbnail="post.thumbnailUrl"
+            :publishedat="post.publishedAt"
+            :content="post.content"
+          />
+          <div class="col-md-12">
+            <div class="see-more text-right">
+              <nuxt-link to="/blog">
+                <span> See More... </span>
+              </nuxt-link>
             </div>
           </div>
         </div>
-      </div>
-    </section> -->
+      </section>
+      <b-row>
+        <b-col cols="12">
+          <GetInTouch />
+        </b-col>
+      </b-row>
+      <b-row>
+        <div class="col-md-12">
+          <footer>
+            <p>
+              Designed & Built by <span class="text-bold">Bagas Afrizal</span>
+            </p>
+          </footer>
+        </div>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
-// import PostPreview from '../components/Blog/postPreview'
+import LandingSite from '~/components/LandingSite'
+import ListBlog from '~/components/ListBlog'
+import GetInTouch from '~/components/GetInTouch'
+import aosMixin from '~/plugins/aos'
 export default {
   components: {
-    // PostPreview
+    LandingSite,
+    ListBlog,
+    GetInTouch
+  },
+  mixins: [aosMixin],
+  asyncData(context) {
+    return context.app.$storyapi
+      .get('cdn/stories', {
+        version: context.isDev ? 'draft' : 'published',
+        starts_with: 'blog/'
+      })
+      .then((res) => {
+        console.log(res)
+        return {
+          posts: res.data.stories.map((bp) => {
+            return {
+              id: bp.slug,
+              title: bp.content.title,
+              previewText: bp.content.sumary,
+              thumbnailUrl: bp.content.thumbnail,
+              publishedAt: bp.published_at,
+              content: bp.content.content
+            }
+          })
+        }
+      })
   },
   data() {
     return {

@@ -193,6 +193,7 @@ export default {
 
 #post {
   background: var(--bg);
+  margin: 75px 0;
 }
 
 h1,

@@ -43,8 +43,16 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/css/main.css'],
 
+  purgeCSS: {
+    whitelist: ["aos-init", "aos-animate", "data-aos-delay", "data-aos-duration", "fade-up", "zoom-in"]
+  },
+
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/particles.js', '~/plugins/disqus'],
+  plugins: [
+    '~/plugins/particles.js',
+    '~/plugins/disqus',
+    { src: "@/plugins/aos", mode: "client" }
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -59,6 +67,7 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    ['vue-scrollto/nuxt'],
     ['@nuxtjs/color-mode'],
     ['@nuxtjs/toast'],
     [
@@ -88,7 +97,7 @@ export default {
               label_hi: 'Hi!👋',
               label_im: "I'm",
               label_title_home: 'Tech Enthusiasts, Frontend Engineers and Indonesian Youth',
-              label_about1: 'An Indonesian youth who likes and is very interested in the world of technology. Currently working as a Frontend Engineer in a private company in Jakarta. And is studying Backend so that in the future he can become a Full Stack Developer.',
+              label_about1: 'An Indonesian youth who likes and is very interested in the world of technology. Currently working as a Frontend Engineer in a private company in Alam Sutera, Tangerang City. Not only in terms of the frontend, I am also studying another part, namely the backend, so that in the next few years I will be able to become a Full Stack Engineer.',
               label_about2: 'I like exploring and learning things about technology, not only in terms of coding, but everything related to Technology. Besides that, I also like adventure, whether climbing mountains and exploring cities with friends or even alone. And there is one more thing that I really like, that is WRITING. I really like a piece of writing, whether in the form of a book or a poem.',
               label_about3: `Many people who say "Can't" are based on what they see today. And if everyone made decisions based on what they saw today, there would be no such thing as INNOVATION. In fact, there's nothing that can't be done, it's just that you don't know how to do it and haven't tried it.`,
               label_about4: `In the past, when an online store application was first broadcast in Indonesia, a lot of people were skeptical, shopping at the mall, not on cellphones. Then when there used to be an online transportation application formed, many people doubted it, just ordering an ojek had to use the application. But now, almost every activity we do is not far from the application, to travel, we just open our cellphone and the transportation arrives. For shopping, you don't need reports to leave the house, just open the application then buy and the day after tomorrow the goods will arrive at home. So there is no such thing as can't, you can but it takes time and courage to try it. If it fails, try again. Failed again, try again. Fail again, try again by learning from previous failures. Remember, all of this takes time and a process. During the process, you can learn a lot until that goal is achieved.`,
@@ -99,7 +108,7 @@ export default {
               label_name: 'Name',
               label_email: 'Email',
               label_message: 'Your Message',
-              btn_kirim: 'Send',
+              btn_kirim: 'Say Hello',
               btn_readmore: 'Read More',
               label_viewmore: 'View More...',
               deskripsi_jualrumah: 'Jualrumahpluit.com is a website application to find property consultants, properties around Pluit Muara Karang and PIK. This application is built using HTML, CSS, and PHP, as well as the React JS library to display Blogs from the WordPress API.',
@@ -123,7 +132,7 @@ export default {
               label_hi: 'Halo!👋',
               label_im: "Saya",
               label_title_home: 'Penggemar Teknologi, Frontend Engineer, dan Pemuda Indonesia',
-              label_about1: 'Seorang Pemuda Indonesia yang gemar dan sangat tertarik dengan Dunia Teknologi. Saat ini bekerja sebagai Frontend Engineer di salah satu perusahaan swasta di Jakarta. Dan sedang mempelajari Backend agar kedepannya bisa menjadi Full Stack Developer.',
+              label_about1: 'Seorang Pemuda Indonesia yang gemar dan sangat tertarik dengan Dunia Teknologi. Saat ini bekerja sebagai Frontend Engineer di salah satu perusahaan swasta di Alam Sutera, Kota Tangerang. Tidak hanya dalam hal frontend saja, saya juga sedang mendalami satu bagian lainnya, yaitu backend, agar beberapa tahun mendatang mampu menjadi Full Stack Engineer.',
               label_about2: 'Saya suka menjelajahi dan mempelajari hal-hal seputar teknologi, bukan hanya dalam hal coding saja, tapi setiap hal yang berhubungan dengan Teknologi. Selain itu, saya juga senang berpetualang, entah naik gunung dan menjelajahi kota-kota dengan kawan atau bahkan sendiri. Dan ada satu hal lagi yang sangat saya sukai, yaitu TULISAN. Saya amat menyukai sebuah karya tulis, entah berbentuk buku atau puisi.',
               label_about3: 'Banyak orang yang bilang “Tidak Bisa” itu bermodalkan apa yang dia lihat pada hari ini. Dan jika semua orang mengambil keputusan berdasarkan apa yang di lihat hari ini, tidak akan ada yang namanya INOVASI. Padahal sebenarnya tidak ada yang tidak bisa, hanya saja belum tau caranya dan belum dicoba.',
               label_about4: 'Dulu ketika ada sebuah aplikasi toko online pertama kali mengudara di Indonesia, banyak sekali orang skeptis, belanja ya di Mall bukan di handphone. Lalu ketika dulu ada sebuah aplikasi transportasi online terbentuk, banyak orang yang meragukannya, mesen ojek aja harus pakai aplikasi. Tapi sekarang, hampir setiap aktivitas kita engga jauh dari yang namanya aplikasi tersebut, untuk berpergian tinggal buka handphone lalu transportasinya datang. Untuk belanja tidak perlu report-report keluar rumah, tinggal buka aplikasinya lalu beli dan lusa barangnya sudah sampai dirumah. Jadi tidak ada yang namanya tidak bisa, Bisa tapi membutuhkan waktu dan berani untuk mencobanya. Jika gagal, coba lagi. Gagal lagi, coba lagi. Gagal lagi, coba lagi dengan belajar dari kegagalan yang sebelumnya. Ingat, semua itu butuh waktu dan proses. Selama proses tersebutlah yang membuat kamu bisa banyak belajar hingga tujuan itu tercapai.',

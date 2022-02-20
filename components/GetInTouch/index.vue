@@ -1,189 +1,103 @@
 <template>
-  <section id="about-page">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <!-- <b-skeleton-wrapper :loading="loading">
-            <template #loading>
-              <b-card>
-                <b-skeleton-img no-aspect height="150px"></b-skeleton-img>
-              </b-card>
-            </template>
-          </b-skeleton-wrapper> -->
-          <div class="hero-about">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="img-profile">
-                  <img src="@/assets/img/pp_ig_hd.png" alt="" srcset="" />
-                </div>
-              </div>
-              <div class="col-md-9">
-                <p class="about-text">
-                  {{ $t('label_about1') }}
-                  <br />
-                  <br />
-                  {{ $t('label_about2') }}
-                </p>
-              </div>
+  <div>
+    <section id="contact" class="contact">
+      <h6>Get In Touch</h6>
+      <hr class="lines-contact" />
+      <div class="social-media">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="title">
+              <p class="contact-me mb-2">{{ $t('label_social_media') }}</p>
+            </div>
+            <div class="detail-sosmed">
+              <a
+                href="https://www.instagram.com/bagasafrizall/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <fa :icon="['fab', 'instagram']" class="instagram" />
+              </a>
+              <a
+                href="https://twitter.com/bagasss_i"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <fa :icon="['fab', 'twitter']" class="twitter" />
+              </a>
+              <a
+                href="https://github.com/bagasafrz7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <fa :icon="['fab', 'github']" class="github" />
+              </a>
+              <a
+                href="https://linkedin.com/in/bagas-afrizal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <fa :icon="['fab', 'linkedin']" class="linkedin" />
+              </a>
             </div>
           </div>
-          <hr />
-          <div class="row">
-            <div class="col-md-6">
-              <div class="title-two">
-                <p>
-                  {{ $t('label_about_main') }}
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="content">
-                <p>
-                  {{ $t('label_about3') }}
-                  <br />
-                  <br />
-                  {{ $t('label_about4') }}
-                  <br />
-                  <br />
-                  {{ $t('label_about5') }}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="social-media">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="title">
-                  <p>{{ $t('label_social_media') }}</p>
-                </div>
-                <div class="detail-sosmed">
-                  <a
-                    href="https://www.instagram.com/bagasafrizall/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <fa :icon="['fab', 'instagram']" class="instagram" />
-                  </a>
-                  <a
-                    href="https://twitter.com/bagasss_i"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <fa :icon="['fab', 'twitter']" class="twitter" />
-                  </a>
-                  <a
-                    href="https://github.com/bagasafrz7"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <fa :icon="['fab', 'github']" class="github" />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/bagas-afrizal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <fa :icon="['fab', 'linkedin']" class="linkedin" />
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-8">
-                <p class="contact-me mb-2">{{ $t('label_contactme') }}</p>
-                <div class="login-box">
-                  <form @submit.prevent="submitData">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="user-box">
-                          <input v-model="formData.name" type="text" required />
-                          <label>{{ $t('label_name') }}</label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="user-box">
-                          <input
-                            v-model="formData.email"
-                            type="email"
-                            required
-                          />
-                          <label>{{ $t('label_email') }}</label>
-                        </div>
-                      </div>
-                    </div>
+          <div class="col-md-8">
+            <p class="contact-me mb-2">{{ $t('label_contactme') }}</p>
+            <div class="login-box">
+              <form @submit.prevent="submitData">
+                <div class="row">
+                  <div class="col-md-6">
                     <div class="user-box">
-                      <input v-model="formData.message" type="text" required />
-                      <label>{{ $t('label_message') }}</label>
-                      <!-- <textarea name="" id="" cols="30" rows="5"></textarea> -->
+                      <input v-model="formData.name" type="text" required />
+                      <label>{{ $t('label_name') }}</label>
                     </div>
-                    <div class="button-send">
-                      <!-- <button type="submit" class="btn btn-kirim">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="user-box">
+                      <input v-model="formData.email" type="email" required />
+                      <label>{{ $t('label_email') }}</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="user-box">
+                  <input v-model="formData.message" type="text" required />
+                  <label>{{ $t('label_message') }}</label>
+                  <!-- <textarea name="" id="" cols="30" rows="5"></textarea> -->
+                </div>
+                <div class="button-send">
+                  <!-- <button type="submit" class="btn btn-kirim">
                         {{ $t('btn_kirim') }}
                       </button> -->
-                      <button
-                        type="submit"
-                        class="btn btn-kirim btn-sm"
-                        :disabled="
-                          formData.name === '' ||
-                          formData.email === '' ||
-                          formData.message === ''
-                        "
-                      >
-                        {{ $t('btn_kirim') }}
-                      </button>
-                    </div>
-                    <!-- <a type="submit">
+                  <button
+                    type="submit"
+                    class="btn btn-kirim btn-sm"
+                    :disabled="
+                      formData.name === '' ||
+                      formData.email === '' ||
+                      formData.message === ''
+                    "
+                  >
+                    {{ $t('btn_kirim') }}
+                  </button>
+                </div>
+                <!-- <a type="submit">
                       <span></span>
                       <span></span>
                       <span></span>
                       <span></span>
                       Submit
                     </a> -->
-                  </form>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Modal2 -->
-    <div v-if="showMenu" id="menu" class="popover1">
-      <div class="content">
-        <div class="nav">
-          <ul class="nav_list">
-            <div class="nav_list_item">
-              <div class="modal_content">
-                <div class="modal_close" title="Close" @click="closeModal">
-                  <p class="bx bx-x">x</p>
-                </div>
-                <!-- <img
-                  src="@/assets/img/logo/ba3-black.png"
-                  alt=""
-                  srcset=""
-                  class="modal_img"
-                /> -->
-                <p class="assets-succes">🥳</p>
-                <h1 class="modal_title">{{ $t('title_suscces') }}</h1>
-                <p class="modal_description">
-                  {{ $t('description_succes') }}
-                </p>
-                <button class="modal_button-link" @click="closeModal">
-                  {{ $t('label_close') }}
-                </button>
-              </div>
-            </div>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Modal2 -->
-  </section>
+    </section>
+  </div>
 </template>
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script>
-// import Email from '../../email.js'
-
 export default {
   data() {
     return {
@@ -224,29 +138,6 @@ export default {
         }
       ]
     }
-  },
-  watch: {
-    loading(newValue, oldValue) {
-      if (newValue !== oldValue) {
-        this.clearLoadingTimeInterval()
-
-        if (newValue) {
-          this.$_loadingTimeInterval = setInterval(() => {
-            this.loadingTime++
-          }, 1000)
-        }
-      }
-    },
-    loadingTime(newValue, oldValue) {
-      if (newValue !== oldValue) {
-        if (newValue === this.maxLoadingTime) {
-          this.loading = false
-        }
-      }
-    }
-  },
-  created() {
-    this.$_loadingTimeInterval = null
   },
   methods: {
     clearLoadingTimeInterval() {
@@ -362,13 +253,15 @@ p.about-text {
 
 .social-media .title p {
   color: var(--color);
-  font-size: 32px;
-  font-family: 'Poppins', sans-serif;
 }
 
 hr {
   background: #777777;
   margin: 50px 0;
+}
+
+.detail-sosmed {
+  margin: 25px 0;
 }
 
 .detail-sosmed .instagram,
@@ -400,11 +293,11 @@ p.contact-me {
 }
 
 .btn-kirim {
-  /* border: 1px solid #f7b633; */
-  background: #f7b633;
+  /* border: 1px solid #F45027; */
+  background: #f45027;
   width: 15%;
   color: #fff;
-  /* color: #f7b633; */
+  /* color: #F45027; */
   padding: 10px 0;
   font-family: 'Poppins', sans-serif;
 }
@@ -477,7 +370,7 @@ p.contact-me {
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #f7b633;
+  color: #f45027;
   font-size: 12px;
 }
 
@@ -485,7 +378,7 @@ p.contact-me {
 .login-box .user-box textarea:valid ~ label {
   top: -20px;
   left: 0;
-  color: #f7b633;
+  color: #f45027;
   font-size: 12px;
 }
 
@@ -493,7 +386,7 @@ p.contact-me {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: #f7b633;
+  color: #f45027;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -778,11 +671,11 @@ p.assets-succes {
     border-radius: 25px;
   }
   .btn-kirim {
-    /* border: 1px solid #f7b633; */
-    background: #f7b633;
+    /* border: 1px solid #F45027; */
+    background: #f45027;
     width: 25%;
     color: #fff;
-    /* color: #f7b633; */
+    /* color: #F45027; */
     padding: 10px 0;
   }
   .modal_container {
