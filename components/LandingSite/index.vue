@@ -15,18 +15,52 @@
           <div class="menu">
             <p>Menu</p>
             <ul>
-              <li v-scroll-to="'#about'">About</li>
-              <li v-scroll-to="{ el: '#project', duration: 1000 }">
+              <li
+                v-scroll-to="{
+                  el: '#about',
+                  duration: 500,
+                  offset: -50,
+                  easing: 'linear'
+                }"
+              >
+                About
+              </li>
+              <li
+                v-scroll-to="{
+                  el: '#project',
+                  duration: 500,
+                  offset: -50,
+                  easing: 'linear'
+                }"
+              >
                 Portfolio
               </li>
-              <li v-scroll-to="'#blog'">Blog</li>
+              <li
+                v-scroll-to="{
+                  el: '#blog',
+                  duration: 500,
+                  offset: -50,
+                  easing: 'linear'
+                }"
+              >
+                Blog
+              </li>
+              <li
+                v-scroll-to="{
+                  el: '#contact',
+                  duration: 500,
+                  easing: 'linear'
+                }"
+              >
+                Contact Me
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="hero-header">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-down" data-aos-duration="2000">
             <div class="detail-hello">
               <h2>Hello</h2>
               <span class="cicrle-header"></span>
@@ -39,11 +73,23 @@
             </div>
           </div>
           <div class="col-md-6">
-            <AnimationHeaders />
+            <AnimationHeaders
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+              data-aos-duration="2500"
+            />
           </div>
         </div>
       </div>
-      <div v-scroll-to="'#about'" class="scroll-down">
+      <div
+        v-scroll-to="{
+          el: '#about',
+          duration: 500,
+          offset: -50,
+          easing: 'linear'
+        }"
+        class="scroll-down"
+      >
         <b-icon
           icon="b-icon-arrow-down"
           animation="cylon-vertical"
@@ -55,12 +101,12 @@
       <h6>About</h6>
       <hr class="lines-about" />
       <div class="row mt-4">
-        <div class="col-md-3">
+        <div class="col-md-3" data-aos="fade-up">
           <div class="img-profile">
             <img src="@/assets/img/pp_ig_hd.png" alt="" srcset="" />
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9" data-aos="fade-up">
           <p class="about-text">
             {{ $t('label_about1') }}
             <br />
@@ -72,14 +118,14 @@
       <hr />
       <div class="row">
         <div class="col-md-6">
-          <div class="title-two">
+          <div class="title-two" data-aos="fade-up">
             <p>
               {{ $t('label_about_main') }}
             </p>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="content">
+          <div class="content" data-aos="fade-up">
             <p>
               {{ $t('label_about3') }}
               <br />
@@ -97,7 +143,7 @@
       <h6>Some Things I've Built</h6>
       <hr class="lines-project" />
       <div class="list-project">
-        <div class="row">
+        <div class="row" data-aos="fade-up" data-aos-duration="1000">
           <div class="col-md-4">
             <div class="card-project">
               <div class="detail-project">
@@ -175,7 +221,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" data-aos="fade-up" data-aos-duration="1000">
           <div class="col-md-4">
             <div class="card-project">
               <div class="detail-project">

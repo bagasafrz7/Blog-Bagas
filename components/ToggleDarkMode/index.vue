@@ -35,6 +35,7 @@ main {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
 }
 .l:before,
 .l:after {
