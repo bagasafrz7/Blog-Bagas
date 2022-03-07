@@ -68,7 +68,12 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     ['vue-scrollto/nuxt'],
-    ['@nuxtjs/color-mode'],
+    ['@nuxtjs/color-mode', {
+      colorMode: {
+        preference: 'dark',
+        fallback: 'dark'
+      }
+    }],
     ['@nuxtjs/toast'],
     [
       'bootstrap-vue/nuxt'
@@ -93,11 +98,12 @@ export default {
               link_about: 'About Me',
               link_blog: 'Blog',
               link_project: 'Portfolio',
+              link_contact: 'Contact Me',
               greeting: 'Hello world!',
               label_hi: 'Hi!👋',
               label_im: "I'm",
               label_title_home: 'Tech Enthusiasts, Frontend Engineers and Indonesian Youth',
-              label_about1: 'An Indonesian youth who likes and is very interested in the world of technology. Currently working as a Frontend Engineer in a private company in Alam Sutera, Tangerang City. Not only in terms of the frontend, I am also studying another part, namely the backend, so that in the next few years I will be able to become a Full Stack Engineer.',
+              label_about1: 'An Indonesian youth who likes and is very interested in the world of technology. Currently working as a Frontend Engineer at SQM Property, in Alam Sutera, Tangerang City. Not only in terms of the frontend, I am also studying another part, namely the backend, so that in the next few years I will be able to become a Full Stack Engineer.',
               label_about2: 'I like exploring and learning things about technology, not only in terms of coding, but everything related to Technology. Besides that, I also like adventure, whether climbing mountains and exploring cities with friends or even alone. And there is one more thing that I really like, that is WRITING. I really like a piece of writing, whether in the form of a book or a poem.',
               label_about3: `Many people who say "Can't" are based on what they see today. And if everyone made decisions based on what they saw today, there would be no such thing as INNOVATION. In fact, there's nothing that can't be done, it's just that you don't know how to do it and haven't tried it.`,
               label_about4: `In the past, when an online store application was first broadcast in Indonesia, a lot of people were skeptical, shopping at the mall, not on cellphones. Then when there used to be an online transportation application formed, many people doubted it, just ordering an ojek had to use the application. But now, almost every activity we do is not far from the application, to travel, we just open our cellphone and the transportation arrives. For shopping, you don't need reports to leave the house, just open the application then buy and the day after tomorrow the goods will arrive at home. So there is no such thing as can't, you can but it takes time and courage to try it. If it fails, try again. Failed again, try again. Fail again, try again by learning from previous failures. Remember, all of this takes time and a process. During the process, you can learn a lot until that goal is achieved.`,
@@ -120,19 +126,28 @@ export default {
               deskripsi_playchat: 'The Play Chat application is a web-based chat application that is used to interact online. Has a feature to find friends, current location and can send messages in real-time. This application is built using Vue JS and Express JS.',
               deskripsi_covid: 'Covid Track is an application that contains information about the number of sufferers of Covid-19 cases around the world. Always update data for all countries every day. This application is built using React JS.',
               title_suscces: 'Yeay, Data Sent Successfully',
+              title_failed: 'Ops, Data Failed to Send',
               description_succes: 'The data you send will be replied to soon, Thank you!',
+              description_failed: `For now, it seems that your data can't be sent yet, please try again in a while!`,
               label_close: 'Close',
               link_home: 'Home',
+              link_scrooltop: 'Scroll Top',
+              title_about: 'About Me',
+              title_project: `Some Things I've Built`,
+              title_blog: 'Some Things I Write',
+              title_getintouch: 'Get In Touch',
+              text_footer: 'Designed & Built by'
             },
             id: {
               link_about: 'Tentang Saya',
               link_blog: 'Tulisan Saya',
               link_project: 'Portofolio',
+              link_contact: 'Kontak Saya',
               greeting: 'Halo Dunia!',
               label_hi: 'Halo!👋',
               label_im: "Saya",
               label_title_home: 'Penggemar Teknologi, Frontend Engineer, dan Pemuda Indonesia',
-              label_about1: 'Seorang Pemuda Indonesia yang gemar dan sangat tertarik dengan Dunia Teknologi. Saat ini bekerja sebagai Frontend Engineer di salah satu perusahaan swasta di Alam Sutera, Kota Tangerang. Tidak hanya dalam hal frontend saja, saya juga sedang mendalami satu bagian lainnya, yaitu backend, agar beberapa tahun mendatang mampu menjadi Full Stack Engineer.',
+              label_about1: 'Seorang Pemuda Indonesia yang gemar dan sangat tertarik dengan Dunia Teknologi. Saat ini bekerja sebagai Frontend Engineer di SQM Property, di Alam Sutera, Kota Tangerang. Tidak hanya dalam hal frontend saja, saya juga sedang mendalami satu bagian lainnya, yaitu backend, agar beberapa tahun mendatang mampu menjadi Full Stack Engineer.',
               label_about2: 'Saya suka menjelajahi dan mempelajari hal-hal seputar teknologi, bukan hanya dalam hal coding saja, tapi setiap hal yang berhubungan dengan Teknologi. Selain itu, saya juga senang berpetualang, entah naik gunung dan menjelajahi kota-kota dengan kawan atau bahkan sendiri. Dan ada satu hal lagi yang sangat saya sukai, yaitu TULISAN. Saya amat menyukai sebuah karya tulis, entah berbentuk buku atau puisi.',
               label_about3: 'Banyak orang yang bilang “Tidak Bisa” itu bermodalkan apa yang dia lihat pada hari ini. Dan jika semua orang mengambil keputusan berdasarkan apa yang di lihat hari ini, tidak akan ada yang namanya INOVASI. Padahal sebenarnya tidak ada yang tidak bisa, hanya saja belum tau caranya dan belum dicoba.',
               label_about4: 'Dulu ketika ada sebuah aplikasi toko online pertama kali mengudara di Indonesia, banyak sekali orang skeptis, belanja ya di Mall bukan di handphone. Lalu ketika dulu ada sebuah aplikasi transportasi online terbentuk, banyak orang yang meragukannya, mesen ojek aja harus pakai aplikasi. Tapi sekarang, hampir setiap aktivitas kita engga jauh dari yang namanya aplikasi tersebut, untuk berpergian tinggal buka handphone lalu transportasinya datang. Untuk belanja tidak perlu report-report keluar rumah, tinggal buka aplikasinya lalu beli dan lusa barangnya sudah sampai dirumah. Jadi tidak ada yang namanya tidak bisa, Bisa tapi membutuhkan waktu dan berani untuk mencobanya. Jika gagal, coba lagi. Gagal lagi, coba lagi. Gagal lagi, coba lagi dengan belajar dari kegagalan yang sebelumnya. Ingat, semua itu butuh waktu dan proses. Selama proses tersebutlah yang membuat kamu bisa banyak belajar hingga tujuan itu tercapai.',
@@ -155,9 +170,17 @@ export default {
               deskripsi_playchat: 'Aplikasi Play Chat merupakan aplikasi chatting berbasis web yang digunakan untuk berinteraksi secara online. Memiliki fitur untuk mencari teman, lokasi saat ini dan dapat mengirim pesan secara real-time. Aplikasi ini dibangun menggunakan Vue JS dan Express JS.',
               deskripsi_covid: 'Covid Track adalah aplikasi yang berisi informasi jumlah penderita kasus Covid-19 di seluruh dunia. Selalu perbarui data untuk semua negara setiap hari dengan integrasi dengan API Public. Aplikasi ini dibangun menggunakan React JS.',
               title_suscces: 'Yeay, Data Berhasil Dikirim',
+              title_failed: 'Yah, Data Gagal Dikirim',
               description_succes: ' Data yang kamu kirim akan segera dibalas, Terima Kasih!',
+              description_failed: `Untuk saat ini sepertinya data kamu belum bisa dikirim, coba beberapa saat lagi ya!`,
               label_close: 'Tutup',
-              link_home: 'Beranda'
+              link_home: 'Beranda',
+              link_scrooltop: 'Gulir ke atas',
+              title_about: 'Tentang Saya',
+              title_project: `Beberapa Hal yang Saya Buat`,
+              title_blog: 'Beberapa Hal yang Saya Tulis',
+              title_getintouch: 'Hubungi Saya',
+              text_footer: 'Dirancang & Dibangun oleh'
             }
           }
         }
@@ -182,6 +205,19 @@ export default {
       '@nuxtjs/moment'
     ],
     ['@nuxtjs/axios'],
+    ['nuxt-mail', {
+      message: {
+        to: 'bagasafrz7@gmail.com',
+      },
+      smtp: {
+        host: 'ftp.bagasafrizal.com',
+        port: 2525,
+        auth: {
+          user: 'bagp1952',
+          pass: 'F4TWDFyEz4BN83'
+        },
+      },
+    }],
     // https://go.nuxtjs.dev/axios
     [
       'storyblok-nuxt',
@@ -205,6 +241,10 @@ export default {
 
   bootstrapVue: {
     icons: true
+  },
+
+  router: {
+    middleware: ['adjustScroll']
   },
 
   generate: {

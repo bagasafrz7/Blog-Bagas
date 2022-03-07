@@ -35,33 +35,41 @@
         </div>
       </div>
       <div v-if="showEng" class="row">
-        <div class="col-md-8 col-sm-7">
-          <p class="mt-2 mb-2 author">
-            {{ $moment(publishedat).format('L') }} by
-            <span
-              ><u>
-                <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
-              </u></span
-            >
-          </p>
-        </div>
-        <div class="col-md-4 col-sm-5">
-          <p class="mt-2 mb-2 min-read">{{ readingTime }} min read</p>
+        <div class="col-md-12">
+          <div class="detail-link-blog">
+            <div>
+              <p class="mt-2 mb-2 author">
+                {{ $moment(publishedat).locale('id').format('L') }} by
+                <span
+                  ><u>
+                    <nuxt-link to="/about">Bagas Afrizal</nuxt-link>
+                  </u></span
+                >
+              </p>
+            </div>
+            <div>
+              <p class="mt-2 mb-2 min-read">{{ readingTime }} min read</p>
+            </div>
+          </div>
         </div>
       </div>
       <div v-if="showIdn" class="row">
-        <div class="col-md-8 col-sm-7">
-          <p class="mt-2 mb-2 author">
-            {{ $moment(publishedat).format('L') }} by
-            <span
-              ><u>
-                <nuxt-link to="/id/about">Bagas Afrizal</nuxt-link>
-              </u></span
-            >
-          </p>
-        </div>
-        <div class="col-md-4 col-sm-5">
-          <p class="mt-2 mb-2 min-read">{{ readingTime }} min read</p>
+        <div class="col-md-12">
+          <div class="detail-link-blog">
+            <div>
+              <p class="mt-2 mb-2 author">
+                {{ $moment(publishedat).locale('id').format('L') }} by
+                <span
+                  ><u>
+                    <nuxt-link to="/id/about">Bagas Afrizal</nuxt-link>
+                  </u></span
+                >
+              </p>
+            </div>
+            <div>
+              <p class="mt-2 mb-2 min-read">{{ readingTime }} min read</p>
+            </div>
+          </div>
         </div>
       </div>
     </b-skeleton-wrapper>
@@ -279,7 +287,7 @@ p.author {
 }
 
 p.author a {
-  color: #f7b633;
+  color: #f45027;
 }
 
 p.min-read {
@@ -287,8 +295,14 @@ p.min-read {
   font-family: 'Poppins', sans-serif;
   text-align: right;
 }
-.isloading {
+/* .isloading {
   height: 300px;
+} */
+
+.detail-link-blog {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @media (min-width: 35rem) {

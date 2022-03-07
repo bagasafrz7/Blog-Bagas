@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content">
+  <div class="main-content" v-on="scroll">
     <b-container>
       <!-- <b-row>
         <b-col cols="12">
@@ -94,7 +94,7 @@
       <section id="blog" class="blog">
         <div class="row">
           <div class="col-md-12">
-            <h6>Some Things I Write</h6>
+            <h6>{{ $t('title_blog') }}</h6>
             <hr class="lines-blog" />
           </div>
           <ListBlog
@@ -110,7 +110,7 @@
           <div class="col-md-12">
             <div class="see-more text-right">
               <nuxt-link to="/blog">
-                <span> See More... </span>
+                <span>{{ $t('label_viewmore') }}</span>
               </nuxt-link>
             </div>
           </div>
@@ -125,12 +125,31 @@
         <div class="col-md-12">
           <footer>
             <p>
-              Designed & Built by <span class="text-bold">Bagas Afrizal</span>
+              {{ $t('text_footer')
+              }}<span class="text-bold"> Bagas Afrizal</span>
             </p>
           </footer>
         </div>
       </b-row>
     </b-container>
+
+    <!-- Scroll Top -->
+    <div
+      v-if="scrollTop"
+      v-scroll-to="{
+        el: '#header',
+        duration: 500,
+        offset: -50,
+        easing: 'linear'
+      }"
+      class="scroll-top"
+    >
+      <p>
+        <span><b-icon icon="arrow-up"></b-icon></span>
+        {{ $t('link_scrooltop') }}
+      </p>
+    </div>
+    <!-- Scroll Top -->
   </div>
 </template>
 
@@ -153,7 +172,6 @@ export default {
         starts_with: 'blog/'
       })
       .then((res) => {
-        console.log(res)
         return {
           posts: res.data.stories.map((bp) => {
             return {
@@ -171,7 +189,9 @@ export default {
   data() {
     return {
       particlesSnow: '',
-      titlePage: ''
+      titlePage: '',
+      scrolled: false,
+      scrollTop: false
     }
   },
   mounted() {
@@ -179,6 +199,23 @@ export default {
       this.titlePage = 'Halo, Aku Bagas Afrizal!'
     } else {
       this.titlePage = `Hi, I'm Bagas Afrizal!`
+    }
+  },
+  beforeMount() {
+    window.addEventListener('wheel', this.handleScroll)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('wheel', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY > 400) {
+        this.scrollTop = true
+      } else {
+        this.scrollTop = false
+      }
+      // console.log(window.scrollY)
     }
   },
   head() {

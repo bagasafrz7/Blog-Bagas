@@ -6,6 +6,7 @@
   --color-primary: #F45027;
   --color-secondary: #777777;
   --color-secondary2: #797986;
+  --color-white: #fff;
   --bg: #121212;
   --bg-white: #fff;
   --bg-secondary: #26303D;
@@ -25,6 +26,49 @@
   --gray-dots: #e8e8ea;
 }
 
+.dark-mode {
+  --color: #fff;
+  --sub-color: rgb(235, 235, 235);
+  --color-primary: #F45027;
+  --color-secondary: #777777;
+  --color-secondary2: #797986;
+  --bg: #121212;
+  --bg-white: #fff;
+  --bg-secondary: #26303D;
+  --border-color: #ddd;
+  --color-icon-header: #fff;
+  --bg-logo: #fff;
+  --color-logo: #f7b633;
+  --color-h1: #f7b633;
+  --color-nav: #000;
+  --indigo-border: #5d6baa;
+  --indigo-color: #6b7abb;
+  --gray-border: #e8e8ea;
+  --blue-border: #72cce3;
+  --blue-color: #96dcee;
+  --yellow-background: #fffaa8;
+  --yellow-border: #f5eb71;
+  --gray-dots: #e8e8ea;
+}
+
+.light-mode {
+  --color: #000;
+  --color-white: #fff;
+  --sub-color: #000;
+  --color-primary: #F45027;
+  --bg: #fff;
+  --bg1: #121212;
+  --bg-white: #121212;
+  --color-secondary: #121212;
+  --bg-secondary: #21313e;
+  --border-color: #0d2538;
+  --color-icon-header: #000;
+  --bg-logo: #f7b633;
+  --color-logo: #fff;
+  --color-h1: #800080;
+  --color-nav: #fff;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -36,6 +80,10 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg);
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .main-content {
@@ -69,21 +117,45 @@ body {
 
 .header .navbars .menu ul li {
   font-size: 22px;
-  transition: 0.9s ease-in;
   cursor: pointer;
+  position: relative;
 }
 
-.header .navbars .menu ul li:hover {
+.header .navbars .menu ul li span:hover {
+  text-decoration: none;
   color: var(--color-primary);
 }
 
+.header .navbars .menu ul li span:after {
+  display: block;
+  position: absolute;
+  top: 100%;
+  content: '';
+  height: 1px;
+  width: 0;
+  right: 0;
+  background-color: var(--color-primary);
+  opacity: 0.8;
+  transition: width 250ms linear;
+}
+
+.header .navbars .menu ul li span:hover:after {
+  width: 50%;
+}
+
+
+.toole-switch {
+  display: flex;
+  justify-content: right;
+}
+
 .header .hero-header {
-  padding: 0 0 50px 0;
+  padding: 0 0 100px 0;
 }
 
 .header .hero-header h2 {
   color: var(--color-primary);
-  font-size: 72px;
+  font-size: 64px;
   font-style: normal;
   font-weight: 600;
 }
@@ -105,13 +177,13 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 15px 0;
+  /* padding: 15px 0; */
 }
 
 .header .hero-header .detail-header hr.lines-header {
   color: var(--bg-white);
   width: 10%;
-  border: 1px solid #FFFFFF;
+  border: 1px solid var(--bg-white);
 }
 
 .header .hero-header .detail-header h6 {
@@ -320,6 +392,12 @@ hr {
   padding: 25px;
   margin: 15px 0;
   position: relative;
+  transition: transform 250ms;
+}
+
+.project .card-project:hover {
+  transform: translateY(-10px);
+  color: var(--color-primary);
 }
 
 .project .img-project {
@@ -332,7 +410,12 @@ hr {
 .project .description-project h6 {
   font-size: 22px;
   font-weight: bold;
-  color: var(--color);
+  color: var(--color-white);
+}
+
+.project .description-project h6:hover {
+  cursor: pointer;
+  color: var(--color-primary);
 }
 
 .project .description-project p {
@@ -455,7 +538,7 @@ hr {
 
 /* Footer */
 footer p {
-  color: #FFFFFF !important;
+  color: var(--color) !important;
   text-align: center;
 }
 
@@ -484,3 +567,78 @@ footer p span {
 }
 
 /* Scroll */
+
+/* scroll-top */
+.scroll-top {
+  position: fixed;
+  top: 90%;
+  background: var(--bg-secondary);
+  right: 3%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.scroll-top p {
+  color: #fff !important;
+  font-size: 14px;
+}
+
+/* scroll-top */
+
+
+@media (max-width: 576px) {
+  .header .navbars .menu p {
+    font-size: 14px;
+  }
+
+  .header .navbars .menu ul li {
+    font-size: 16px;
+  }
+
+  .header .hero-header h2 {
+    font-size: 52px;
+  }
+
+  span.typed-text {
+    font-size: 18px;
+  }
+
+  .about h6 {
+    font-size: 24px;
+  }
+
+  .about .lines-about {
+    width: 25%;
+  }
+
+  .title-two p {
+    font-size: 62px;
+    line-height: 52px;
+    padding-right: 0px;
+  }
+
+  .project h6 {
+    font-size: 24px;
+  }
+
+  .project .lines-project {
+    width: 25%;
+  }
+
+  .project .list-project {
+    margin: 0 0 25px 0;
+  }
+
+  .blog h6 {
+    font-size: 24px;
+  }
+
+  .blog .lines-blog {
+    width: 25%;
+  }
+
+  .contact h6 {
+    font-size: 24px;
+  }
+}

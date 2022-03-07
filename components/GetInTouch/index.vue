@@ -1,7 +1,7 @@
 <template>
   <div>
     <section id="contact" class="contact">
-      <h6>Get In Touch</h6>
+      <h6>{{ $t('title_getintouch') }}</h6>
       <hr class="lines-contact" />
       <div class="social-media">
         <div class="row">
@@ -91,6 +91,66 @@
           </div>
         </div>
       </div>
+
+      <!-- Modal2 -->
+      <div v-if="showMenu" id="menu" class="popover1">
+        <div class="content">
+          <div class="nav">
+            <ul class="nav_list">
+              <div class="nav_list_item">
+                <div class="modal_content">
+                  <div class="modal_close" title="Close" @click="closeModal">
+                    <p class="bx bx-x">x</p>
+                  </div>
+                  <!-- <img
+                    src="@/assets/img/logo/ba3-black.png"
+                    alt=""
+                    srcset=""
+                    class="modal_img"
+                  /> -->
+                  <p class="assets-succes">🥳</p>
+                  <h1 class="modal_title">{{ $t('title_suscces') }}</h1>
+                  <p class="modal_description">
+                    {{ $t('description_succes') }}
+                  </p>
+                  <button class="modal_button-link" @click="closeModal">
+                    {{ $t('label_close') }}
+                  </button>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div v-if="showMenuFailed" id="menu" class="popover1">
+        <div class="content">
+          <div class="nav">
+            <ul class="nav_list">
+              <div class="nav_list_item">
+                <div class="modal_content">
+                  <div class="modal_close" title="Close" @click="closeModal">
+                    <p class="bx bx-x">x</p>
+                  </div>
+                  <!-- <img
+                    src="@/assets/img/logo/ba3-black.png"
+                    alt=""
+                    srcset=""
+                    class="modal_img"
+                  /> -->
+                  <p class="assets-succes">🥺</p>
+                  <h1 class="modal_title">{{ $t('title_failed') }}</h1>
+                  <p class="modal_description">
+                    {{ $t('description_failed') }}
+                  </p>
+                  <button class="modal_button-link" @click="closeModal">
+                    {{ $t('label_close') }}
+                  </button>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -105,38 +165,13 @@ export default {
       loadingTime: 0,
       maxLoadingTime: 3,
       showMenu: false,
+      showMenuFailed: false,
       titlePage: '',
       formData: {
         name: '',
         email: '',
         message: ''
       }
-    }
-  },
-  mounted() {
-    if (this.$i18n.locale === 'id') {
-      this.titlePage = 'Tentang Bagas Afrizal'
-    } else {
-      this.titlePage = 'About Bagas Afrizal'
-    }
-    this.startLoading()
-  },
-  head() {
-    return {
-      title: this.titlePage,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Tentang Bagas Afrizal'
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content:
-            'Bagas Afrizal,Tentang Bagas Afrizal, Bagas, Afrizal, Frontend Developer, Pemuda Indonesia, bagasafrizal.com'
-        }
-      ]
     }
   },
   methods: {
@@ -150,50 +185,41 @@ export default {
     },
     closeModal() {
       this.showMenu = false
+      this.showMenuFailed = false
     },
-    submitData() {
-      // this.$swal.fire({
-      //   position: 'center',
-      //   icon: 'error',
-      //   title: 'Oops...',
-      //   html: 'Fitur ini masih dalam tahap pengembangan. Tapi jangan khawatir, kamu bisa menghubungi saya di email bagasafrz16@gmail.com, atau dengan <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bagasafrz16@gmail.com&su=HalloBagas&body=Message" target="_blank">Klik Disini</a>'
-      // })
-      // this.$swal.fire({
-      //   position: 'center',
-      //   icon: 'success',
-      //   title: 'Yeay, Data Berhasil Dikirim 🥳',
-      //   html: 'Data yang kamu kirim akan segera dibalas, Terima Kasih'
-      // })
-      // this.$toast.success('Yeay, Data Berhasil Dikirim 🥳')
-      // this.$toasted.success('Yeay, Data Berhasil Dikirim 🥳', {
-      //   theme: 'bubble',
-      //   position: 'top-center',
-      //   duration: 5000,
-      //   progressBar: true
-      // })
-      this.showMenu = true
+    async submitData() {
+      const result = await this.$axios.$post(
+        `https://simple-sendemail.vercel.app/api/send-email?name=${this.formData.name}&email=${this.formData.email}&message=${this.formData.message}`
+      )
+      if (result.status === 200) {
+        this.formData = ''
+        this.showMenu = true
+      } else {
+        this.formData = ''
+        this.showMenuFailed = true
+      }
 
-      Email.send({
-        Host: 'ftp.bagasafrizal.com',
-        Username: 'bagp1952',
-        Password: 'F4TWDFyEz4BN83',
-        To: 'bagasafrz16@gmail.com',
-        From: 'noreply@bagasafrizal.com',
-        Subject: `New Inquiry`,
-        Body: `<span style="font-family:arial,helvetica,sans-serif">Hi Bagas Afrizal,<br /><br />There is a New Question From :</span><blockquote><p><span style="font-family:arial,helvetica,sans-serif">Nama : ${this.formData.name}<br />Email : ${this.formData.email}<br />Message : ${this.formData.message}</span></p></blockquote><p><span style="font-family:arial,helvetica,sans-serif">Please follow up immediately for this question data&nbsp;</span></p><p><span style="font-family:arial,helvetica,sans-serif">Best Regards,<br /><br />Tim Bagas Afrizal</span></p><hr /><p><span style="font-family:arial,helvetica,sans-serif"><span style="color:#A9A9A9"><span style="font-size:11px">Tangerang - Indonesia<br />Phone :&nbsp;<span style="background-color:rgb(255, 255, 255)">0895-0295-5429</span></span></span></span></p>`
-      })
-        .then((message) => (this.formData = ''))
-        .catch(
-          (error) =>
-            this.$swal.fire({
-              position: 'center',
-              icon: 'error',
-              title: 'Data Gagal Dikirim'
-            }),
-          setTimeout(() => {
-            this.formData = ''
-          }, 1500)
-        )
+      // const res = await this.$axios
+      //   .post(
+      //     `https://simple-sendemail.vercel.app/api/send-email?name=${this.formData.name}&email=${this.formData.email}&message=${this.formData.message}`)
+      // .then((message) =>
+      //   this.$swal.fire({
+      //     position: 'center',
+      //     icon: 'success',
+      //     title: 'Success'
+      //   })
+      // )
+      // .catch(
+      //   (error) =>
+      //     this.$swal.fire({
+      //       position: 'center',
+      //       icon: 'error',
+      //       title: 'Data Gagal Dikirim'
+      //     }),
+      //   setTimeout(() => {
+      //     this.formData = ''
+      //   }, 1500)
+      // )
     }
   }
 }
@@ -437,7 +463,7 @@ p.contact-me {
   /* border-radius: 0.3rem; */
 }
 .modal_content {
-  width: 380px;
+  width: 100%;
   height: auto;
   background: #fff;
   text-align: center;
@@ -554,16 +580,16 @@ img.modal_img {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   width: 100%;
   height: 100%;
   color: #fff;
-  background-color: #00000069;
+  /* background-color: #00000069; */
   -webkit-animation: 1s grow-data-v-81a679f4 ease forwards;
   animation: 1s grow-data-v-81a679f4 ease forwards;
   text-align: center;
   position: fixed;
   top: 0;
+  left: 0;
 }
 
 .nav_list {

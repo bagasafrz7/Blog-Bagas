@@ -1,10 +1,40 @@
 <template>
   <div>
     <main>
-      <input class="l" type="checkbox" />
+      <input
+        v-model="checked"
+        class="l"
+        type="checkbox"
+        :checked="valueCheck"
+      />
     </main>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      toggleDarkMode: false,
+      darkMode: true,
+      valueCheck: true
+    }
+  },
+  mounted() {
+    const dataTheme = localStorage.getItem('nuxt-color-mode')
+    if (this.$colorMode.preference === 'dark') {
+      this.valueCheck = false
+      console.log(dataTheme)
+    } else if (this.$colorMode.preference === 'light') {
+      console.log(dataTheme)
+      this.valueCheck = true
+    } else if (this.$colorMode.preference === '') {
+      console.log(dataTheme)
+      this.valueCheck = false
+    }
+  }
+}
+</script>
 
 <style scoped>
 :root {
@@ -68,7 +98,7 @@ main {
 }
 /* Checked */
 .l:checked {
-  background-color: #fff;
+  background-color: #bbb;
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
 }
 .l:checked:before {
