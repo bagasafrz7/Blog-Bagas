@@ -93,6 +93,10 @@ body {
 /* Headers */
 .header {
   position: relative;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
 }
 
 .header .navbars {
