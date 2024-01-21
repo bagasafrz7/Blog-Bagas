@@ -215,197 +215,7 @@
         </div>
       </div>
     </section>
-    <section id="project" class="project">
-      <h6>{{ $t('title_project') }}</h6>
-      <hr class="lines-project" />
-      <div class="list-project">
-        <div class="row" data-aos="fade-up" data-aos-duration="1000">
-          <div class="col-md-4">
-            <div class="card-project">
-              <div class="detail-project">
-                <div class="img-project">
-                  <fa :icon="['far', 'building']" class="building" />
-                  <a href="https://jualrumahpluit.com/" target="_blank">
-                    <b-icon
-                      icon="box-arrow-up-right"
-                      font-scale="1"
-                      class="pointer"
-                    ></b-icon>
-                  </a>
-                </div>
-                <div class="description-project">
-                  <a href="https://jualrumahpluit.com/" target="_blank">
-                    <h6>Jualrumahpluit.com</h6>
-                  </a>
-                  <p>
-                    {{ $t('deskripsi_jualrumah') }}
-                  </p>
-                  <div class="tools">
-                    <fa :icon="['fab', 'html5']" class="html5 detail-tools" />
-                    <fa
-                      :icon="['fab', 'css3-alt']"
-                      class="css3-alt detail-tools"
-                    />
-                    <fa :icon="['fab', 'react']" class="react detail-tools" />
-                    <fa :icon="['fab', 'php']" class="php detail-tools" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-project">
-              <div class="detail-project">
-                <div class="img-project">
-                  <fa :icon="['far', 'hospital']" class="building" />
-                  <a href="https://rscikinidrivethru.com/" target="_blank">
-                    <b-icon icon="box-arrow-up-right" font-scale="1"></b-icon>
-                  </a>
-                </div>
-                <div class="description-project">
-                  <a href="https://rscikinidrivethru.com/" target="_blank">
-                    <h6>RS PGI Cikini Drive Thru</h6>
-                  </a>
-                  <p>
-                    {{ $t('deskripsi_cikini') }}
-                  </p>
-                  <div class="tools">
-                    <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
-                    <fa
-                      :icon="['fab', 'bootstrap']"
-                      class="bootstrap detail-tools"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-project">
-              <div class="detail-project">
-                <div class="img-project">
-                  <fa :icon="['fas', 'business-time']" class="building" />
-                  <a href="https://marvelfood.co.id/" target="_blank">
-                    <b-icon icon="box-arrow-up-right" font-scale="1"></b-icon>
-                  </a>
-                </div>
-                <div class="description-project">
-                  <a href="https://marvelfood.co.id/" target="_blank">
-                    <h6>Marvel Food</h6>
-                  </a>
-                  <p>
-                    {{ $t('deskripsi_marvel') }}
-                  </p>
-                  <div class="tools">
-                    <img
-                      src="@/assets/img/favicon.png"
-                      alt=""
-                      srcset=""
-                      class="detail-tools"
-                    />
-                    <fa
-                      :icon="['fab', 'js']"
-                      class="js detail-tools detail-tools"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row" data-aos="fade-up" data-aos-duration="1000">
-          <div class="col-md-4">
-            <div class="card-project">
-              <div class="detail-project">
-                <div class="img-project">
-                  <fa :icon="['fas', 'money-check-alt']" class="building" />
-                  <a href="https://nepays.netlify.app/" target="_blank">
-                    <b-icon icon="box-arrow-up-right" font-scale="1"></b-icon>
-                  </a>
-                </div>
-                <div class="description-project">
-                  <a href="https://nepays.netlify.app/" target="_blank">
-                    <h6>Nepays</h6>
-                  </a>
-                  <p>
-                    {{ $t('deskripsi_nepays') }}
-                  </p>
-                  <div class="tools">
-                    <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
-                    <fa :icon="['fab', 'js']" class="js detail-tools" />
-                    <fa
-                      :icon="['fab', 'node-js']"
-                      class="node-js detail-tools"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-project">
-              <div class="detail-project">
-                <div class="img-project">
-                  <fa :icon="['fas', 'store']" class="building" />
-                  <a href="https://pos-space.netlify.app/login" target="_blank">
-                    <b-icon icon="box-arrow-up-right" font-scale="1"></b-icon>
-                  </a>
-                </div>
-                <div class="description-project">
-                  <a href="https://pos-space.netlify.app/login" target="_blank">
-                    <h6>Space Point of Sale</h6>
-                  </a>
-                  <p>
-                    {{ $t('deskripsi_pos') }}
-                  </p>
-                  <div class="tools">
-                    <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
-                    <fa :icon="['fab', 'js']" class="js detail-tools" />
-                    <fa
-                      :icon="['fab', 'node-js']"
-                      class="node-js detail-tools"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-project">
-              <div class="detail-project">
-                <div class="img-project">
-                  <fa :icon="['fas', 'network-wired']" class="building" />
-                  <a href="https://badag.netlify.app/" target="_blank">
-                    <b-icon icon="box-arrow-up-right" font-scale="1"></b-icon>
-                  </a>
-                </div>
-                <div class="description-project">
-                  <a href="https://badag.netlify.app/" target="_blank">
-                    <h6>Portal Job - BADAG</h6>
-                  </a>
-                  <p>
-                    {{ $t('deskripsi_badag') }}
-                  </p>
-                  <div class="tools">
-                    <fa :icon="['fab', 'vuejs']" class="vuejs detail-tools" />
-                    <fa :icon="['fab', 'js']" class="js detail-tools" />
-                    <fa
-                      :icon="['fab', 'node-js']"
-                      class="node-js detail-tools"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="see-more text-right">
-        <nuxt-link to="/projects">
-          <span> See More... </span>
-        </nuxt-link>
-      </div> -->
-    </section>
+    <PortfolioComponent show_more limit />
   </div>
 </template>
 
@@ -413,10 +223,13 @@
 import AnimationHeaders from '~/components/AnimationHeaders'
 // import ToggleDarkMode from '~/components/ToggleDarkMode'
 import DropdownCountry from '~/components/DropdownCountry'
+import PortfolioComponent from '~/components/Portfolio'
+
 export default {
   components: {
     AnimationHeaders,
-    DropdownCountry
+    DropdownCountry,
+    PortfolioComponent
     // ToggleDarkMode
   },
   data() {
