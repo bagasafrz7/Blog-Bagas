@@ -51,7 +51,8 @@ export default {
   plugins: [
     '~/plugins/particles.js',
     '~/plugins/disqus',
-    { src: "@/plugins/aos", mode: "client" }
+    { src: "@/plugins/aos", mode: "client" },
+    { src: '~plugins/vue-carousel-3d', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -129,6 +130,11 @@ export default {
               title_failed: 'Ops, Data Failed to Send',
               description_succes: 'The data you send will be replied to soon, Thank you!',
               description_failed: `For now, it seems that your data can't be sent yet, please try again in a while!`,
+              description_estate_management: `Create a website that displays profile information for hospitals that collaborate with Tomodachi. It has a function that allows you to compare packages from different hospitals and order packages. This website was created with TypeScript, React JS as a framework, and Mantine UI as a library for application styling.`,
+              description_sqm: `Developing additional features including matrix data, pipeline reports, subscription packages, and more. In addition, I perform site maintenance by correcting abandoned problems and, on occasion, delving right into the backend to create new or improve existing APIs.`,
+              description_tomodachi: `Create a website that displays profile information for hospitals that collaborate with Tomodachi. It has a function that allows you to compare packages from different hospitals and order packages. This website was created with TypeScript, React JS as a framework, and Mantine UI as a library for application styling.`,
+              description_kota_event: `Create an e-commerce website where users may complete transactions. This website was built using TypeScript with React JS as a framework and Mantine UI as a frontend for the application.`,
+              description_tisla: `For Mercubuana University, I developed an online dashboard for managing CPL (Graduate Learning Outcomes) and CPMK (Course Learning Outcomes). This website was created with JavaScript, Vue JS as the framework, and Vue Bootstrap as the application styling library.`,
               label_close: 'Close',
               link_home: 'Home',
               link_scrooltop: 'Scroll Top',
@@ -136,7 +142,13 @@ export default {
               title_project: `Some Things I've Built`,
               title_blog: 'Some Things I Write',
               title_getintouch: 'Get In Touch',
-              text_footer: 'Designed & Built by'
+              text_footer: 'Designed & Built by',
+              text_link_private: 'Ups, Link is Private!',
+              desc_link_private_one: 'For now the link you want to see is',
+              desc_link_private_two: `To see it, let's discuss with me`,
+              desc_link_private_three: 'via',
+              desc_link_private_four: 'or',
+              desc_link_private_five: 'Click Here',
             },
             id: {
               link_about: 'Tentang Saya',
@@ -173,6 +185,11 @@ export default {
               title_failed: 'Yah, Data Gagal Dikirim',
               description_succes: ' Data yang kamu kirim akan segera dibalas, Terima Kasih!',
               description_failed: `Untuk saat ini sepertinya data kamu belum bisa dikirim, coba beberapa saat lagi ya!`,
+              description_estate_management: `Membuat website untuk menampilkan informasi profil daftar rumah sakit yang berkerja sama dengan Tomodachi. Di dalamnya terdapat fitur untuk membandingkan paket antar rumah sakit dan juga order paketnya. Web ini dibangun menggunakan TypeScript dengan React JS sebagai kerangka kerja, dan Mantine UI sebagai perpustakaan untuk gaya aplikasinya.`,
+              description_sqm: `Membuat fitur baru seperti data matriks, pipeline report, paket langganan, dan lain-lainnya. Dan saya pun melakukan pemeliharaan web dengan memperbaiki bug-bug yang ditinggalkan, dan terkadang terjun langsung ke backend untuk membuat api baru atau memperbaiki api.`,
+              description_tomodachi: `Membuat website untuk menampilkan informasi profil daftar rumah sakit yang berkerja sama dengan Tomodachi. Di dalamnya terdapat fitur untuk membandingkan paket antar rumah sakit dan juga order paketnya. Web ini dibangun menggunakan TypeScript dengan React JS sebagai kerangka kerja, dan Mantine UI sebagai perpustakaan untuk gaya aplikasinya.`,
+              description_kota_event: `Membuat website e-commerce yang di dalamnya pengguna dapat melakukan transaksi. Web ini dibangun menggunakan TypeScript dengan React JS sebagai kerangka kerja, dan Mantine UI sebagai perpustakaan untuk gaya aplikasinya.`,
+              description_tisla: `Membuat web dashboard manajemen penilaian CPL (Capaian Pembelajaran Lulusan), CPMK (Capaian Pembelajaran Mata Kuliah), untuk Universitas Mercubuana. Website ini dibangun menggunakan JavaScript dengan Vue JS sebagai kerangka kerja dan Vue Bootstrap sebagai perpustakaan gaya aplikasinya.`,
               label_close: 'Tutup',
               link_home: 'Beranda',
               link_scrooltop: 'Gulir ke atas',
@@ -180,7 +197,13 @@ export default {
               title_project: `Beberapa Hal yang Saya Buat`,
               title_blog: 'Beberapa Hal yang Saya Tulis',
               title_getintouch: 'Hubungi Saya',
-              text_footer: 'Dirancang & Dibangun oleh'
+              text_footer: 'Dirancang & Dibangun oleh',
+              text_link_private: 'Ups, URL Bersifat Pribadi!',
+              desc_link_private_one: 'Untuk saat ini link yang ingin kamu lihat itu bersifat',
+              desc_link_private_two: 'Untuk melihatnya mari diskusi bersama saya',
+              desc_link_private_three: 'melalui',
+              desc_link_private_four: 'atau',
+              desc_link_private_five: 'Klik Disini',
             }
           }
         }
@@ -294,7 +317,8 @@ export default {
           fix: true
         }
       })
-    }
+    },
+    transpile: ["oh-vue-icons"]
   },
 
   extend(config, ctx) { }
