@@ -1,0 +1,355 @@
+[
+  {
+  "id": 1,
+  "project_name": "Estate Management",
+  "description": "description_estate_management",
+  "icon": "M570.7 236.3 512 184.4V48a16 16 0 0 0 -16-16H432a16 16 0 0 0 -16 16V99.7L314.8 10.3C308.5 4.6 296.5 0 288 0s-20.5 4.6-26.7 10.3l-256 226A18.3 18.3 0 0 0 0 248.2a18.6 18.6 0 0 0 4.1 10.7L25.5 282.7a21.1 21.1 0 0 0 12 5.3 21.7 21.7 0 0 0 10.7-4.1l15.9-14V480a32 32 0 0 0 32 32H480a32 32 0 0 0 32-32V269.9l15.9 14A21.9 21.9 0 0 0 538.6 288a20.9 20.9 0 0 0 11.9-5.3l21.4-23.8A21.6 21.6 0 0 0 576 248.2 21 21 0 0 0 570.7 236.3zM288 176a64 64 0 1 1 -64 64A64 64 0 0 1 288 176zM400 448H176a16 16 0 0 1 -16-16 96 96 0 0 1 96-96h64a96 96 0 0 1 96 96A16 16 0 0 1 400 448z",
+  "thumbnail": ["img/projects/tomodachi/thumbnail-estate.png"],
+  "images": ["https://images.unsplash.com/photo-1594862565524-acad491f0958?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1512845296467-183ccf124347?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1555178715-09cb7406643b?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+  "link": "",
+  "is_private_link": true,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg",
+        "class": "react detail-tools",
+        "title": "React"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nextdotjs.svg",
+        "class": "nextdotjs detail-tools",
+        "title": "Next.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/typescript.svg",
+        "class": "typescript detail-tools",
+        "title": "TypeScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/chakraui.svg",
+        "class": "chakraui detail-tools",
+        "title": "Chakra UI"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mobx.svg",
+        "class": "mobx detail-tools",
+        "title": "Mox X"
+      }
+    ]
+  },
+  {
+  "id": 2,
+  "project_name": "SQM Property",
+  "description": "description_sqm",
+  "icon": ["far", "building"],
+  "thumbnail": ["img/projects/tomodachi/thumbnail-sqm.png"],
+  "images": [],
+  "link": "https://developer.sqmproperty.co.id/",
+  "is_private_link": false,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg",
+        "class": "react detail-tools",
+        "title": "React"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nextdotjs.svg",
+        "class": "nextdotjs detail-tools",
+        "title": "Next.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg",
+        "class": "javascript detail-tools",
+        "title": "JavaScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bootstrap.svg",
+        "class": "bootstrap detail-tools",
+        "title": "Bootstrap"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/css3.svg",
+        "class": "css3 detail-tools",
+        "title": "CSS"
+      }
+    ]
+  },
+  {
+  "id": 3,
+  "project_name": "Tomodachi",
+  "description": "description_tomodachi",
+  "icon": ["far", "hospital"],
+  "thumbnail": ["img/projects/tomodachi/thumbnail-tomodachi.png"],
+  "images": ["img/projects/tomodachi/home.png", 
+  "img/projects/tomodachi/list-service.png", "img/projects/tomodachi/detail-service.png", "img/projects/tomodachi/comparison.png"],
+  "link": "http://tomodachi.co.id/",
+  "is_private_link": false,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg",
+        "class": "react detail-tools",
+        "title": "React"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/typescript.svg",
+        "class": "typescript detail-tools",
+        "title": "TypeScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mantine.svg",
+        "class": "mantine detail-tools",
+        "title": "Mantine UI"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mobx.svg",
+        "class": "mobx detail-tools",
+        "title": "Mox X"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vite.svg",
+        "class": "vite detail-tools",
+        "title": "Vite"
+      }
+    ]
+  },
+  {
+  "id": 4,
+  "project_name": "Kota Event",
+  "description": "description_kota_event",
+  "icon": "M602 118.6L537.1 15C531.3 5.7 521 0 510 0H106C95 0 84.7 5.7 78.9 15L14 118.6c-33.5 53.5-3.8 127.9 58.8 136.4 4.5 .6 9.1 .9 13.7 .9 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18.1 20.1 44.3 33.1 73.8 33.1 4.7 0 9.2-.3 13.7-.9 62.8-8.4 92.6-82.8 59-136.4zM529.5 288c-10 0-19.9-1.5-29.5-3.8V384H116v-99.8c-9.6 2.2-19.5 3.8-29.5 3.8-6 0-12.1-.4-18-1.2-5.6-.8-11.1-2.1-16.4-3.6V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32V283.2c-5.4 1.6-10.8 2.9-16.4 3.6-6.1 .8-12.1 1.2-18.2 1.2z",
+  "thumbnail": ["img/projects/tomodachi/thumbnail_kota_event.png"],
+  "images": [],
+  "link": "",
+  "is_private_link": true,
+  "tools": [
+    {
+      "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg",
+      "class": "react detail-tools",
+      "title": "React"
+    },
+    {
+      "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/typescript.svg",
+      "class": "typescript detail-tools",
+      "title": "TypeScript"
+    },
+    {
+      "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mantine.svg",
+      "class": "mantine detail-tools",
+      "title": "Mantine UI"
+    },
+    {
+      "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mobx.svg",
+      "class": "mobx detail-tools",
+      "title": "Mox X"
+    },
+    {
+      "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vite.svg",
+      "class": "vite detail-tools",
+      "title": "Vite"
+    }
+    ]
+  },
+  {
+  "id": 5,
+  "project_name": "TISLA",
+  "description": "description_tisla",
+  "icon": "M496 128v16a8 8 0 0 1 -8 8h-24v12c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12v-12H24a8 8 0 0 1 -8-8v-16a8 8 0 0 1 4.9-7.4l232-88a8 8 0 0 1 6.1 0l232 88A8 8 0 0 1 496 128zm-24 304H40c-13.3 0-24 10.7-24 24v16a8 8 0 0 0 8 8h464a8 8 0 0 0 8-8v-16c0-13.3-10.7-24-24-24zM96 192v192H60c-6.6 0-12 5.4-12 12v20h416v-20c0-6.6-5.4-12-12-12h-36V192h-64v192h-64V192h-64v192h-64V192H96z",
+  "thumbnail": ["img/projects/tomodachi/thumbnail-tisla.png"],
+  "images": [],
+  "link": "",
+  "is_private_link": true,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vuedotjs.svg",
+        "class": "vuedotjs detail-tools",
+        "title": "Vue.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg",
+        "class": "javascript detail-tools",
+        "title": "JavaScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bootstrap.svg",
+        "class": "bootstrap detail-tools",
+        "title": "Bootstrap"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vuedotjs.svg",
+        "class": "vuedotjs detail-tools",
+        "title": "Vuex"
+      }
+    ]
+  },
+  {
+  "id": 6,
+  "project_name": "Jualrumahpluit.com",
+  "description": "deskripsi_jualrumah",
+  "icon": "M504 352H136.4c-4.4 0-8 3.6-8 8l-.1 48c0 4.4 3.6 8 8 8H504c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm0 96H136.1c-4.4 0-8 3.6-8 8l-.1 48c0 4.4 3.6 8 8 8h368c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm0-192H136.6c-4.4 0-8 3.6-8 8l-.1 48c0 4.4 3.6 8 8 8H504c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm106.5-139L338.4 3.7a48.2 48.2 0 0 0 -36.9 0L29.5 117C11.7 124.5 0 141.9 0 161.3V504c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8V256c0-17.6 14.6-32 32.6-32h382.8c18 0 32.6 14.4 32.6 32v248c0 4.4 3.6 8 8 8h80c4.4 0 8-3.6 8-8V161.3c0-19.4-11.7-36.8-29.5-44.3z",
+  "thumbnail": [],
+  "images": [],
+  "link": "https://jualrumahpluit.com/",
+  "is_private_link": false,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/html5.svg",
+        "class": "html5 detail-tools",
+        "title": "HTML"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/css3.svg",
+        "class": "css3 detail-tools",
+        "title": "CSS"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg",
+        "class": "react detail-tools",
+        "title": "React"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/php.svg",
+        "class": "php detail-tools",
+        "title": "PHP"
+      }
+    ]
+  },
+  {
+  "id": 7,
+  "project_name": "RS PGI Cikini Drive Thru",
+  "description": "deskripsi_cikini",
+  "icon": ["far", "hospital"],
+  "thumbnail": [],
+  "images": [],
+  "link": "https://rscikinidrivethru.com",
+  "is_private_link": false,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vuedotjs.svg",
+        "class": "vuedotjs detail-tools",
+        "title": "Vue.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg",
+        "class": "javascript detail-tools",
+        "title": "JavaScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bootstrap.svg",
+        "class": "bootstrap detail-tools",
+        "title": "Bootstrap"
+      }
+    ]
+  },
+  {
+  "id": 8,
+  "project_name": "Marvel Food",
+  "description": "deskripsi_marvel",
+  "icon": ["fas", "business-time"],
+  "thumbnail": [],
+  "images": [],
+  "link": "https://marvelfood.co.id",
+  "is_private_link": false,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vuedotjs.svg",
+        "class": "vuedotjs detail-tools",
+        "title": "Vue.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nuxtdotjs.svg",
+        "class": "nuxtdotjs detail-tools",
+        "title": "Nuxt.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg",
+        "class": "javascript detail-tools",
+        "title": "JavaScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/bootstrap.svg",
+        "class": "bootstrap detail-tools",
+        "title": "Bootstrap"
+      }
+    ]
+  },
+  {
+  "id": 9,
+  "project_name": "Nepays",
+  "description": "deskripsi_nepays",
+  "icon": ["fas", "money-check-alt"],
+  "thumbnail": [],
+  "images": [],
+  "link": "https://nepays.netlify.app",
+  "is_private_link": false,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vuedotjs.svg",
+        "class": "vuedotjs detail-tools",
+        "title": "Vue.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg",
+        "class": "javascript detail-tools",
+        "title": "JavaScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nodedotjs.svg",
+        "class": "nodedotjs detail-tools",
+        "title": "Node JS"
+      }
+    ]
+  },
+  {
+  "id": 10,
+  "project_name": "Space Point of Sale",
+  "description": "deskripsi_pos",
+  "icon": ["fas", "store"],
+  "thumbnail": [],
+  "images": [],
+  "link": "https://pos-space.netlify.app/login",
+  "is_private_link": false,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vuedotjs.svg",
+        "class": "vuedotjs detail-tools",
+        "title": "Vue.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg",
+        "class": "javascript detail-tools",
+        "title": "JavaScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nodedotjs.svg",
+        "class": "nodedotjs detail-tools",
+        "title": "Node JS"
+      }
+    ]
+  },
+  {
+  "id": 11,
+  "project_name": "Portal Job - BADAG",
+  "description": "deskripsi_badag",
+  "icon": ["fas", "network-wired"],
+  "thumbnail": [],
+  "images": [],
+  "link": "https://badag.netlify.app/",
+  "is_private_link": false,
+  "tools": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/vuedotjs.svg",
+        "class": "vuedotjs detail-tools",
+        "title": "Vue.js"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg",
+        "class": "javascript detail-tools",
+        "title": "JavaScript"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nodedotjs.svg",
+        "class": "nodedotjs detail-tools",
+        "title": "Node JS"
+      }
+    ]
+  }
+]
