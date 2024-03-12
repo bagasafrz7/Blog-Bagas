@@ -7,7 +7,7 @@
             <h6>{{ $t('title_project') }}</h6>
             <hr class="lines-project" />
             <div class="list-project">
-              <div class="row" data-aos="fade-up" data-aos-duration="1000">
+              <div class="row">
                 <div
                   v-for="(item, index) in listDataProject"
                   :key="index"
